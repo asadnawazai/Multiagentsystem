@@ -1,0 +1,14 @@
+timestamp,file_name,extracted_fields,missing_fields,ocr_type
+2025-05-26 12:12:17,453411d7-02a8-4bc1-a0f5-bb970f22579b.jpg,,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",scanned_image
+2025-05-26 12:35:22,f9e55cae-2da4-4cc1-8056-0d5138708e25.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 14:31:33,59203112-6721-4199-8765-26ef2ede1ade.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 14:50:59,39758664-3db5-415d-8f2f-ae5785dcc255.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 17:44:22,d7b94386-1e33-46dc-b66a-21fbe85f699b.jpeg,,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",scanned_image
+2025-05-26 17:59:24,df3e0571-d492-4912-ad37-e45728000e35.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 18:14:26,49da8eb5-e5b2-4954-9b07-d9598b7a8483.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 18:27:30,4069a132-8a22-4c77-b919-02f4ec859738.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,bedrooms,bathrooms,year_built,mls_number",,digital_pdf
+2025-05-26 18:46:48,faf10f71-6b77-4d8b-9adf-609801687adf.pdf,"parcel_id,tax_value,property_address,flood_zone,amount,year_built,mls_number","bedrooms,bathrooms",digital_pdf
+2025-05-26 18:57:55,04e664f1-6755-4a9e-a3e9-0fdb4dab59d9.pdf,"parcel_id,tax_value,property_address,amount","flood_zone,bedrooms,bathrooms,year_built,mls_number",digital_pdf
+2025-05-26 23:15:01,73ce87d3-03f4-4997-9443-edf547069d9e.pdf,"parcel_id,tax_value,property_address,amount","flood_zone,bedrooms,bathrooms,year_built,mls_number",digital_pdf
+2025-05-27 00:09:25,d9f4a76c-b70d-4fe2-b437-c64c77462c2e.pdf,"parcel_id,tax_value,property_address,amount,bedrooms,bathrooms,year_built,mls_number",flood_zone,digital_pdf
+2025-05-27 00:34:50,7652b8bd-0082-4409-a7d4-b115fdc173e3.pdf,"parcel_id,tax_value,property_address,amount,bedrooms,bathrooms,year_built,mls_number",flood_zone,digital_pdf

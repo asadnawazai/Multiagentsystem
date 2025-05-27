@@ -1,0 +1,153 @@
+<!-- MFA Verification Modal -->
+<div id="mfa-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Verify Your Identity</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>For security purposes, please enter the verification code that was sent to your device.</p>
+            <p><small>For demo purposes, the code is: <strong>123456</strong></small></p>
+            
+            <form id="mfa-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group otp-input-group">
+                    <label for="otp">Verification Code:</label>
+                    <input type="text" id="otp" name="otp" maxlength="6" required placeholder="6-digit code">
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="button primary">Verify</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 0;
+    width: 400px;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s;
+}
+
+.modal-header {
+    padding: 16px 24px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #555;
+}
+
+.otp-input-group input {
+    letter-spacing: 4px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+<script>
+// MFA Modal JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Show the MFA modal when upload form is submitted
+    const uploadForm = document.getElementById('upload-form');
+    const mfaModal = document.getElementById('mfa-modal');
+    const mfaForm = document.getElementById('mfa-form');
+    const closeButton = mfaModal.querySelector('.close');
+    
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showMfaModal();
+        });
+    }
+    
+    // Close modal when clicking the X
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            mfaModal.style.display = 'none';
+        });
+    }
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(e) {
+        if (e.target === mfaModal) {
+            mfaModal.style.display = 'none';
+        }
+    });
+    
+    // Handle MFA form submission
+    if (mfaForm) {
+        mfaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const otp = document.getElementById('otp').value;
+            
+            // In a real app, you would verify the OTP with the server
+            // For demo purposes, we'll accept 123456 as the valid OTP
+            if (otp === '123456') {
+                mfaModal.style.display = 'none';
+                // Submit the original upload form
+                uploadForm.submit();
+            } else {
+                alert('Invalid verification code. Please try again.');
+            }
+        });
+    }
+    
+    function showMfaModal() {
+        mfaModal.style.display = 'block';
+    }
+});
+</script>

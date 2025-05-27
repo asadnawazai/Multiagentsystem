@@ -1,0 +1,50 @@
+MULTIPLE LISTING SERVICE PROPERTY REPORT
+MLS Number: MLS_123456
+Date: May 25, 2025
+
+PROPERTY DETAILS
+---------------------
+Property Address: 123 Main Street, Beverly Hills, CA 90210
+Parcel ID: APN-12345-6789
+Property Type: Residential - Single Family
+Year Built: 1985
+Square Footage: 3,200 sq.ft.
+Lot Size: 0.45 acres
+Bedrooms: 4
+Bathrooms: 3.5
+
+FINANCIAL INFORMATION
+---------------------
+List Price: $1,850,000
+Tax Value: $1,525,000
+Annual Property Tax: $18,975
+HOA Fees: $325 monthly
+
+FEATURES AND AMENITIES
+---------------------
+- Renovated kitchen with granite countertops
+- Hardwood floors throughout main level
+- Central air conditioning and heating
+- Attached two-car garage
+- Swimming pool with hot tub
+- Outdoor kitchen and entertainment area
+- Solar panels (owned, not leased)
+- Smart home system installed
+
+SCHOOL INFORMATION
+---------------------
+Elementary School: Washington Elementary (Rating: 9/10)
+Middle School: Lincoln Middle School (Rating: 8/10)
+High School: Jefferson High School (Rating: 9/10)
+
+REMARKS
+---------------------
+Beautiful well-maintained property in a highly desirable neighborhood. Recent renovation completed in 2023 includes kitchen upgrade, new roof, and HVAC system replacement. Property has been pre-inspected and all reports are available upon request. Flood zone: X (minimal flood risk). Seller is motivated and willing to consider all reasonable offers.
+
+LISTING AGENT
+---------------------
+John Smith
+Luxury Homes Realty
+License #: BRE-98765432
+Phone: (310) 555-1234
+Email: john.smith@luxuryhomes.example

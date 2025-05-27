@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore - RAG Processing</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PanoramaScore</h1>
+            <p class="subtitle">AI-powered document risk analysis</p>
+        </header>
+        
+        <main>
+            <div class="tabs">
+                <div class="tab-header">
+                    <a href="/" class="tab">Metadata Extraction</a>
+                    <a href="/process-form" class="tab">Document Processing</a>
+                    <a href="/rag-process" class="tab active">Vector Search</a>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <h2>Vector Similarity Search</h2>
+                        <p>Upload a document to extract text, structured fields, and find similar documents using vector embeddings.</p>
+                        
+                        <form action="/rag-process" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file3">Select File:</label>
+                                <input type="file" id="file3" name="file" accept=".pdf,.jpg,.jpeg,.png,.csv" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client_id3">Client ID (optional):</label>
+                                <input type="text" id="client_id3" name="client_id" placeholder="Enter client ID">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="document_type">Document Type:</label>
+                                <select id="document_type" name="document_type">
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Insurance">Insurance</option>
+                                    <option value="Supply Chain">Supply Chain</option>
+                                    <option value="Fraud Detection">Fraud Detection</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="risk_score">Initial Risk Score (0-100):</label>
+                                <input type="number" id="risk_score" name="risk_score" min="0" max="100" value="50">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="redact_pii">Redact PII:</label>
+                                <input type="checkbox" id="redact_pii" name="redact_pii" value="true">
+                                <span class="checkbox-label">Redact personally identifiable information</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>API Key:</label>
+                                <input type="text" name="api_key" value="dev_panorama_key_123" placeholder="Enter API key">
+                                <small>(The API key is set in the .env file)</small>
+                            </div>
+                            
+                            <button type="submit">Process with Vector Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dependencies-note">
+                <h3>Required Dependencies</h3>
+                <p>For vector similarity search, please ensure the following are available:</p>
+                <ul>
+                    <li><strong>PostgreSQL with pgvector extension</strong> - Running on localhost:5432</li>
+                    <li><strong>OpenAI API key</strong> - Configured in the .env file</li>
+                </ul>
+                <p>The system will work with limited functionality if these are not configured.</p>
+            </div>
+            
+            <div class="api-docs">
+                <h2>API Documentation</h2>
+                <p>Access the full API documentation at: <a href="/docs">/docs</a></p>
+                <p>Check API health status at: <a href="/health">/health</a></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

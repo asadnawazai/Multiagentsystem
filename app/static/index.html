@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore -Document Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PanoramaScore</h1>
+            <p class="subtitle">AI-powered document risk analysis</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <h2>Compelete Document Analysis</h2>
+                <p>Upload a document to process it through all three milestones:</p>
+                <!-- <ul class="feature-list">
+                    <li><strong>Milestone 1:</strong> Document ingestion and metadata extraction</li>
+                    <li><strong>Milestone 2:</strong> OCR and field extraction with NLU</li>
+                    <li><strong>Milestone 3:</strong> Vector embeddings and similarity search</li>
+                </ul> -->
+                
+                <form action="/process" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">Select Document:</label>
+                        <input type="file" id="file" name="file" accept=".pdf,.jpg,.jpeg,.png,.csv" required>
+                        <small>Supported formats: PDF, JPEG, PNG, CSV</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client_id">Client ID (optional):</label>
+                        <input type="text" id="client_id" name="client_id" placeholder="Enter client ID">
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Document Classification</h3>
+                        <div class="form-group">
+                            <label for="document_type">Document Type:</label>
+                            <select id="document_type" name="document_type">
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Insurance">Insurance</option>
+                                <option value="Supply Chain">Supply Chain</option>
+                                <option value="Fraud Detection">Fraud Detection</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="risk_score">Initial Risk Score (0-100):</label>
+                            <input type="number" id="risk_score" name="risk_score" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Processing Options</h3>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="enable_vector_search" name="enable_vector_search" value="true" checked>
+                            <label for="enable_vector_search">Enable Vector Similarity Search</label>
+                            <small>Find similar documents using OpenAI embeddings and vector database</small>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="redact_pii" name="redact_pii" value="true">
+                            <label for="redact_pii">Redact PII</label>
+                            <small>Redact personally identifiable information (emails, phone numbers, etc.)</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="api_key">API Key:</label>
+                        <input type="text" id="api_key" name="api_key" value="dev_panorama_key_123" placeholder="Enter API key">
+                        <!-- <small>(The API key is set in the .env file)</small> -->
+                    </div>
+                    
+                    <button type="submit" class="primary-button">Process Document</button>
+                </form>
+            </div>
+            
+            <div class="api-docs">
+                <h2>API Documentation</h2>
+                <p>Access the full API documentation at: <a href="/docs">/docs</a></p>
+                <p>Check API health status at: <a href="/health">/health</a></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

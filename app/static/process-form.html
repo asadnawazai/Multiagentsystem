@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore - Document Processing</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PanoramaScore</h1>
+            <p class="subtitle">AI-powered document risk analysis</p>
+        </header>
+        
+        <main>
+            <div class="tabs">
+                <div class="tab-header">
+                    <a href="/" class="tab">Metadata Extraction</a>
+                    <a href="/process-form" class="tab active">Full Document Processing</a>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <h2>Full Document Processing</h2>
+                        <p>Upload a document to extract text, metadata, and structured fields (OCR + NLU).</p>
+                        
+                        <form action="/process" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file2">Select File:</label>
+                                <input type="file" id="file2" name="file" accept=".pdf,.jpg,.jpeg,.png,.csv" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client_id2">Client ID (optional):</label>
+                                <input type="text" id="client_id2" name="client_id" placeholder="Enter client ID">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="redact_pii">Redact PII:</label>
+                                <input type="checkbox" id="redact_pii" name="redact_pii" value="true">
+                                <span class="checkbox-label">Redact personally identifiable information (emails, phone numbers, etc.)</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>API Key:</label>
+                                <input type="text" name="api_key" value="dev_panorama_key_123" placeholder="Enter API key">
+                                <small>(The API key is set in the .env file)</small>
+                            </div>
+                            
+                            <button type="submit">Process Document</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dependencies-note">
+                <h3>Required Dependencies</h3>
+                <p>For optimal OCR and NLU processing, please ensure the following are installed:</p>
+                <ul>
+                    <li><strong>Tesseract OCR</strong> - <a href="https://github.com/UB-Mannheim/tesseract/wiki" target="_blank">Download here</a></li>
+                    <li><strong>spaCy model</strong> - Install with: <code>python -m spacy download en_core_web_sm</code></li>
+                </ul>
+                <p>The system will work with limited functionality if these are not installed.</p>
+            </div>
+            
+            <div class="api-docs">
+                <h2>API Documentation</h2>
+                <p>Access the full API documentation at: <a href="/docs">/docs</a></p>
+                <p>Check API health status at: <a href="/health">/health</a></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

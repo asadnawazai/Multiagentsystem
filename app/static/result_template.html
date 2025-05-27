@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore - Analysis Results</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PanoramaScore</h1>
+            <p class="subtitle">AI-powered document risk analysis</p>
+        </header>
+        
+        <main>
+            <div class="result-section">
+                <h2>Document Analysis Results</h2>
+                
+                <!-- Milestone 1: Document Ingestion & Metadata -->
+                <div class="result-card">
+                    <h3>Document Metadata</h3>
+                    <div class="metadata-section">
+                        {milestone1_content}
+                    </div>
+                </div>
+                
+                <!-- Milestone 2: OCR & Field Extraction -->
+                <div class="result-card">
+                    <h3>Extracted Fields</h3>
+                    <div class="fields-section">
+                        {milestone2_content}
+                    </div>
+                </div>
+                
+                <!-- Milestone 3: Vector Similarity Search -->
+                <div class="result-card">
+                    <h3>RAG Results</h3>
+                    <div class="vector-section">
+                        {vector_search_section}
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <a href="/" class="button">Process Another Document</a>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

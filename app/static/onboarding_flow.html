@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore - Onboarding</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .onboarding-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .onboarding-step {
+            display: none;
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .onboarding-step.active {
+            display: block;
+        }
+        
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+        
+        .step-dot.active {
+            background: #4A90E2;
+            width: 16px;
+            height: 16px;
+        }
+        
+        .step-line {
+            flex-grow: 1;
+            height: 2px;
+            background: #e0e0e0;
+            margin: 0 8px;
+        }
+        
+        .diagnostic-question {
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .option-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option-card:hover {
+            border-color: #4A90E2;
+            box-shadow: 0 2px 4px rgba(74, 144, 226, 0.1);
+        }
+        
+        .option-card.selected {
+            border-color: #4A90E2;
+            background: rgba(74, 144, 226, 0.05);
+        }
+        
+        .option-card img {
+            max-width: 48px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .adapter-preview {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .field-mapping {
+            margin-top: 1rem;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        .field-mapping th, .field-mapping td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .credits-display {
+            background: #F0F7FF;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .credit-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .dashboard-tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .dashboard-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .dashboard-tab.active {
+            border-bottom-color: #4A90E2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="onboarding-container">
+        <div class="step-indicator">
+            <div class="step-dot active" id="dot-1"></div>
+            <div class="step-line"></div>
+            <div class="step-dot" id="dot-2"></div>
+            <div class="step-line"></div>
+            <div class="step-dot" id="dot-3"></div>
+            <div class="step-line"></div>
+            <div class="step-dot" id="dot-4"></div>
+            <div class="step-line"></div>
+            <div class="step-dot" id="dot-5"></div>
+            <div class="step-line"></div>
+            <div class="step-dot" id="dot-6"></div>
+        </div>
+        
+        <!-- Step 1: Vertical Selection -->
+        <div class="onboarding-step active" id="step-1">
+            <div class="step-header">
+                <h2>Select Your Industry</h2>
+                <span>Step 1 of 6</span>
+            </div>
+            
+            <p>Choose the industry vertical that best matches your document processing needs:</p>
+            
+            <div class="option-grid">
+                <div class="option-card selected" onclick="selectOption(this, 'industry')">
+                    <img src="/static/icons/real-estate.svg" alt="Real Estate Icon" onerror="this.src='/static/icons/placeholder.png'">
+                    <h4>Real Estate</h4>
+                    <p>Property documents, MLS listings, zoning records</p>
+                </div>
+                
+                <div class="option-card disabled" onclick="alert('Only Real Estate is available in this demo')">
+                    <img src="/static/icons/insurance.svg" alt="Insurance Icon" onerror="this.src='/static/icons/placeholder.png'">
+                    <h4>Insurance</h4>
+                    <p>Claims, policies, adjustments</p>
+                </div>
+                
+                <div class="option-card disabled" onclick="alert('Only Real Estate is available in this demo')">
+                    <img src="/static/icons/supply-chain.svg" alt="Supply Chain Icon" onerror="this.src='/static/icons/placeholder.png'">
+                    <h4>Supply Chain</h4>
+                    <p>Invoices, BOLs, customs forms</p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="button secondary" disabled>Back</button>
+                <button class="button primary" onclick="nextStep(1)">Continue</button>
+            </div>
+        </div>
+        
+        <!-- Step 2: Diagnostic Questions -->
+        <div class="onboarding-step" id="step-2">
+            <div class="step-header">
+                <h2>Tell Us About Your Documents</h2>
+                <span>Step 2 of 6</span>
+            </div>
+            
+            <div class="diagnostic-question">
+                <h4>What types of real estate documents do you process?</h4>
+                <div class="option-grid">
+                    <div class="option-card" onclick="selectOption(this, 'doc_type')">
+                        <h4>Property Reports</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'doc_type')">
+                        <h4>MLS Listings</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'doc_type')">
+                        <h4>Zoning Records</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'doc_type')">
+                        <h4>Tax Documents</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diagnostic-question">
+                <h4>What is your primary concern with these documents?</h4>
+                <div class="option-grid">
+                    <div class="option-card" onclick="selectOption(this, 'concern')">
+                        <h4>Risk Assessment</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'concern')">
+                        <h4>Data Extraction</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'concern')">
+                        <h4>Fraud Detection</h4>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this, 'concern')">
+                        <h4>Compliance</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="button secondary" onclick="prevStep(2)">Back</button>
+                <button class="button primary" onclick="nextStep(2)">Continue</button>
+            </div>
+        </div>
+        
+        <!-- Step 3: Show Adapter Preview -->
+        <div class="onboarding-step" id="step-3">
+            <div class="step-header">
+                <h2>Your Real Estate Adapter</h2>
+                <span>Step 3 of 6</span>
+            </div>
+            
+            <p>Based on your selections, we've configured a Real Estate document adapter that will:</p>
+            
+            <ul>
+                <li>Extract key property information from your documents</li>
+                <li>Identify risk factors based on industry standards</li>
+                <li>Calculate risk scores for each property</li>
+            </ul>
+            
+            <div class="adapter-preview">
+                <h4>Field Mapping:</h4>
+                <table class="field-mapping">
+                    <tr>
+                        <th>Document Field</th>
+                        <th>Mapped To</th>
+                        <th>Risk Impact</th>
+                    </tr>
+                    <tr>
+                        <td>Tax Appraisal Value</td>
+                        <td>tax_appraisal</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Flood Zone</td>
+                        <td>flood_risk_zone</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Year Built</td>
+                        <td>year_built</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Property Address</td>
+                        <td>property_address</td>
+                        <td>Low</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="button secondary" onclick="prevStep(3)">Back</button>
+                <button class="button primary" onclick="nextStep(3)">Looks Good!</button>
+            </div>
+        </div>
+        
+        <!-- Step 4: Activate Trial with Lapis Credits -->
+        <div class="onboarding-step" id="step-4">
+            <div class="step-header">
+                <h2>Activate Your Free Trial</h2>
+                <span>Step 4 of 6</span>
+            </div>
+            
+            <p>You're almost ready to start analyzing your real estate documents! Your free trial includes:</p>
+            
+            <div class="credits-display">
+                <div>
+                    <h3>Lapis Credits</h3>
+                    <p>Used for document processing</p>
+                </div>
+                <div class="credit-amount">30</div>
+            </div>
+            
+            <ul>
+                <li>Each document processed uses 5 Lapis credits</li>
+                <li>Full access to all Real Estate vertical features</li>
+                <li>Unlimited similar document searches</li>
+                <li>30-day access to the platform</li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <button class="button secondary" onclick="prevStep(4)">Back</button>
+                <button class="button primary" onclick="nextStep(4)">Activate Trial</button>
+            </div>
+        </div>
+        
+        <!-- Step 5: Start First Risk Scan -->
+        <div class="onboarding-step" id="step-5">
+            <div class="step-header">
+                <h2>Upload Your First Document</h2>
+                <span>Step 5 of 6</span>
+            </div>
+            
+            <p>Let's analyze your first real estate document to generate a risk score:</p>
+            
+            <form id="upload-form" action="/rag-process" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Select a document to analyze:</label>
+                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,.jpg,.png,.tif" required>
+                    <small>Supported formats: PDF, DOC, DOCX, JPG, PNG, TIF</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="document_type">Document Type:</label>
+                    <select id="document_type" name="document_type">
+                        <option value="Real Estate" selected>Real Estate</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="redact_pii" name="redact_pii">
+                        <label for="redact_pii">Redact PII data in results</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="api_key" value="demo_key">
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="button secondary" onclick="prevStep(5); return false;">Back</button>
+                    <button type="submit" class="button primary">Start Analysis</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Step 6: Show Vertical Dashboard Tabs -->
+        <div class="onboarding-step" id="step-6">
+            <div class="step-header">
+                <h2>Your Real Estate Dashboard</h2>
+                <span>Step 6 of 6</span>
+            </div>
+            
+            <div class="dashboard-tabs">
+                <div class="dashboard-tab active" onclick="selectTab(this)">Documents</div>
+                <div class="dashboard-tab" onclick="selectTab(this)">Risk Analysis</div>
+                <div class="dashboard-tab" onclick="selectTab(this)">Property Map</div>
+                <div class="dashboard-tab" onclick="selectTab(this)">Settings</div>
+            </div>
+            
+            <div class="credits-display">
+                <div>
+                    <h3>Lapis Credits Remaining</h3>
+                    <p>You have enough credits to process 6 more documents</p>
+                </div>
+                <div class="credit-amount">30</div>
+            </div>
+            
+            <p>Your dashboard is ready! Use the tabs above to navigate between different views of your real estate document analysis.</p>
+            
+            <div class="nav-buttons">
+                <button class="button secondary" onclick="prevStep(6)">Back</button>
+                <a href="/" class="button primary">Go to Dashboard</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function selectOption(element, groupName) {
+            // Remove selection from other options in the same group
+            document.querySelectorAll(`.option-card[onclick*="${groupName}"]`).forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option
+            element.classList.add('selected');
+        }
+        
+        function selectTab(element) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.dashboard-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Add active class to clicked tab
+            element.classList.add('active');
+        }
+        
+        function nextStep(currentStep) {
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            
+            // Show next step
+            document.getElementById(`step-${currentStep + 1}`).classList.add('active');
+            
+            // Update step indicator
+            document.getElementById(`dot-${currentStep}`).classList.remove('active');
+            document.getElementById(`dot-${currentStep + 1}`).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function prevStep(currentStep) {
+            // Hide current step
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            
+            // Show previous step
+            document.getElementById(`step-${currentStep - 1}`).classList.add('active');
+            
+            // Update step indicator
+            document.getElementById(`dot-${currentStep}`).classList.remove('active');
+            document.getElementById(`dot-${currentStep - 1}`).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

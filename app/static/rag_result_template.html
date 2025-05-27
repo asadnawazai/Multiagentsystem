@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanoramaScore - Real Estate Risk Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #2c3e50;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        /* Data tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .data-table tr:last-child td,
+        .data-table tr:last-child th {
+            border-bottom: none;
+        }
+        
+        /* Risk indicators */
+        .risk-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            margin-left: 8px;
+        }
+        
+        .risk-high {
+            background-color: #E74C3C;
+        }
+        
+        .risk-moderate {
+            background-color: #F39C12;
+        }
+        
+        .risk-low {
+            background-color: #2ECC71;
+        }
+        
+        /* Match number indicator */
+        .match-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        /* Similarity score */
+        .similarity-score {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #4A90E2;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Match fields */
+        .match-field {
+            display: inline-block;
+            background-color: #EBF5FB;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+        
+        /* Recommendation box */
+        .recommendation-box {
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .recommendation-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .similar-doc-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            background-color: white;
+        }
+        
+        .similar-doc-card h4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        .match-properties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .match-property {
+            background-color: #EBF5FB;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 0.85rem;
+        }
+        
+        .credits-display {
+            background: #F0F7FF;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .credit-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        
+        .credit-alert {
+            background-color: #FDEBD0;
+            border-left: 4px solid #F39C12;
+            padding: 8px 16px;
+            margin: 16px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PanoramaScore</h1>
+            <p class="subtitle">Real Estate Risk Analysis</p>
+        </header>
+        
+        <main>
+            <h2 class="section-title">Current Document Summary</h2>
+            
+            <table class="data-table">
+                <tbody>
+                    <tr>
+                        <th>Document Type</th>
+                        <td>{{document_type}}</td>
+                    </tr>
+                    <tr>
+                        <th>Upload Date</th>
+                        <td>{{upload_date}}</td>
+                    </tr>
+                    <tr>
+                        <th>File Name</th>
+                        <td>{{file_name}}</td>
+                    </tr>
+                    <tr>
+                        <th>File Size</th>
+                        <td>{{file_size}}</td>
+                    </tr>
+                    <tr>
+                        <th>MIME Type</th>
+                        <td>{{mime_type}}</td>
+                    </tr>
+                    <tr>
+                        <th>Page Count</th>
+                        <td>{{page_count}}</td>
+                    </tr>
+                    <tr>
+                        <th>Extraction Method</th>
+                        <td>{{extraction_method}}</td>
+                    </tr>
+                    <tr>
+                        <th>OCR Confidence</th>
+                        <td>{{ocr_confidence}}</td>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <td>{{amount}}</td>
+                    </tr>
+                    <tr>
+                        <th>Risk Score</th>
+                        <td>
+                            <strong>{{risk_score}}</strong>
+                            <span class="risk-badge {{risk_class}}">{{risk_band}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Risk Factors</th>
+                        <td>{{risk_factors}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="recommendation-box">
+                <h4 class="recommendation-title">Copilot Recommendation</h4>
+                <p>This document shows a <strong>{{risk_band}} risk score of {{risk_score}}</strong>.
+                {{recommendation_text}}</p>
+            </div>
+
+            <h2 class="section-title">Similar Documents (RAG Matches)</h2>
+            <p>These are past documents most similar to the one you uploaded. They're used to provide additional context.</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Match #</th>
+                        <th>Similarity</th>
+                        <th>Risk Score</th>
+                        <th>Match Fields</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{similar_documents}}
+                </tbody>
+            </table>
+            
+            <div class="credits-display">
+                <div>
+                    <span>Remaining Lapis Credits:</span>
+                </div>
+                <div class="credit-amount">{{credits_remaining}}</div>
+            </div>
+        
+        <footer>
+            <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
