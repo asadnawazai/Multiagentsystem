@@ -1,0 +1,494 @@
+2025-05-25 16:07:37 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 16:07:37 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 16:07:37 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 0 existing checksums
+2025-05-25 16:07:37 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 16:07:37 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 16:07:37 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 16:07:37 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 16:07:37 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 16:07:37 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 16:07:37 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 16:07:37 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 16:07:37 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 16:07:37 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 16:07:37 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 16:07:37 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 16:07:37 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 16:07:37 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 16:07:37 | INFO     | main:startup_event:506 - Starting PanoramaScore API
+2025-05-25 16:07:37 | INFO     | main:startup_event:507 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:07:37 | INFO     | main:startup_event:524 - Starting PanoramaScore API
+2025-05-25 16:07:37 | INFO     | main:startup_event:525 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:13:48 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 16:13:48 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 16:13:48 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 0 existing checksums
+2025-05-25 16:13:48 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 16:13:48 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 16:13:48 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 16:13:48 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 16:13:48 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 16:13:48 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 16:13:48 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 16:13:49 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 16:13:49 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 16:13:49 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 16:13:49 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 16:13:49 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 16:13:49 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 16:13:49 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 16:13:49 | INFO     | main:startup_event:506 - Starting PanoramaScore API
+2025-05-25 16:13:49 | INFO     | main:startup_event:507 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:13:49 | INFO     | main:startup_event:524 - Starting PanoramaScore API
+2025-05-25 16:13:49 | INFO     | main:startup_event:525 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:14:24 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File ChatGPT Image May 25, 2025, 04_11_41 PM.png does not match any real estate document patterns
+2025-05-25 16:14:24 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: ChatGPT Image May 25, 2025, 04_11_41 PM.png
+2025-05-25 16:14:24 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\87221fe9-463c-4b76-b78c-4b4b43e0985d.png
+2025-05-25 16:14:24 | ERROR    | main:process_document:462 - Validation error: too many values to unpack (expected 2)
+2025-05-25 16:23:19 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 16:23:19 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 16:23:19 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 1 existing checksums
+2025-05-25 16:23:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 16:23:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 16:23:19 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 16:23:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 16:23:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 16:23:19 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 16:23:19 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 16:23:19 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 16:23:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 16:23:19 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 16:23:19 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 16:23:19 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 16:23:19 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 16:23:19 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 16:23:19 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 16:23:19 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:23:19 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 16:23:19 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:23:49 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 16:23:49 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 16:23:49 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 1 existing checksums
+2025-05-25 16:23:49 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 16:23:49 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 16:23:49 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 16:23:49 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 16:23:49 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 16:23:49 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 16:23:49 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 16:23:49 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 16:23:49 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 16:23:49 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 16:23:49 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 16:23:49 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 16:23:49 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 16:23:49 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 16:23:49 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 16:23:49 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:23:49 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 16:23:49 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:24:12 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File ChatGPT Image May 25, 2025, 04_11_41 PM.png does not match any real estate document patterns
+2025-05-25 16:24:12 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: ChatGPT Image May 25, 2025, 04_11_41 PM.png
+2025-05-25 16:24:12 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\faee15a6-f35c-4640-a0f0-a172ff6b9bcf.png
+2025-05-25 16:24:12 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: ChatGPT Image May 25, 2025, 04_11_41 PM.png has already been uploaded
+2025-05-25 16:24:36 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File ChatGPT Image May 25, 2025, 04_11_41 PM.png does not match any real estate document patterns
+2025-05-25 16:24:36 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: ChatGPT Image May 25, 2025, 04_11_41 PM.png
+2025-05-25 16:24:36 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\86f1bb4d-1d5d-496f-8b3f-bd3ef6b42224.png
+2025-05-25 16:24:37 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: ChatGPT Image May 25, 2025, 04_11_41 PM.png has already been uploaded
+2025-05-25 16:24:59 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File ChatGPT Image May 25, 2025, 04_11_41 PM.png does not match any real estate document patterns
+2025-05-25 16:24:59 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: ChatGPT Image May 25, 2025, 04_11_41 PM.png
+2025-05-25 16:24:59 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\8c5c1447-5bc3-4fa7-b825-21913bd46589.png
+2025-05-25 16:24:59 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: ChatGPT Image May 25, 2025, 04_11_41 PM.png has already been uploaded
+2025-05-25 16:49:09 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 16:49:09 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 16:49:09 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 1 existing checksums
+2025-05-25 16:49:09 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 16:49:09 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 16:49:09 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 16:49:09 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 16:49:09 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 16:49:09 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 16:49:09 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 16:49:09 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 16:49:09 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 16:49:09 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 16:49:09 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 16:49:09 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 16:49:09 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 16:49:09 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 16:49:09 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 16:49:09 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:49:09 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 16:49:09 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 16:50:51 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File ChatGPT Image May 25, 2025, 04_11_41 PM.png does not match any real estate document patterns
+2025-05-25 16:50:51 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: ChatGPT Image May 25, 2025, 04_11_41 PM.png
+2025-05-25 16:50:51 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\8519e3a8-75fe-465a-9b8d-88614fb08726.png
+2025-05-25 16:50:51 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: ChatGPT Image May 25, 2025, 04_11_41 PM.png has already been uploaded
+2025-05-25 17:00:05 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File sodapdf-converted (1).pdf does not match any real estate document patterns
+2025-05-25 17:00:05 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: sodapdf-converted (1).pdf
+2025-05-25 17:00:05 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\0cbc9374-66c8-4006-82be-d0c8cc10b678.pdf
+2025-05-25 17:08:15 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File CRS_Property_Report_90210.pdf.pdf matches pattern CRS_Property_Report_*
+2025-05-25 17:08:15 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\20eff2d2-98e9-4d10-8593-35a0851f8f0d.pdf
+2025-05-25 17:08:15 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for CRS_Property_Report_90210.pdf.pdf
+2025-05-25 17:08:15 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 20eff2d2-98e9-4d10-8593-35a0851f8f0d.pdf
+2025-05-25 17:08:19 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-25 17:08:24 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-25 17:08:24 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:24 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:25 | ERROR    | app.agents.rag_agent:store_embedding:254 - Error storing embedding: null value in column "file_name" of relation "real_estate_documents" violates not-null constraint
+DETAIL:  Failing row contains (9ee51b30-ed65-4331-adfe-f6d414e62fd5, null, null, Real Estate, {"date": "2025-05-25", "amount": "$1850000.00", "document_type":..., null, [-0.0029107095,0.027378917,0.032144822,0.030627748,0.004955541,0..., 50, null, null, null, pending, 2025-05-25 17:08:25.031028).
+
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 0 similar documents
+2025-05-25 17:08:25 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-25 17:08:25 | INFO     | main:process_document:503 - Successfully processed document: CRS_Property_Report_90210.pdf.pdf
+2025-05-25 17:19:30 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 17:19:30 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 17:19:30 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 3 existing checksums
+2025-05-25 17:19:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 17:19:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 17:19:30 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 17:19:30 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 17:19:30 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 17:19:30 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 17:19:30 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 17:19:30 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:19:30 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:19:30 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 17:19:30 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 17:19:30 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 17:19:30 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 17:19:30 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 17:19:30 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 17:19:30 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 17:19:30 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 17:19:30 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 17:20:03 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 17:20:03 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 17:20:03 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 3 existing checksums
+2025-05-25 17:20:03 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 17:20:03 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 17:20:03 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 17:20:03 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 17:20:03 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 17:20:03 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 17:20:03 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 17:20:03 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:20:03 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:20:03 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 17:20:03 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 17:20:03 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 17:20:03 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 17:20:03 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 17:20:03 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 17:20:03 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 17:20:03 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 17:20:03 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 17:22:08 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File CRS_Property_Report_90210.pdf.pdf matches pattern CRS_Property_Report_*
+2025-05-25 17:22:08 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\5c7021f3-b576-4b89-a1d9-ef66fedd620b.pdf
+2025-05-25 17:22:08 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: CRS_Property_Report_90210.pdf.pdf has already been uploaded
+2025-05-25 17:25:03 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 17:25:03 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 17:25:03 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 3 existing checksums
+2025-05-25 17:25:03 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 17:25:03 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 17:25:03 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 17:25:03 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 17:25:03 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 17:25:03 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 17:25:03 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 17:25:03 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 17:25:03 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 17:25:03 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 17:25:03 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 17:25:03 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 17:25:03 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 17:25:03 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 17:25:03 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 17:25:03 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 17:25:03 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 17:25:03 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 21:10:15 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File realestate_information_report.png.png does not match any real estate document patterns
+2025-05-25 21:10:15 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: realestate_information_report.png.png
+2025-05-25 21:10:15 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\83ec4a93-7d59-49d0-b6a0-17fce5d67b34.png
+2025-05-25 21:25:34 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File Property_Tax_2023.png.png matches pattern Property_Tax_*
+2025-05-25 21:25:34 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\53adb8e3-0b7d-4920-9637-a52d56f3fb5f.png
+2025-05-25 21:25:34 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Property_Tax_2023.png.png
+2025-05-25 21:25:34 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 53adb8e3-0b7d-4920-9637-a52d56f3fb5f.png
+2025-05-25 21:25:34 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 1 fields from document
+2025-05-25 21:25:41 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-25 21:25:41 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | ERROR    | app.agents.rag_agent:store_embedding:264 - Error storing embedding: null value in column "file_checksum" of relation "real_estate_documents" violates not-null constraint
+DETAIL:  Failing row contains (32106d71-669e-4577-a405-5c0426dc1853, document_32106d71-669e-4577-a405-5c0426dc1853.pdf, null, Real Estate, {"document_type": "Unknown Document"}, null, [-0.045370214,0.04100882,0.003077125,-0.014584329,-0.0062420634,..., 50, null, null, null, pending, 2025-05-25 21:25:41.6706).
+
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:find_similar_documents:330 - Found 0 similar documents
+2025-05-25 21:25:41 | INFO     | app.agents.rag_agent:process_document:436 - Successfully processed document through RAG pipeline
+2025-05-25 21:25:41 | INFO     | main:process_document:503 - Successfully processed document: Property_Tax_2023.png.png
+2025-05-25 21:36:06 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File Property_Tax_2023.png.png matches pattern Property_Tax_*
+2025-05-25 21:36:06 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\ebc957b5-0fe5-4df4-9964-c595bba247b4.png
+2025-05-25 21:36:06 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: Property_Tax_2023.png.png has already been uploaded
+2025-05-25 21:36:23 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Real Estate Table Creation.pdf does not match any real estate document patterns
+2025-05-25 21:36:23 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: Real Estate Table Creation.pdf
+2025-05-25 21:36:23 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\052a8239-6cdd-4161-9e8c-428b2cafce63.pdf
+2025-05-25 21:38:16 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Real Estate Table Creation.pdf does not match any real estate document patterns
+2025-05-25 21:38:16 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: Real Estate Table Creation.pdf
+2025-05-25 21:38:16 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\dab41786-88c9-43fa-8026-50af3779232e.pdf
+2025-05-25 21:38:16 | WARNING  | app.agents.document_ingest_agent:ingest_document:91 - File integrity check failed: Duplicate file detected: Real Estate Table Creation.pdf has already been uploaded
+2025-05-25 21:38:20 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 21:38:20 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 21:38:20 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 6 existing checksums
+2025-05-25 21:38:20 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 21:38:20 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 21:38:20 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 21:38:20 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 21:38:20 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 21:38:20 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 21:38:20 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 21:38:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:38:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:38:20 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 21:38:20 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 21:38:20 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 21:38:20 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 21:38:20 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 21:38:20 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 21:38:20 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 21:38:20 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 21:38:20 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 21:52:43 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 21:52:43 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 21:52:43 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 6 existing checksums
+2025-05-25 21:52:43 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 21:52:43 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 21:52:43 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 21:52:43 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 21:52:43 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 21:52:43 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 21:52:43 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 21:52:43 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 21:52:43 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 21:52:43 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 21:52:43 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 21:52:43 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 21:52:43 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 21:52:43 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 21:52:43 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 21:52:43 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 21:52:43 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 21:52:43 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 21:52:48 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Property_Report_3333_E_Long_Lake_Rd.pdf does not match any real estate document patterns
+2025-05-25 21:52:48 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: Property_Report_3333_E_Long_Lake_Rd.pdf
+2025-05-25 21:52:48 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\373e0af7-064f-4c4c-a602-5fbb98ebc71e.pdf
+2025-05-25 21:52:48 | ERROR    | app.utils.document_validator:_is_duplicate_in_database:187 - Error checking for duplicates in database: No module named 'app.config.config'
+2025-05-25 21:55:51 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Property_Report_3333_E_Long_Lake_Rd.pdf does not match any real estate document patterns
+2025-05-25 21:55:51 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: Property_Report_3333_E_Long_Lake_Rd.pdf
+2025-05-25 21:55:51 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\0cd069bb-7815-4ac5-9d3c-5d91bd1cafa8.pdf
+2025-05-25 21:55:51 | WARNING  | app.agents.document_ingest_agent:ingest_document:95 - File integrity check failed: Duplicate content detected: This document has already been processed as Property_Report_3333_E_Long_Lake_Rd.pdf
+2025-05-25 21:59:15 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Property_Report_16_Cherry_Tree_Ln_Nashville_TN.pdf does not match any real estate document patterns
+2025-05-25 21:59:15 | WARNING  | app.agents.document_ingest_agent:ingest_document:56 - Not a valid real estate document: Property_Report_16_Cherry_Tree_Ln_Nashville_TN.pdf
+2025-05-25 21:59:15 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\685d0cf5-546e-4ff1-9c75-427f8cd966f3.pdf
+2025-05-25 21:59:15 | ERROR    | app.utils.document_validator:_is_duplicate_in_database:187 - Error checking for duplicates in database: No module named 'app.config.config'
+2025-05-25 22:02:43 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 22:02:43 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 22:02:43 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 8 existing checksums
+2025-05-25 22:02:44 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 22:02:44 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 22:02:44 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 22:02:44 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 22:02:44 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 22:02:44 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 22:02:44 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 22:02:44 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:02:44 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:02:44 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 22:02:44 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 22:02:44 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 22:02:44 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 22:02:44 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 22:02:44 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 22:02:44 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:02:44 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 22:02:44 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:03:17 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 22:03:17 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 22:03:17 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 8 existing checksums
+2025-05-25 22:03:17 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 22:03:17 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 22:03:17 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 22:03:17 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 22:03:17 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 22:03:17 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 22:03:17 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 22:03:17 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:03:17 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:03:17 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 22:03:17 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 22:03:17 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 22:03:17 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 22:03:17 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 22:03:17 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 22:03:17 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:03:17 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 22:03:17 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:03:50 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 22:03:50 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 22:03:50 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 8 existing checksums
+2025-05-25 22:03:50 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 22:03:50 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 22:03:50 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 22:03:50 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 22:03:50 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 22:03:50 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 22:03:50 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 22:03:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:03:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:03:50 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 22:03:50 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 22:03:50 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 22:03:50 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 22:03:50 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 22:03:50 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 22:03:50 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:03:50 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 22:03:50 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 22:04:27 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Property_Report_4901_Spruce_Street_Dallas_TX.pdf does not match any real estate document patterns
+2025-05-25 22:04:27 | WARNING  | app.agents.document_ingest_agent:ingest_document:55 - File does not match standard naming patterns: Property_Report_4901_Spruce_Street_Dallas_TX.pdf
+2025-05-25 22:04:27 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\502bffa6-cd04-429e-80e9-51ac0485a293.pdf
+2025-05-25 22:04:27 | ERROR    | app.utils.document_validator:_is_duplicate_in_database:187 - Error checking for duplicates in database: No module named 'app.config.config'
+2025-05-25 22:04:27 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Property_Report_4901_Spruce_Street_Dallas_TX.pdf
+2025-05-25 22:04:27 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 502bffa6-cd04-429e-80e9-51ac0485a293.pdf
+2025-05-25 22:04:35 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-25 22:04:41 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-25 22:04:41 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:42 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_4a1894fe-af6d-48e5-9c5f-e658476cc813.pdf, using generated default
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:store_embedding:268 - Successfully stored embedding with ID: 4a1894fe-af6d-48e5-9c5f-e658476cc813
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:find_similar_documents:339 - Found 1 similar documents
+2025-05-25 22:04:42 | INFO     | app.agents.rag_agent:process_document:445 - Successfully processed document through RAG pipeline
+2025-05-25 22:04:42 | INFO     | main:process_document:503 - Successfully processed document: Property_Report_4901_Spruce_Street_Dallas_TX.pdf
+2025-05-25 23:23:04 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 23:23:04 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 23:23:04 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 9 existing checksums
+2025-05-25 23:23:04 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 23:23:04 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 23:23:04 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 23:23:04 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 23:23:04 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 23:23:04 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 23:23:04 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 23:23:04 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:23:04 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:23:04 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 23:23:04 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 23:23:04 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 23:23:04 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 23:23:04 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 23:23:04 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 23:23:04 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 23:23:04 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 23:23:04 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 23:24:24 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Report 1 _ MULTIPLE LISTING SERVICE PROPERTY REPORT.pdf does not match any real estate document patterns
+2025-05-25 23:24:24 | WARNING  | app.agents.document_ingest_agent:ingest_document:55 - File does not match standard naming patterns: Report 1 _ MULTIPLE LISTING SERVICE PROPERTY REPORT.pdf
+2025-05-25 23:24:24 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\52cfe6d2-6e14-4379-96fc-dcbb89c56eb1.pdf
+2025-05-25 23:24:24 | ERROR    | app.utils.document_validator:_is_duplicate_in_database:187 - Error checking for duplicates in database: No module named 'app.config.config'
+2025-05-25 23:24:24 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Report 1 _ MULTIPLE LISTING SERVICE PROPERTY REPORT.pdf
+2025-05-25 23:24:25 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 52cfe6d2-6e14-4379-96fc-dcbb89c56eb1.pdf
+2025-05-25 23:24:31 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-25 23:24:34 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-25 23:24:34 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_2913a2d4-c1af-48d0-ab32-e1f7bbe3d544.pdf, using generated default
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:store_embedding:268 - Successfully stored embedding with ID: 2913a2d4-c1af-48d0-ab32-e1f7bbe3d544
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:find_similar_documents:339 - Found 2 similar documents
+2025-05-25 23:24:34 | INFO     | app.agents.rag_agent:process_document:445 - Successfully processed document through RAG pipeline
+2025-05-25 23:24:34 | INFO     | main:process_document:503 - Successfully processed document: Report 1 _ MULTIPLE LISTING SERVICE PROPERTY REPORT.pdf
+2025-05-25 23:45:30 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-25 23:45:30 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-25 23:45:30 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 10 existing checksums
+2025-05-25 23:45:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-25 23:45:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-25 23:45:30 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-25 23:45:30 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-25 23:45:30 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-25 23:45:30 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-25 23:45:30 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-25 23:45:30 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:45:30 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:45:30 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-25 23:45:30 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-25 23:45:30 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-25 23:45:30 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 3 fields
+2025-05-25 23:45:30 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-25 23:45:30 | INFO     | main:startup_event:580 - Starting PanoramaScore API
+2025-05-25 23:45:30 | INFO     | main:startup_event:581 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 23:45:30 | INFO     | main:startup_event:598 - Starting PanoramaScore API
+2025-05-25 23:45:30 | INFO     | main:startup_event:599 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-25 23:46:00 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File WhatsApp Image 2025-05-25 at 10.02.29 PM.jpeg does not match any real estate document patterns
+2025-05-25 23:46:00 | WARNING  | app.agents.document_ingest_agent:ingest_document:55 - File does not match standard naming patterns: WhatsApp Image 2025-05-25 at 10.02.29 PM.jpeg
+2025-05-25 23:46:00 | INFO     | app.agents.document_ingest_agent:ingest_document:83 - File saved: ./uploads\20fae409-2291-4460-98da-4d8e51f3c06f.jpeg
+2025-05-25 23:46:00 | ERROR    | app.utils.document_validator:_is_duplicate_in_database:187 - Error checking for duplicates in database: No module named 'app.config.config'
+2025-05-25 23:46:00 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for WhatsApp Image 2025-05-25 at 10.02.29 PM.jpeg
+2025-05-25 23:46:00 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 20fae409-2291-4460-98da-4d8e51f3c06f.jpeg
+2025-05-25 23:46:00 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 1 fields from document
+2025-05-25 23:46:02 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-25 23:46:02 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:02 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_77a0672b-99b4-47cf-813a-d17442bd8be4.pdf, using generated default
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:store_embedding:268 - Successfully stored embedding with ID: 77a0672b-99b4-47cf-813a-d17442bd8be4
+2025-05-25 23:46:02 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:03 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:03 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user asadkhan_user...
+2025-05-25 23:46:03 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-25 23:46:03 | INFO     | app.agents.rag_agent:find_similar_documents:339 - Found 3 similar documents
+2025-05-25 23:46:03 | INFO     | app.agents.rag_agent:process_document:445 - Successfully processed document through RAG pipeline
+2025-05-25 23:46:03 | INFO     | main:process_document:503 - Successfully processed document: WhatsApp Image 2025-05-25 at 10.02.29 PM.jpeg

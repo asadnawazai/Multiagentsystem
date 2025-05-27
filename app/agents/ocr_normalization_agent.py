@@ -2,6 +2,8 @@ import os
 import re
 import json
 import csv
+import os
+import time
 import pytesseract
 from PIL import Image
 import pdfplumber
@@ -578,66 +580,75 @@ class OCRNormalizationAgent:
         Returns:
             Tuple of (extracted_text, metadata)
         """
+        if not self.tesseract_available:
+            logger.warning("Tesseract not available for OCR processing")
+            return "[OCR unavailable - Tesseract not installed]", {"method": "none", "page_count": 1, "confidence": 0}
+        
+        # Define a fallback method to use if all else fails
+        def fallback_ocr():
+            try:
+                # Try direct OCR on the original image as a last resort
+                logger.info(f"Falling back to direct OCR on original image: {file_path}")
+                direct_text = pytesseract.image_to_string(file_path)
+                return direct_text, {"method": "direct_image_ocr", "page_count": 1, "confidence": 50.0}
+            except Exception as e2:
+                logger.error(f"Even fallback OCR failed: {str(e2)}")
+                return f"[OCR Error: {str(e2)}]", {"method": "error", "page_count": 1, "confidence": 0}
+        
+        # OPTIMIZED OCR PROCESSING - Faster performance
         try:
-            if not self.tesseract_available:
-                logger.warning("Tesseract not available for OCR processing")
-                return "[OCR unavailable - Tesseract not installed]", {"method": "none", "page_count": 1, "confidence": 0}
-            
-            # Preprocess the image for better OCR results
+            # Step 1: Preprocess the image for better OCR results
             preprocessed_path = self.ocr_preprocessor.preprocess_image(file_path, rotation_angle)
             
-            # Apply OCR with advanced configuration
-            ocr_config = f"--psm 6 -l eng {self.tesseract_config}"
+            # Quick verification that the file exists and is not empty
+            if not os.path.exists(preprocessed_path) or os.path.getsize(preprocessed_path) == 0:
+                logger.warning(f"Using original image as preprocessed image is unavailable")
+                preprocessed_path = file_path
             
-            # Get both text and data for confidence calculation
-            text = pytesseract.image_to_string(preprocessed_path, config=ocr_config)
+            # Apply OCR with optimized settings
+            # Use --oem 1 for LSTM only which is faster than the default combined mode
+            # Use --psm 3 for automatic page segmentation without orientation detection
+            ocr_config = "--oem 1 --psm 3 -l eng"
+            
+            # Perform a single OCR operation to get both text and data
+            logger.info(f"Starting OCR processing on {preprocessed_path}")
             ocr_data = pytesseract.image_to_data(preprocessed_path, output_type=pytesseract.Output.DICT, config=ocr_config)
             
-            # Calculate confidence
-            confidence = 0
-            if 'conf' in ocr_data and len(ocr_data['conf']) > 0:
-                # Filter out -1 confidence values (which indicate no confidence data)
-                conf_values = [c for c in ocr_data['conf'] if c != -1]
-                if conf_values:
-                    confidence = sum(conf_values) / len(conf_values)
+            # Extract text from OCR data
+            text = " ".join([word for word in ocr_data["text"] if word.strip()])
             
-            # Clean up temporary file if it's not the original
-            try:
-                if os.path.exists(preprocessed_path) and preprocessed_path != file_path and "_preprocessed" in preprocessed_path:
-                    os.remove(preprocessed_path)
-            except Exception as e:
-                logger.warning(f"Failed to remove temporary file {preprocessed_path}: {e}")
+            if not text.strip():
+                logger.warning("OCR returned empty text, trying fallback method")
+                # Fallback to basic image_to_string which is sometimes more reliable
+                text = pytesseract.image_to_string(preprocessed_path)
                 
-            # Prepare metadata
-            metadata = {
-                "method": "image_ocr",
-                "page_count": 1,  # Images are single page
-                "confidence": round(confidence, 2),
-                "rotation_corrected": rotation_angle != 0
-            }
-            
-            # Apply OCR if available
-            if self.tesseract_available:
-                ocr_data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
-                
-                # Extract text and confidence
-                text = " ".join([word for word in ocr_data["text"] if word.strip()])
-            else:
-                text = "[OCR unavailable - Tesseract not installed]"
-                ocr_data = {"conf": []}
-            
-            # Calculate average confidence
+            # Calculate confidence metrics
             confidence = None
-            if ocr_data["conf"] and len(ocr_data["conf"]) > 0:
-                valid_conf = [c for c in ocr_data["conf"] if c != -1]  # Filter out -1 values
+            if 'conf' in ocr_data and ocr_data['conf']:
+                valid_conf = [c for c in ocr_data['conf'] if c != -1]  # Filter out -1 values
                 if valid_conf:
                     confidence = round(sum(valid_conf) / len(valid_conf), 2)
             
-            return text, {"method": "image_ocr", "page_count": 1, "confidence": confidence}
+            # Clean up temporary file if needed
+            try:
+                if os.path.exists(preprocessed_path) and preprocessed_path != file_path:
+                    os.remove(preprocessed_path)
+                    logger.debug(f"Removed temporary preprocessed file: {preprocessed_path}")
+            except Exception as cleanup_error:
+                logger.warning(f"Failed to remove temporary file {preprocessed_path}: {cleanup_error}")
+            
+            # Return successfully processed data
+            logger.info(f"OCR completed successfully with confidence: {confidence}")
+            return text, {
+                "method": "optimized_image_ocr", 
+                "page_count": 1, 
+                "confidence": confidence,
+                "rotation_corrected": rotation_angle != 0
+            }
             
         except Exception as e:
-            logger.error(f"Error processing image {file_path}: {str(e)}")
-            raise
+            logger.error(f"Error during OCR processing: {str(e)}")
+            return fallback_ocr()
     
     def _normalize_text(self, text: str) -> str:
         """Normalize extracted text to improve field extraction.

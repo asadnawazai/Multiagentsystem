@@ -249,23 +249,31 @@ class RAGAgent:
                     file_checksum = default_checksum
                     logger.warning(f"No checksum available for {file_name}, using generated default")
                 
-                # Determine risk band based on risk score
-                risk_band = 'low'
-                if risk_score >= 75:
-                    risk_band = 'high'
-                elif risk_score >= 50:
-                    risk_band = 'moderate'
+                # Use the risk_band and contributing_factors from the fields if available
+                # This ensures we use the properly calculated values from risk_scoring_service
+                if 'risk_band' in fields:
+                    risk_band = fields['risk_band'].lower()
+                else:
+                    # Fallback risk band calculation if not provided
+                    risk_band = 'low'
+                    if risk_score >= 75:
+                        risk_band = 'high'
+                    elif risk_score >= 50:
+                        risk_band = 'moderate'
                 
-                # Identify contributing factors (basic implementation)
-                contributing_factors = []
-                for field_name, field_value in fields.items():
-                    # Add critical fields that might contribute to risk
-                    if field_name in ['flood_zone', 'property_condition', 'year_built']:
-                        if field_value:
-                            contributing_factors.append(f"{field_name}: {field_value}")
-                
-                if not contributing_factors:
-                    contributing_factors = ["Standard document with no elevated risk factors"]
+                # Use contributing factors from the fields if available
+                if 'contributing_factors' in fields and fields['contributing_factors']:
+                    contributing_factors = fields['contributing_factors']
+                else:
+                    # Fallback contributing factors logic
+                    contributing_factors = []
+                    for field_name, field_value in fields.items():
+                        if field_name in ['flood_zone', 'property_condition', 'year_built']:
+                            if field_value:
+                                contributing_factors.append(f"{field_name}: {field_value}")
+                    
+                    if not contributing_factors:
+                        contributing_factors = ["Standard document with no elevated risk factors"]
                 
                 cursor.execute(f"""
                     INSERT INTO {self.embedding_table} (id, file_name, file_checksum, document_type, fields, embedding, risk_score, risk_band, contributing_factors, status)
@@ -446,7 +454,12 @@ class RAGAgent:
             # Store the embedding
             # Get original filename from fields if available
             file_name = fields.get('original_filename', None)
-            record_id = await self.store_embedding(document_type, fields, embedding, risk_score, file_name)
+            
+            # Use the calculated risk_score from fields if available (dynamically calculated)
+            calculated_risk_score = fields.get('risk_score', risk_score)
+            
+            # Pass the calculated risk_score to store_embedding
+            record_id = await self.store_embedding(document_type, fields, embedding, calculated_risk_score, file_name)
             
             # Find similar documents
             similar_docs = await self.find_similar_documents(embedding)

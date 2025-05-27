@@ -1,0 +1,272 @@
+2025-05-22 15:48:00 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 15:48:00 | INFO     | main:startup_event:108 - Starting PanoramaScore API
+2025-05-22 15:48:00 | INFO     | main:startup_event:109 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 15:54:14 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 15:54:14 | INFO     | main:startup_event:118 - Starting PanoramaScore API
+2025-05-22 15:54:14 | INFO     | main:startup_event:119 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 15:55:14 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 15:55:14 | INFO     | main:startup_event:121 - Starting PanoramaScore API
+2025-05-22 15:55:14 | INFO     | main:startup_event:122 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 16:04:14 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:04:14 | INFO     | main:startup_event:121 - Starting PanoramaScore API
+2025-05-22 16:04:14 | INFO     | main:startup_event:122 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 16:05:03 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:08:27 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:08:56 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:08:56 | INFO     | main:startup_event:149 - Starting PanoramaScore API
+2025-05-22 16:08:56 | INFO     | main:startup_event:150 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 16:09:19 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:09:19 | INFO     | main:startup_event:149 - Starting PanoramaScore API
+2025-05-22 16:09:19 | INFO     | main:startup_event:150 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 16:19:17 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\fd80aff2-0fed-4d0d-9671-5dca3790d512.pdf
+2025-05-22 16:19:17 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume.pdf
+2025-05-22 16:19:17 | INFO     | main:upload_document:107 - Successfully processed document: Asad Nawaz Resume.pdf
+2025-05-22 16:20:14 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\7813cecd-71dd-4848-8bba-06e6b294d2f3.pdf
+2025-05-22 16:20:14 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 16:20:14 | INFO     | main:upload_document:107 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 16:20:59 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\ea5b43bb-2cd6-4668-a01b-709002d2b375.pdf
+2025-05-22 16:20:59 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-22 16:20:59 | INFO     | main:upload_document:107 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-22 16:57:19 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 16:57:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 16:57:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 16:57:19 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 16:57:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:28 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 16:57:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:29 - Run: python -m spacy download en_core_web_sm
+2025-05-22 16:57:19 | INFO     | main:startup_event:267 - Starting PanoramaScore API
+2025-05-22 16:57:19 | INFO     | main:startup_event:268 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 16:58:02 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\a7b20e82-9fae-4bcd-b2f3-016908755a45.pdf
+2025-05-22 16:58:02 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume.pdf
+2025-05-22 16:58:02 | INFO     | main:upload_document:112 - Successfully processed document: Asad Nawaz Resume.pdf
+2025-05-22 16:59:06 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\174f9aa9-5ff6-4b6c-9229-398e8a985b41.pdf
+2025-05-22 16:59:06 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for RFP_AgenticAnalytics_Copilots_May18.pdf (1).pdf
+2025-05-22 16:59:06 | INFO     | main:upload_document:112 - Successfully processed document: RFP_AgenticAnalytics_Copilots_May18.pdf (1).pdf
+2025-05-22 17:44:20 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\45b34f04-94d9-47e3-9b19-597777ca16af.pdf
+2025-05-22 17:44:20 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-22 17:44:20 | INFO     | main:upload_document:112 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-22 17:55:51 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:51 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:51 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:51 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:51 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:51 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:51 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:55 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:55 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:55 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:55 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:55 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:55 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:55 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:55 | INFO     | main:startup_event:287 - Starting PanoramaScore API
+2025-05-22 17:55:55 | INFO     | main:startup_event:288 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 17:55:57 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:57 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:57 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:57 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:57 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 17:55:57 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 17:55:57 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 17:55:57 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 17:55:57 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 17:55:57 | INFO     | main:startup_event:287 - Starting PanoramaScore API
+2025-05-22 17:55:57 | INFO     | main:startup_event:288 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 17:56:49 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\eaf5df52-a3ef-4fb0-bb7b-f103aa4b33c3.pdf
+2025-05-22 17:56:49 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 17:56:49 | INFO     | main:upload_document:112 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 17:57:23 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\de1c2c1f-a4cd-4bc1-ae7a-acbddec75e2a.pdf
+2025-05-22 17:57:23 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 17:57:23 | INFO     | main:upload_document:112 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:00:36 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:00:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:00:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:00:36 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:00:36 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:00:36 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:00:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:00:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:00:36 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:00:36 | INFO     | main:startup_event:280 - Starting PanoramaScore API
+2025-05-22 18:00:36 | INFO     | main:startup_event:281 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 18:11:59 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:11:59 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:11:59 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:11:59 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:11:59 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:11:59 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:11:59 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:11:59 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 18:11:59 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 18:12:00 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:12:00 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:12:00 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:12:00 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:12:00 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:12:00 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:12:00 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:12:01 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:12:01 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:12:01 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:12:01 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:12:01 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:12:01 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:12:01 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:12:01 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 18:12:01 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 18:12:01 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\0affae7b-0232-46eb-8688-3e4ad3c4258d.pdf
+2025-05-22 18:12:01 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:01 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:01 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\48830510-993e-47f0-9f7d-9339628068ce.pdf
+2025-05-22 18:12:01 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:01 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:01 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\1a071e55-e469-4639-b56d-e2bd59c5fca6.pdf
+2025-05-22 18:12:01 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:01 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:14 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:12:14 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:12:14 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:12:14 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:12:14 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:12:14 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:12:14 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:12:19 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:12:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:12:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:12:19 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:12:19 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:12:19 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:12:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:12:19 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:12:19 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:12:19 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 18:12:19 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 18:12:38 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\3ce28dd1-6f59-4b3e-8cfa-77bd973e9b48.pdf
+2025-05-22 18:12:38 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:12:38 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:13:41 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:13:41 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:13:41 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:13:41 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:13:41 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:13:41 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:13:41 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:13:42 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:13:42 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:13:42 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:13:42 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:13:42 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 18:13:42 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 18:13:42 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 18:13:42 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 18:13:42 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 18:13:42 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 18:13:42 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 18:14:13 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\16e18203-5161-4e3c-be44-0e53b8eaa703.pdf
+2025-05-22 18:14:13 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:14:13 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:14:46 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\29b0c68d-43e5-418e-a5a0-03abc6a984a1.pdf
+2025-05-22 18:14:46 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:14:46 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 29b0c68d-43e5-418e-a5a0-03abc6a984a1.pdf
+2025-05-22 18:14:48 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-22 18:14:48 | INFO     | main:process_document:225 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 18:38:09 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\731a2ad5-94e1-4333-9bf7-b63782d9af54.pdf
+2025-05-22 18:38:09 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume.pdf
+2025-05-22 18:38:10 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 731a2ad5-94e1-4333-9bf7-b63782d9af54.pdf
+2025-05-22 18:38:10 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-22 18:38:10 | INFO     | main:process_document:225 - Successfully processed document: Asad Nawaz Resume.pdf
+2025-05-22 19:32:35 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 19:32:35 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 19:32:35 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 19:32:36 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 19:32:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 19:32:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 19:32:36 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 19:32:36 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 19:32:36 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 19:33:32 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\fd97227c-8f41-45b1-b70b-7438efef1d0b.pdf
+2025-05-22 19:33:32 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 19:33:32 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_Asad_Nawaz (1).pdf
+2025-05-22 19:33:50 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\32f51f64-4069-4b6a-aba5-5d8c62590860.pdf
+2025-05-22 19:33:50 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for RFP_AgenticAnalytics_Copilots_May18.pdf (1).pdf
+2025-05-22 19:33:53 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 32f51f64-4069-4b6a-aba5-5d8c62590860.pdf
+2025-05-22 19:33:55 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-22 19:33:55 | INFO     | main:process_document:225 - Successfully processed document: RFP_AgenticAnalytics_Copilots_May18.pdf (1).pdf
+2025-05-22 20:52:36 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 20:52:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 20:52:36 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 20:52:36 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 20:52:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 20:52:36 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 20:52:36 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 20:52:36 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 20:52:36 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 21:32:15 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 21:32:15 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 21:32:15 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 21:32:15 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 21:32:15 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 21:32:15 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 21:32:15 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 21:32:15 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 21:32:15 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 21:33:42 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\1f26fc1c-d864-45c3-8f2e-b6bd10c35f72.pdf
+2025-05-22 21:33:42 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-22 21:33:43 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 1f26fc1c-d864-45c3-8f2e-b6bd10c35f72.pdf
+2025-05-22 21:33:50 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-22 21:33:50 | INFO     | main:process_document:225 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-22 21:34:42 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\711ed4ed-712e-4f20-b28e-b09972400d23.pdf
+2025-05-22 21:34:42 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-22 21:34:44 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 711ed4ed-712e-4f20-b28e-b09972400d23.pdf
+2025-05-22 21:34:44 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-22 21:34:44 | INFO     | main:process_document:225 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-22 23:47:25 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-22 23:47:26 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-22 23:47:26 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-22 23:47:26 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-22 23:47:26 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-22 23:47:26 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-22 23:47:26 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-22 23:47:26 | INFO     | main:startup_event:286 - Starting PanoramaScore API
+2025-05-22 23:47:26 | INFO     | main:startup_event:287 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-22 23:50:54 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\2a3964d7-14db-41f6-8303-a9c9237f7d28.pdf
+2025-05-22 23:50:54 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume (1).pdf
+2025-05-22 23:50:55 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 2a3964d7-14db-41f6-8303-a9c9237f7d28.pdf
+2025-05-22 23:50:55 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-22 23:50:55 | INFO     | main:process_document:225 - Successfully processed document: Asad Nawaz Resume (1).pdf
+2025-05-22 23:51:55 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\42113670-d1d6-41c9-b5c0-4c4c43a7a52b.pdf
+2025-05-22 23:51:55 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_AsadNawaz.pdf
+2025-05-22 23:51:55 | INFO     | main:upload_document:116 - Successfully processed document: PanoramaScore_Detailed_Proposal_AsadNawaz.pdf

@@ -50,13 +50,25 @@ class OCRPreprocessor:
             # Step 5: Deskew text (correct slight rotations)
             deskewed = self._deskew(binary)
             
-            # Save the preprocessed image to a temporary file
+            # Save the preprocessed image to a temporary file with absolute path
+            # Use the uploads directory instead of system temp dir for better reliability
+            upload_dir = os.path.dirname(os.path.abspath(image_path))
             filename, ext = os.path.splitext(os.path.basename(image_path))
-            output_path = os.path.join(tempfile.gettempdir(), f"{filename}_preprocessed{ext}")
-            cv2.imwrite(output_path, deskewed)
+            output_path = os.path.join(upload_dir, f"{filename}_preprocessed{ext}")
             
-            logger.info(f"Image preprocessed successfully: {output_path}")
-            return output_path
+            # Ensure the image is properly written
+            success = cv2.imwrite(output_path, deskewed)
+            if not success:
+                logger.error(f"Failed to write preprocessed image to {output_path}")
+                return image_path  # Fallback to original if we can't save preprocessed
+            
+            # Verify the file exists before returning
+            if os.path.exists(output_path):
+                logger.info(f"Image preprocessed successfully: {output_path}")
+                return output_path
+            else:
+                logger.error(f"Preprocessed file not found at {output_path} after writing")
+                return image_path  # Fallback to original
             
         except Exception as e:
             logger.error(f"Error preprocessing image: {e}")

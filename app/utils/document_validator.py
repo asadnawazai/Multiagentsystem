@@ -118,16 +118,15 @@ class DocumentValidator:
             # Calculate checksum
             checksum = self._calculate_checksum(filepath)
             
-            # Check for duplicates by checksum only (content-based deduplication)
-            for filename, details in self.checksums.items():
-                if details['checksum'] == checksum:
-                    return False, f"Duplicate content detected: This document has already been processed as {filename}"
-            
-            # Also check in the database if available
+            # UPDATED LOGIC: First check if the document exists in the database
+            # Only consider a file a duplicate if it exists in the database
             if self._is_duplicate_in_database(checksum):
-                return False, "This document has already been processed."
+                return False, "This document has already been processed and exists in the database."
             
-            # File is valid - save its checksum
+            # The file may have been uploaded before but doesn't exist in the database anymore
+            # (e.g., it was deleted) - in this case, we allow it to be processed again
+            
+            # File is valid - save its checksum locally for reference
             self._save_checksum(original_filename, str(file_size), checksum)
             
             return True, None

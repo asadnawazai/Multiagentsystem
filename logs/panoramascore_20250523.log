@@ -1,0 +1,461 @@
+2025-05-23 15:11:38 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:11:38 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:11:38 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:11:38 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:11:38 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:11:38 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:11:38 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:11:38 | INFO     | app.agents.embedding_agent:__init__:28 - Embedding Agent initialized successfully
+2025-05-23 15:11:38 | INFO     | app.agents.rag_agent:__init__:45 - RAG Agent initialized with successful database connection
+2025-05-23 15:11:46 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:11:46 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:11:46 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:11:46 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:11:46 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:11:46 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:11:46 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:11:47 | INFO     | app.agents.embedding_agent:__init__:28 - Embedding Agent initialized successfully
+2025-05-23 15:11:47 | INFO     | app.agents.rag_agent:__init__:45 - RAG Agent initialized with successful database connection
+2025-05-23 15:12:27 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:12:27 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:12:27 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:12:27 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:12:27 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:12:27 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:12:27 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:12:27 | INFO     | app.agents.embedding_agent:__init__:28 - Embedding Agent initialized successfully
+2025-05-23 15:12:27 | INFO     | app.agents.rag_agent:__init__:45 - RAG Agent initialized with successful database connection
+2025-05-23 15:19:56 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:19:56 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:19:56 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:19:56 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:19:56 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:19:56 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:19:56 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:19:56 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 15:19:56 | INFO     | app.agents.rag_agent:__init__:52 - RAG Agent initialized with successful database connection
+2025-05-23 15:21:30 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:21:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:21:30 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:21:31 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:21:31 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:21:31 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:21:31 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:21:31 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 15:21:31 | INFO     | app.agents.rag_agent:__init__:52 - RAG Agent initialized with successful database connection
+2025-05-23 15:21:31 | INFO     | main:startup_event:516 - Starting PanoramaScore API
+2025-05-23 15:21:31 | INFO     | main:startup_event:517 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 15:22:15 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\99e18f75-f1a6-4543-9dd3-81aac6c4bd6f.pdf
+2025-05-23 15:22:15 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 15:22:16 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 99e18f75-f1a6-4543-9dd3-81aac6c4bd6f.pdf
+2025-05-23 15:22:23 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 15:22:23 | INFO     | main:process_document:242 - Successfully processed document: sodapdf-converted.pdf
+2025-05-23 15:29:49 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\9a6e052d-d77e-41bf-9529-c939f8a13999.pdf
+2025-05-23 15:29:49 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 15:29:49 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 9a6e052d-d77e-41bf-9529-c939f8a13999.pdf
+2025-05-23 15:29:50 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 15:29:53 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 15:29:53 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 15:29:53 | INFO     | app.agents.rag_agent:store_embedding:133 - Successfully stored embedding with ID: 83dae945-a8d6-4eaa-bff8-9c1944de6428
+2025-05-23 15:29:53 | ERROR    | app.agents.rag_agent:find_similar_documents:188 - Error finding similar documents: operator does not exist: vector <-> numeric[]
+LINE 2: ... id, document_type, fields, risk_score, embedding <-> ARRAY[...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+2025-05-23 15:29:53 | INFO     | app.agents.rag_agent:process_document:262 - Successfully processed document through RAG pipeline
+2025-05-23 15:29:53 | INFO     | main:rag_process_document:422 - Successfully processed document with RAG: sodapdf-converted.pdf
+2025-05-23 15:42:51 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:42:51 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:42:51 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:42:51 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:42:51 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:42:51 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:42:51 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:42:51 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 15:42:51 | INFO     | app.agents.rag_agent:__init__:52 - RAG Agent initialized with successful database connection
+2025-05-23 15:42:51 | INFO     | main:startup_event:640 - Starting PanoramaScore API
+2025-05-23 15:42:51 | INFO     | main:startup_event:641 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 15:43:35 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\e132e4f4-e78e-4f62-9e03-9c583e8b038c.pdf
+2025-05-23 15:43:35 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-23 15:43:36 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from e132e4f4-e78e-4f62-9e03-9c583e8b038c.pdf
+2025-05-23 15:43:43 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 15:43:45 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 15:43:45 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 15:43:45 | INFO     | app.agents.rag_agent:store_embedding:133 - Successfully stored embedding with ID: 8f3fe432-d50d-42fe-b960-12521a934e70
+2025-05-23 15:43:45 | ERROR    | app.agents.rag_agent:find_similar_documents:188 - Error finding similar documents: operator does not exist: vector <-> numeric[]
+LINE 2: ... id, document_type, fields, risk_score, embedding <-> ARRAY[...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+2025-05-23 15:43:45 | INFO     | app.agents.rag_agent:process_document:262 - Successfully processed document through RAG pipeline
+2025-05-23 15:43:45 | INFO     | main:process_document:383 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-23 15:43:45 | ERROR    | main:process_document:420 - Error processing document: 'filename'
+2025-05-23 15:46:46 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:46:46 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:46:46 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:46:46 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:46:46 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:46:46 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:46:46 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:46:46 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 15:46:46 | INFO     | app.agents.rag_agent:__init__:52 - RAG Agent initialized with successful database connection
+2025-05-23 15:46:46 | INFO     | main:startup_event:640 - Starting PanoramaScore API
+2025-05-23 15:46:46 | INFO     | main:startup_event:641 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 15:47:17 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\743671cc-c0e9-413a-8740-42feb16385d6.pdf
+2025-05-23 15:47:17 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume.pdf
+2025-05-23 15:47:18 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 743671cc-c0e9-413a-8740-42feb16385d6.pdf
+2025-05-23 15:47:18 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-23 15:47:21 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 15:47:21 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 15:47:21 | INFO     | app.agents.rag_agent:store_embedding:133 - Successfully stored embedding with ID: b54ef80b-9f91-4bf2-8d42-cbbaeb694520
+2025-05-23 15:47:21 | ERROR    | app.agents.rag_agent:find_similar_documents:188 - Error finding similar documents: the JSON object must be str, bytes or bytearray, not dict
+2025-05-23 15:47:21 | INFO     | app.agents.rag_agent:process_document:262 - Successfully processed document through RAG pipeline
+2025-05-23 15:47:21 | INFO     | main:process_document:383 - Successfully processed document: Asad Nawaz Resume.pdf
+2025-05-23 15:54:09 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 15:54:09 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 15:54:09 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 15:54:09 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 15:54:09 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 15:54:09 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 15:54:09 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 15:54:09 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 15:54:09 | INFO     | app.agents.rag_agent:__init__:52 - RAG Agent initialized with successful database connection
+2025-05-23 15:54:09 | INFO     | main:startup_event:640 - Starting PanoramaScore API
+2025-05-23 15:54:09 | INFO     | main:startup_event:641 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 15:54:57 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\2c4b4b4c-c2b9-4e19-a7aa-d172544bdda3.pdf
+2025-05-23 15:54:57 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for PanoramaScore_Detailed_Proposal_AsadNawaz.pdf
+2025-05-23 15:54:57 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 2c4b4b4c-c2b9-4e19-a7aa-d172544bdda3.pdf
+2025-05-23 15:55:04 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-23 15:55:06 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 15:55:06 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 15:55:06 | INFO     | app.agents.rag_agent:store_embedding:133 - Successfully stored embedding with ID: a535884d-fc5c-4b03-bf92-af36a1b192c7
+2025-05-23 15:55:06 | INFO     | app.agents.rag_agent:find_similar_documents:192 - Found 3 similar documents
+2025-05-23 15:55:06 | INFO     | app.agents.rag_agent:process_document:270 - Successfully processed document through RAG pipeline
+2025-05-23 15:55:06 | INFO     | main:process_document:383 - Successfully processed document: PanoramaScore_Detailed_Proposal_AsadNawaz.pdf
+2025-05-23 16:54:43 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 16:54:43 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 16:54:43 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 16:54:43 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 16:54:43 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 16:54:43 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 16:54:43 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 16:54:43 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 16:54:48 | ERROR    | app.agents.rag_agent:__init__:56 - Error connecting to database: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 16:54:48 | WARNING  | app.agents.rag_agent:__init__:57 - The RAG Agent will run in limited mode without vector database functionality
+2025-05-23 16:54:48 | INFO     | main:startup_event:640 - Starting PanoramaScore API
+2025-05-23 16:54:48 | INFO     | main:startup_event:641 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 16:56:25 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\b4474c40-85b8-4f85-bd00-233ecb898b2b.png
+2025-05-23 16:56:25 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Screenshot (18).png
+2025-05-23 16:56:25 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from b4474c40-85b8-4f85-bd00-233ecb898b2b.png
+2025-05-23 16:56:25 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 1 fields from document
+2025-05-23 16:56:28 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 16:56:28 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 16:56:32 | ERROR    | app.agents.rag_agent:is_available:88 - Database connection check failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 16:56:32 | WARNING  | main:process_document:357 - RAG Agent is not available - Database connection failed
+2025-05-23 16:56:32 | INFO     | main:process_document:383 - Successfully processed document: Screenshot (18).png
+2025-05-23 17:06:55 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 17:06:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 17:06:55 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 17:06:55 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 17:06:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 17:06:55 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 17:06:55 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 17:06:55 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 17:08:41 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 17:08:41 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 17:08:41 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 17:08:41 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 17:08:41 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 17:08:41 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 17:08:41 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 17:08:41 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 17:08:45 | ERROR    | app.agents.rag_agent:__init__:66 - Error connecting to database: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 17:08:45 | WARNING  | app.agents.rag_agent:__init__:67 - The RAG Agent will run in limited mode without vector database functionality
+2025-05-23 17:08:45 | INFO     | main:startup_event:653 - Starting PanoramaScore API
+2025-05-23 17:08:45 | INFO     | main:startup_event:654 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 17:09:39 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\0aee73a1-7dc5-4f54-98b8-b53b3fffa00d.pdf
+2025-05-23 17:09:39 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 17:09:39 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 0aee73a1-7dc5-4f54-98b8-b53b3fffa00d.pdf
+2025-05-23 17:09:44 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 17:09:45 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 17:09:45 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 17:09:45 | WARNING  | main:process_document:368 - RAG Agent is not available - connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 17:09:45 | INFO     | main:process_document:396 - Successfully processed document: sodapdf-converted.pdf
+2025-05-23 17:19:25 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 17:19:25 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 17:19:25 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 17:19:25 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 17:19:25 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 17:19:25 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 17:19:25 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 17:19:25 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 17:19:29 | ERROR    | app.agents.rag_agent:__init__:68 - Error connecting to database: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 17:19:29 | WARNING  | app.agents.rag_agent:__init__:69 - The RAG Agent will run in limited mode without vector database functionality
+2025-05-23 17:19:29 | INFO     | main:startup_event:653 - Starting PanoramaScore API
+2025-05-23 17:19:29 | INFO     | main:startup_event:654 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 17:19:55 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\f1ce5f10-d1f8-4eb6-b75d-521fa36d25ff.pdf
+2025-05-23 17:19:55 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 17:19:56 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from f1ce5f10-d1f8-4eb6-b75d-521fa36d25ff.pdf
+2025-05-23 17:20:00 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 17:20:02 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 17:20:02 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 17:20:02 | WARNING  | main:process_document:368 - RAG Agent is not available - connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 17:20:02 | INFO     | main:process_document:396 - Successfully processed document: sodapdf-converted.pdf
+2025-05-23 17:23:28 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 17:23:28 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 17:23:28 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 17:23:28 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 17:23:28 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 17:23:28 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 17:23:28 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 17:23:28 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 17:23:32 | ERROR    | app.agents.rag_agent:__init__:70 - Error connecting to database: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-05-23 17:23:32 | WARNING  | app.agents.rag_agent:__init__:71 - The RAG Agent will run in limited mode without vector database functionality
+2025-05-23 17:23:32 | INFO     | main:startup_event:653 - Starting PanoramaScore API
+2025-05-23 17:23:32 | INFO     | main:startup_event:654 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 22:34:06 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 22:34:06 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 22:34:06 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 22:34:06 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 22:34:06 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 22:34:06 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 22:34:06 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 22:34:06 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 22:34:06 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database PanoramaScore as user admin_user...
+2025-05-23 22:34:06 | WARNING  | app.agents.rag_agent:_get_connection:127 - Primary connection failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "PanoramaScore" does not exist
+
+2025-05-23 22:34:06 | INFO     | app.agents.rag_agent:_get_connection:128 - Trying fallback connection with DB_* parameters...
+2025-05-23 22:34:06 | ERROR    | app.agents.rag_agent:_get_connection:150 - All database connection attempts failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "PanoramaScore" does not exist
+
+2025-05-23 22:34:06 | ERROR    | app.agents.rag_agent:__init__:102 - Error connecting to database: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "PanoramaScore" does not exist
+
+2025-05-23 22:34:06 | WARNING  | app.agents.rag_agent:__init__:103 - The RAG Agent will run in limited mode without vector database functionality
+2025-05-23 22:34:06 | INFO     | main:startup_event:659 - Starting PanoramaScore API
+2025-05-23 22:34:06 | INFO     | main:startup_event:660 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 22:35:47 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 22:35:47 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 22:35:47 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 22:35:47 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 22:35:47 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 22:35:47 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 22:35:48 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 22:35:48 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 22:35:48 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:35:48 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:35:48 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-23 22:35:48 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_embeddings
+2025-05-23 22:35:48 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-23 22:35:48 | INFO     | main:startup_event:659 - Starting PanoramaScore API
+2025-05-23 22:35:48 | INFO     | main:startup_event:660 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 22:36:21 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\f29242c8-6e5f-4a34-b12e-9de52ba6bd68.pdf
+2025-05-23 22:36:21 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 22:36:21 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from f29242c8-6e5f-4a34-b12e-9de52ba6bd68.pdf
+2025-05-23 22:36:27 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 22:36:31 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 22:36:31 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 22:36:31 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:31 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:31 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: 80e0d06d-f5b6-4614-b97e-1bc4c2d8b101
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 1 similar documents
+2025-05-23 22:36:32 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-23 22:36:32 | INFO     | main:process_document:402 - Successfully processed document: sodapdf-converted.pdf
+2025-05-23 22:41:06 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\12e8294b-2337-4060-8fd4-ddf938eafd1a.pdf
+2025-05-23 22:41:06 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-23 22:41:06 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 12e8294b-2337-4060-8fd4-ddf938eafd1a.pdf
+2025-05-23 22:41:06 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-23 22:41:08 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 22:41:08 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 22:41:08 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:08 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:08 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:08 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:08 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: 3fba5bbb-280b-4302-9ff7-a5c59a924057
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 2 similar documents
+2025-05-23 22:41:09 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-23 22:41:09 | INFO     | main:process_document:402 - Successfully processed document: sodapdf-converted.pdf
+2025-05-23 22:45:20 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 22:45:20 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 22:45:20 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 22:45:20 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 22:45:20 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 22:45:20 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 22:45:20 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 22:45:20 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 22:45:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:45:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:45:20 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-23 22:45:20 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_embeddings
+2025-05-23 22:45:20 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-23 22:45:20 | INFO     | main:startup_event:659 - Starting PanoramaScore API
+2025-05-23 22:45:20 | INFO     | main:startup_event:660 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 22:46:07 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-23 22:46:07 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:56 - Tesseract not available: tesseract is not installed or it's not in your PATH. See README file for more information.
+2025-05-23 22:46:07 | WARNING  | app.agents.ocr_normalization_agent:_check_tesseract:57 - Please install Tesseract OCR: https://github.com/UB-Mannheim/tesseract/wiki
+2025-05-23 22:46:07 | WARNING  | app.agents.ocr_normalization_agent:__init__:44 - OCR & Normalization Agent initialized WITHOUT Tesseract OCR support - text extraction from images will be limited
+2025-05-23 22:46:07 | WARNING  | app.agents.nlu_extraction_agent:__init__:32 - Could not load spaCy model en_core_web_sm: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.
+2025-05-23 22:46:07 | WARNING  | app.agents.nlu_extraction_agent:__init__:33 - To download the model, run: python -m spacy download en_core_web_sm
+2025-05-23 22:46:07 | INFO     | app.agents.nlu_extraction_agent:__init__:34 - Continuing without NLP capabilities (regex-only mode)
+2025-05-23 22:46:08 | INFO     | app.agents.embedding_agent:__init__:32 - Embedding Agent initialized successfully
+2025-05-23 22:46:08 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:46:08 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:46:08 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-23 22:46:08 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_embeddings
+2025-05-23 22:46:08 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-23 22:46:08 | INFO     | main:startup_event:659 - Starting PanoramaScore API
+2025-05-23 22:46:08 | INFO     | main:startup_event:660 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-23 22:58:47 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\b959ad58-09c0-4a11-9006-6c97c04ddd6b.pdf
+2025-05-23 22:58:47 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume (1).pdf
+2025-05-23 22:58:48 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from b959ad58-09c0-4a11-9006-6c97c04ddd6b.pdf
+2025-05-23 22:58:48 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-23 22:58:51 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-23 22:58:51 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: eaec15a7-7569-43de-8a14-244a709ccd7b
+2025-05-23 22:58:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:52 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:52 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-23 22:58:52 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-23 22:58:52 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 3 similar documents
+2025-05-23 22:58:52 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-23 22:58:52 | INFO     | main:process_document:402 - Successfully processed document: Asad Nawaz Resume (1).pdf
+2025-05-24 00:05:41 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\70fd3592-6f06-41b5-a13e-08d59c93764c.pdf
+2025-05-24 00:05:41 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-24 00:05:42 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 70fd3592-6f06-41b5-a13e-08d59c93764c.pdf
+2025-05-24 00:05:49 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-24 00:05:50 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-24 00:05:50 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: e3ea61b1-361f-4dd8-bb4e-9c8c72ba56c0
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:51 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:05:51 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:05:51 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 3 similar documents
+2025-05-24 00:05:51 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-24 00:05:51 | INFO     | main:process_document:402 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-24 00:15:18 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\71c353c4-b6ad-42bb-beb8-e24c0059308f.pdf
+2025-05-24 00:15:18 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Agents - OpenAI API.pdf
+2025-05-24 00:15:19 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 71c353c4-b6ad-42bb-beb8-e24c0059308f.pdf
+2025-05-24 00:15:19 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-24 00:15:20 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-24 00:15:20 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: 742fe56c-1a65-4d8a-9699-c19b90357c12
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:15:21 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:15:21 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 3 similar documents
+2025-05-24 00:15:21 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-24 00:15:21 | INFO     | main:process_document:402 - Successfully processed document: Agents - OpenAI API.pdf
+2025-05-24 00:19:53 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\bdf9af00-38fc-4656-96e9-987a4472a890.pdf
+2025-05-24 00:19:53 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Asad Nawaz Resume.pdf
+2025-05-24 00:19:54 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from bdf9af00-38fc-4656-96e9-987a4472a890.pdf
+2025-05-24 00:19:54 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-24 00:19:55 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-24 00:19:55 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: b8ddbec1-0a04-4160-a71b-7fe81036f951
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:19:56 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:19:56 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 3 similar documents
+2025-05-24 00:19:56 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-24 00:19:56 | INFO     | main:process_document:402 - Successfully processed document: Asad Nawaz Resume.pdf
+2025-05-24 00:24:59 | INFO     | app.agents.document_ingest_agent:ingest_document:53 - File saved: ./uploads\4895b36a-7bb9-474d-a0d9-e3d3d82a2a02.pdf
+2025-05-24 00:24:59 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for sodapdf-converted.pdf
+2025-05-24 00:24:59 | INFO     | app.agents.ocr_normalization_agent:process_document:95 - Successfully extracted text from 4895b36a-7bb9-474d-a0d9-e3d3d82a2a02.pdf
+2025-05-24 00:24:59 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-24 00:25:01 | INFO     | app.agents.embedding_agent:generate_embedding:96 - Successfully generated embedding of dimension 1536
+2025-05-24 00:25:01 | INFO     | app.agents.embedding_agent:process_document:127 - Successfully processed document and generated embedding
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:store_embedding:249 - Successfully stored embedding with ID: b4c83007-a1e0-4e94-a40d-06bb673bca9b
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database panoramascore as user admin_user...
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:find_similar_documents:320 - Found 3 similar documents
+2025-05-24 00:25:01 | INFO     | app.agents.rag_agent:process_document:424 - Successfully processed document through RAG pipeline
+2025-05-24 00:25:01 | INFO     | main:process_document:402 - Successfully processed document: sodapdf-converted.pdf
