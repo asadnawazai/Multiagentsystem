@@ -760,3 +760,683 @@
 2025-05-27 17:07:15 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
 2025-05-27 17:07:15 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
 2025-05-27 17:07:15 | INFO     | main:process_document:529 - Successfully processed document: MLS_Report_Seattle_WA.pdf
+2025-05-27 17:49:45 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Report_Chicago_IL.pdf matches pattern MLS_*
+2025-05-27 17:49:45 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\eb8ff189-23ad-43e4-a27f-7313f011939d.pdf
+2025-05-27 17:49:45 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 17:49:45 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 17:49:45 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from eb8ff189-23ad-43e4-a27f-7313f011939d.pdf
+2025-05-27 17:49:46 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 9 extracted fields
+2025-05-27 17:49:46 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Report_Chicago_IL.pdf
+2025-05-27 17:49:46 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 17:49:46 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from eb8ff189-23ad-43e4-a27f-7313f011939d.pdf
+2025-05-27 17:49:46 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 17:49:46 | INFO     | main:process_document:467 - Calculated risk score: 30 based on extracted fields
+2025-05-27 17:49:47 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 17:49:47 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:47 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:48 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_1c22ffc9-24f2-45ec-a1b1-923bee056436.pdf, using generated default
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 1c22ffc9-24f2-45ec-a1b1-923bee056436
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 17:49:48 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 17:49:48 | INFO     | main:process_document:529 - Successfully processed document: MLS_Report_Chicago_IL.pdf
+2025-05-27 17:50:06 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 17:50:06 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 17:50:06 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 30 existing checksums
+2025-05-27 17:50:06 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 17:50:06 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 17:50:06 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 17:50:06 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 17:50:07 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 17:50:07 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 17:50:07 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:50:07 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:50:07 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 17:50:07 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 17:50:07 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 17:50:07 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 17:50:07 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 17:50:07 | INFO     | main:startup_event:606 - Starting PanoramaScore API
+2025-05-27 17:50:07 | INFO     | main:startup_event:607 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 17:50:07 | INFO     | main:startup_event:624 - Starting PanoramaScore API
+2025-05-27 17:50:07 | INFO     | main:startup_event:625 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 17:51:06 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Seller-Report-5-Scanned.jpg does not match any real estate document patterns
+2025-05-27 17:51:06 | WARNING  | app.agents.document_ingest_agent:ingest_document:82 - File does not match standard naming patterns: Seller-Report-5-Scanned.jpg
+2025-05-27 17:51:06 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\6d1ef677-91d3-4321-91ee-be43932c0e50.jpg
+2025-05-27 17:51:06 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 17:51:06 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 17:51:08 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\6d1ef677-91d3-4321-91ee-be43932c0e50_preprocessed.jpg
+2025-05-27 17:51:08 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\6d1ef677-91d3-4321-91ee-be43932c0e50_preprocessed.jpg
+2025-05-27 17:51:11 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 33.15
+2025-05-27 17:51:11 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 6d1ef677-91d3-4321-91ee-be43932c0e50.jpg
+2025-05-27 17:51:11 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Seller-Report-5-Scanned.jpg
+2025-05-27 17:51:12 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 17:51:13 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\6d1ef677-91d3-4321-91ee-be43932c0e50_preprocessed.jpg
+2025-05-27 17:51:13 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\6d1ef677-91d3-4321-91ee-be43932c0e50_preprocessed.jpg
+2025-05-27 17:51:16 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 33.15
+2025-05-27 17:51:16 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 6d1ef677-91d3-4321-91ee-be43932c0e50.jpg
+2025-05-27 17:51:16 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 3 fields from document
+2025-05-27 17:51:16 | INFO     | main:process_document:467 - Calculated risk score: 30 based on extracted fields
+2025-05-27 17:51:18 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 17:51:18 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:18 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_f80c0eb4-8dc0-4b03-b245-d09617eb1613.pdf, using generated default
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: f80c0eb4-8dc0-4b03-b245-d09617eb1613
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:18 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 17:51:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 17:51:19 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 17:51:19 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 17:51:19 | INFO     | main:process_document:529 - Successfully processed document: Seller-Report-5-Scanned.jpg
+2025-05-27 18:00:23 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:00:24 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:00:24 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 30 existing checksums
+2025-05-27 18:00:24 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:00:24 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:00:24 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:00:24 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:00:24 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:00:24 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:00:24 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:00:24 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:00:24 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:00:24 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:00:24 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:00:24 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:00:24 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:00:24 | INFO     | main:startup_event:606 - Starting PanoramaScore API
+2025-05-27 18:00:24 | INFO     | main:startup_event:607 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:00:24 | INFO     | main:startup_event:624 - Starting PanoramaScore API
+2025-05-27 18:00:24 | INFO     | main:startup_event:625 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:00:58 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Seller-Report-4-Scanned.jpg does not match any real estate document patterns
+2025-05-27 18:00:58 | WARNING  | app.agents.document_ingest_agent:ingest_document:82 - File does not match standard naming patterns: Seller-Report-4-Scanned.jpg
+2025-05-27 18:00:58 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\99fb28d9-d515-4206-9b25-e3a881ef0abb.jpg
+2025-05-27 18:01:00 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 18:01:02 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 18:01:03 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\99fb28d9-d515-4206-9b25-e3a881ef0abb_preprocessed.jpg
+2025-05-27 18:01:03 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\99fb28d9-d515-4206-9b25-e3a881ef0abb_preprocessed.jpg
+2025-05-27 18:01:06 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 42.91
+2025-05-27 18:01:07 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 99fb28d9-d515-4206-9b25-e3a881ef0abb.jpg
+2025-05-27 18:01:07 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Seller-Report-4-Scanned.jpg
+2025-05-27 18:01:08 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 18:01:09 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\99fb28d9-d515-4206-9b25-e3a881ef0abb_preprocessed.jpg
+2025-05-27 18:01:09 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\99fb28d9-d515-4206-9b25-e3a881ef0abb_preprocessed.jpg
+2025-05-27 18:01:13 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 42.91
+2025-05-27 18:01:13 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 99fb28d9-d515-4206-9b25-e3a881ef0abb.jpg
+2025-05-27 18:01:13 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-27 18:01:13 | INFO     | main:process_document:467 - Calculated risk score: 50 based on extracted fields
+2025-05-27 18:01:14 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:01:14 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_56bfb1cd-5612-4b07-9d84-3f1c66db8977.pdf, using generated default
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 56bfb1cd-5612-4b07-9d84-3f1c66db8977
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:01:14 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:01:15 | INFO     | main:process_document:529 - Successfully processed document: Seller-Report-4-Scanned.jpg
+2025-05-27 18:07:10 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:07:10 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:07:10 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 31 existing checksums
+2025-05-27 18:07:10 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:07:10 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:07:10 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:07:10 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:07:10 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:07:11 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:07:11 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:11 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:11 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:07:11 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:07:11 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:07:11 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:07:11 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:07:11 | INFO     | main:startup_event:606 - Starting PanoramaScore API
+2025-05-27 18:07:11 | INFO     | main:startup_event:607 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:07:11 | INFO     | main:startup_event:624 - Starting PanoramaScore API
+2025-05-27 18:07:11 | INFO     | main:startup_event:625 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:07:52 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Report_Staten_Island_NY.pdf matches pattern MLS_*
+2025-05-27 18:07:52 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\be0a3108-3a6a-462f-a2d2-d1e33bbad3dd.pdf
+2025-05-27 18:07:52 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:07:52 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:07:52 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from be0a3108-3a6a-462f-a2d2-d1e33bbad3dd.pdf
+2025-05-27 18:07:53 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 9 extracted fields
+2025-05-27 18:07:53 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Report_Staten_Island_NY.pdf
+2025-05-27 18:07:53 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:07:53 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from be0a3108-3a6a-462f-a2d2-d1e33bbad3dd.pdf
+2025-05-27 18:07:55 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 18:07:55 | INFO     | main:process_document:467 - Calculated risk score: 30 based on extracted fields
+2025-05-27 18:07:55 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:07:55 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:07:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:55 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:55 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:56 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_dd07ea62-77fb-4df8-a671-668a07e20e84.pdf, using generated default
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: dd07ea62-77fb-4df8-a671-668a07e20e84
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:07:56 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:07:56 | INFO     | main:process_document:529 - Successfully processed document: MLS_Report_Staten_Island_NY.pdf
+2025-05-27 18:09:46 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:09:46 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:09:46 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 31 existing checksums
+2025-05-27 18:09:46 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:09:46 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:09:46 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:09:46 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:09:47 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:09:47 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:09:47 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:09:47 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:09:47 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:09:47 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:09:47 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:09:47 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:09:47 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:09:47 | INFO     | main:startup_event:606 - Starting PanoramaScore API
+2025-05-27 18:09:47 | INFO     | main:startup_event:607 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:09:47 | INFO     | main:startup_event:624 - Starting PanoramaScore API
+2025-05-27 18:09:47 | INFO     | main:startup_event:625 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:10:22 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Report_Staten_Island_NY.pdf matches pattern MLS_*
+2025-05-27 18:10:22 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\93355dc4-208b-417b-a1fe-0ebe8a245476.pdf
+2025-05-27 18:10:22 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:10:22 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:10:22 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 93355dc4-208b-417b-a1fe-0ebe8a245476.pdf
+2025-05-27 18:10:22 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 9 extracted fields
+2025-05-27 18:10:22 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Report_Staten_Island_NY.pdf
+2025-05-27 18:10:22 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:10:23 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 93355dc4-208b-417b-a1fe-0ebe8a245476.pdf
+2025-05-27 18:10:26 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 18:10:26 | INFO     | main:process_document:467 - Calculated risk score: 30 based on extracted fields
+2025-05-27 18:10:28 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:10:28 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:28 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_c29d4285-987d-4be4-bf3f-829a39d18a9d.pdf, using generated default
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: c29d4285-987d-4be4-bf3f-829a39d18a9d
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:10:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:10:29 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:10:29 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:10:29 | INFO     | main:process_document:529 - Successfully processed document: MLS_Report_Staten_Island_NY.pdf
+2025-05-27 18:26:14 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:26:14 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:26:14 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 31 existing checksums
+2025-05-27 18:26:14 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:26:14 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:26:15 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:26:15 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:26:15 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:26:15 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:26:15 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:26:15 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:26:15 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:26:15 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:26:15 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:26:15 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:26:15 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:26:15 | INFO     | main:startup_event:662 - Starting PanoramaScore API
+2025-05-27 18:26:15 | INFO     | main:startup_event:663 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:26:15 | INFO     | main:startup_event:680 - Starting PanoramaScore API
+2025-05-27 18:26:15 | INFO     | main:startup_event:681 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:28:10 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:28:10 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:28:10 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 31 existing checksums
+2025-05-27 18:28:10 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:28:10 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:28:10 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:28:10 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:28:11 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:28:11 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:28:11 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:28:11 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:28:11 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:28:11 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:28:11 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:28:11 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:28:11 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:28:11 | INFO     | main:startup_event:662 - Starting PanoramaScore API
+2025-05-27 18:28:11 | INFO     | main:startup_event:663 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:28:11 | INFO     | main:startup_event:680 - Starting PanoramaScore API
+2025-05-27 18:28:11 | INFO     | main:startup_event:681 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:30:13 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Report_Winter_Haven_FL.pdf matches pattern MLS_*
+2025-05-27 18:30:13 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\606dc909-833c-4f3f-8214-f570ee9271be.pdf
+2025-05-27 18:30:13 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:30:13 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:30:13 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 606dc909-833c-4f3f-8214-f570ee9271be.pdf
+2025-05-27 18:30:14 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 9 extracted fields
+2025-05-27 18:30:14 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Report_Winter_Haven_FL.pdf
+2025-05-27 18:30:14 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:30:14 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 606dc909-833c-4f3f-8214-f570ee9271be.pdf
+2025-05-27 18:30:18 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 18:30:18 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 18:30:19 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:30:19 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:19 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:20 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_0049a668-6639-40e3-b5f1-441e1e7cb255.pdf, using generated default
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 0049a668-6639-40e3-b5f1-441e1e7cb255
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:30:20 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:30:20 | INFO     | main:process_document:530 - Successfully processed document: MLS_Report_Winter_Haven_FL.pdf
+2025-05-27 18:40:59 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:40:59 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:40:59 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 31 existing checksums
+2025-05-27 18:40:59 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:41:00 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:41:00 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:41:00 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:41:00 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:41:00 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:41:00 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:00 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:00 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:41:00 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:41:00 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:41:01 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:41:01 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:41:01 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 18:41:01 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:41:01 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 18:41:01 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:41:23 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Property_2.pdf matches pattern MLS_*
+2025-05-27 18:41:23 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\b6cdc296-e0b0-4415-bb14-aaaed5e09335.pdf
+2025-05-27 18:41:23 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:41:23 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:41:23 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from b6cdc296-e0b0-4415-bb14-aaaed5e09335.pdf
+2025-05-27 18:41:23 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 8 extracted fields
+2025-05-27 18:41:23 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Property_2.pdf
+2025-05-27 18:41:23 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:41:23 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from b6cdc296-e0b0-4415-bb14-aaaed5e09335.pdf
+2025-05-27 18:41:24 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 18:41:24 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 18:41:25 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:41:25 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_25a31f12-1f1a-4cca-948c-4a0bf4e86352.pdf, using generated default
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 25a31f12-1f1a-4cca-948c-4a0bf4e86352
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:41:25 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:41:25 | INFO     | main:process_document:530 - Successfully processed document: MLS_Property_2.pdf
+2025-05-27 18:51:00 | INFO     | app.utils.file_utils:create_upload_directory:61 - Ensured upload directory exists: ./uploads
+2025-05-27 18:51:01 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 18:51:01 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 32 existing checksums
+2025-05-27 18:51:01 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:51:01 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:51:01 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 18:51:01 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 18:51:01 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 18:51:01 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 18:51:01 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:01 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:01 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 18:51:01 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 18:51:01 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 18:51:02 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 18:51:02 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 18:51:02 | INFO     | main:startup_event:781 - Starting PanoramaScore API
+2025-05-27 18:51:02 | INFO     | main:startup_event:782 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:51:02 | INFO     | main:startup_event:799 - Starting PanoramaScore API
+2025-05-27 18:51:02 | INFO     | main:startup_event:800 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 18:51:23 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Property_1.pdf matches pattern MLS_*
+2025-05-27 18:51:23 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\b416e9d6-ad69-40e8-ad1e-586ad19e2609.pdf
+2025-05-27 18:51:23 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:51:23 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:51:23 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from b416e9d6-ad69-40e8-ad1e-586ad19e2609.pdf
+2025-05-27 18:51:24 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 8 extracted fields
+2025-05-27 18:51:24 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Property_1.pdf
+2025-05-27 18:51:24 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 18:51:24 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from b416e9d6-ad69-40e8-ad1e-586ad19e2609.pdf
+2025-05-27 18:51:24 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 18:51:24 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 18:51:25 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 18:51:25 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_bc3e3027-6c20-47ff-af89-f8cc217c3c68.pdf, using generated default
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: bc3e3027-6c20-47ff-af89-f8cc217c3c68
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 18:51:25 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 18:51:25 | INFO     | main:process_document:530 - Successfully processed document: MLS_Property_1.pdf
+2025-05-27 22:26:49 | INFO     | app.utils.file_utils:create_upload_directory:11 - Ensured upload directory exists: ./uploads
+2025-05-27 22:26:49 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 22:26:49 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 33 existing checksums
+2025-05-27 22:26:49 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:26:49 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:26:49 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:26:49 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:26:50 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 22:26:50 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 22:26:50 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:26:50 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:26:50 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 22:26:50 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 22:26:50 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 22:26:50 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 22:26:51 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 22:26:51 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 22:26:51 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:26:51 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 22:26:51 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:27:30 | INFO     | app.utils.file_utils:create_upload_directory:11 - Ensured upload directory exists: ./uploads
+2025-05-27 22:27:31 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 22:27:31 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 33 existing checksums
+2025-05-27 22:27:31 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:27:31 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:27:31 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:27:31 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:27:32 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 22:27:32 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 22:27:32 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:27:32 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:27:32 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 22:27:32 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 22:27:32 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 22:27:32 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 22:27:32 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 22:27:32 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 22:27:32 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:27:32 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 22:27:32 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:27:41 | INFO     | app.utils.file_utils:create_upload_directory:11 - Ensured upload directory exists: ./uploads
+2025-05-27 22:27:42 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 22:27:42 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 33 existing checksums
+2025-05-27 22:27:42 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:27:42 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:27:42 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:27:42 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:27:42 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 22:27:42 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 22:27:42 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:27:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:27:42 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 22:27:42 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 22:27:42 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 22:27:43 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 22:27:43 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 22:27:43 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 22:27:43 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:27:43 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 22:27:43 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:28:19 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Property_1.pdf matches pattern MLS_*
+2025-05-27 22:28:19 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\e67d4020-c9eb-4dfd-8188-20d827d983d6.pdf
+2025-05-27 22:28:19 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:28:19 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:28:19 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from e67d4020-c9eb-4dfd-8188-20d827d983d6.pdf
+2025-05-27 22:28:20 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 8 extracted fields
+2025-05-27 22:28:20 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Property_1.pdf
+2025-05-27 22:28:20 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:28:20 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from e67d4020-c9eb-4dfd-8188-20d827d983d6.pdf
+2025-05-27 22:28:27 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 22:28:27 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 22:28:29 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 22:28:29 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:29 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_35ab9051-ab05-4900-87ed-23e87e4cfa7a.pdf, using generated default
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 35ab9051-ab05-4900-87ed-23e87e4cfa7a
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:29 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:28:30 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:28:30 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 1 similar documents
+2025-05-27 22:28:30 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 22:28:30 | INFO     | main:process_document:530 - Successfully processed document: MLS_Property_1.pdf
+2025-05-27 22:29:27 | INFO     | app.utils.file_utils:create_upload_directory:11 - Ensured upload directory exists: ./uploads
+2025-05-27 22:29:27 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 22:29:27 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 33 existing checksums
+2025-05-27 22:29:27 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:29:27 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:29:27 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:29:27 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:29:28 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 22:29:28 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 22:29:28 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:29:28 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:29:28 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 22:29:28 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 22:29:28 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 22:29:28 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 22:29:28 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 22:29:28 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 22:29:28 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:29:28 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 22:29:28 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:30:15 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Listing-1-Scanned.jpg does not match any real estate document patterns
+2025-05-27 22:30:15 | WARNING  | app.agents.document_ingest_agent:ingest_document:82 - File does not match standard naming patterns: Listing-1-Scanned.jpg
+2025-05-27 22:30:15 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\679706bf-c604-455b-8df4-b33f1fece78c.jpg
+2025-05-27 22:30:19 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:30:23 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:30:25 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\679706bf-c604-455b-8df4-b33f1fece78c_preprocessed.jpg
+2025-05-27 22:30:25 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\679706bf-c604-455b-8df4-b33f1fece78c_preprocessed.jpg
+2025-05-27 22:30:31 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 34.96
+2025-05-27 22:30:31 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 679706bf-c604-455b-8df4-b33f1fece78c.jpg
+2025-05-27 22:30:31 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Listing-1-Scanned.jpg
+2025-05-27 22:30:32 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:30:32 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\679706bf-c604-455b-8df4-b33f1fece78c_preprocessed.jpg
+2025-05-27 22:30:32 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\679706bf-c604-455b-8df4-b33f1fece78c_preprocessed.jpg
+2025-05-27 22:30:38 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 34.96
+2025-05-27 22:30:38 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 679706bf-c604-455b-8df4-b33f1fece78c.jpg
+2025-05-27 22:30:38 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-27 22:30:38 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 22:30:41 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 22:30:41 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:41 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:41 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_cb9eb66b-106b-49e4-8b9b-300374a37782.pdf, using generated default
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: cb9eb66b-106b-49e4-8b9b-300374a37782
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 2 similar documents
+2025-05-27 22:30:42 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 22:30:42 | INFO     | main:process_document:530 - Successfully processed document: Listing-1-Scanned.jpg
+2025-05-27 22:36:53 | INFO     | app.utils.file_utils:create_upload_directory:11 - Ensured upload directory exists: ./uploads
+2025-05-27 22:36:53 | INFO     | app.utils.document_validator:_load_config:35 - Loaded document patterns: ['CRS_Property_Report_*', 'Zoning_*', 'MLS_*', 'Property_Tax_*', 'Flood_Map_*', 'Title_Search_*', 'Appraisal_*']
+2025-05-27 22:36:53 | INFO     | app.utils.document_validator:_load_existing_checksums:60 - Loaded 33 existing checksums
+2025-05-27 22:36:53 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:36:53 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:36:54 | INFO     | app.agents.ocr_normalization_agent:__init__:62 - Found Tesseract at: C:\Program Files\Tesseract-OCR\tesseract.exe
+2025-05-27 22:36:54 | INFO     | app.agents.ocr_normalization_agent:__init__:99 - OCR & Normalization Agent initialized with Tesseract OCR support
+2025-05-27 22:36:54 | INFO     | app.agents.nlu_extraction_agent:__init__:30 - Loaded spaCy model: en_core_web_sm
+2025-05-27 22:36:54 | INFO     | app.agents.embedding_agent:__init__:31 - Embedding Agent initialized successfully
+2025-05-27 22:36:54 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:36:54 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:36:54 | INFO     | app.agents.rag_agent:__init__:66 - Vector extension already exists
+2025-05-27 22:36:54 | INFO     | app.agents.rag_agent:__init__:86 - Successfully created or confirmed table public.real_estate_documents
+2025-05-27 22:36:54 | INFO     | app.agents.rag_agent:__init__:96 - RAG Agent initialized with full vector search capabilities
+2025-05-27 22:36:54 | INFO     | app.services.risk_scoring_service:_load_config:28 - Loaded risk scoring configuration for 11 fields
+2025-05-27 22:36:55 | INFO     | app.services.field_validation_service:_load_config:25 - Loaded critical fields: ['parcel_id', 'tax_value', 'property_address', 'MLS_number']
+2025-05-27 22:36:55 | INFO     | main:startup_event:720 - Starting PanoramaScore API
+2025-05-27 22:36:55 | INFO     | main:startup_event:721 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:36:55 | INFO     | main:startup_event:738 - Starting PanoramaScore API
+2025-05-27 22:36:55 | INFO     | main:startup_event:739 - Configuration: Upload folder=./uploads, Max file size=10MB
+2025-05-27 22:37:40 | INFO     | app.utils.document_validator:is_valid_real_estate_document:92 - File MLS_Property_2.pdf matches pattern MLS_*
+2025-05-27 22:37:40 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\f205d7dd-f324-459b-b965-9d5309c86656.pdf
+2025-05-27 22:37:40 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:37:40 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:37:40 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from f205d7dd-f324-459b-b965-9d5309c86656.pdf
+2025-05-27 22:37:41 | INFO     | app.agents.document_ingest_agent:ingest_document:169 - Updated YAML config with 8 extracted fields
+2025-05-27 22:37:41 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for MLS_Property_2.pdf
+2025-05-27 22:37:41 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: digital_pdf, needs OCR: False, rotation: 0°
+2025-05-27 22:37:41 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from f205d7dd-f324-459b-b965-9d5309c86656.pdf
+2025-05-27 22:37:49 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 4 fields from document
+2025-05-27 22:37:49 | INFO     | main:process_document:468 - Calculated risk score: 30 based on extracted fields
+2025-05-27 22:37:52 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 22:37:52 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 22:37:52 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:52 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:52 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:53 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_86dbcef0-8c1d-45ef-af81-4b17a11624d7.pdf, using generated default
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 86dbcef0-8c1d-45ef-af81-4b17a11624d7
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 22:37:53 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 22:37:53 | INFO     | main:process_document:530 - Successfully processed document: MLS_Property_2.pdf
+2025-05-27 22:43:26 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Listing-2-Scanned.jpg does not match any real estate document patterns
+2025-05-27 22:43:26 | WARNING  | app.agents.document_ingest_agent:ingest_document:82 - File does not match standard naming patterns: Listing-2-Scanned.jpg
+2025-05-27 22:43:26 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\58ce6854-73f3-4f72-84e6-02e18a68f505.jpg
+2025-05-27 22:43:30 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:43:34 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:43:36 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\58ce6854-73f3-4f72-84e6-02e18a68f505_preprocessed.jpg
+2025-05-27 22:43:36 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\58ce6854-73f3-4f72-84e6-02e18a68f505_preprocessed.jpg
+2025-05-27 22:43:43 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 36.02
+2025-05-27 22:43:43 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 58ce6854-73f3-4f72-84e6-02e18a68f505.jpg
+2025-05-27 22:43:43 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Listing-2-Scanned.jpg
+2025-05-27 22:43:47 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:43:49 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\58ce6854-73f3-4f72-84e6-02e18a68f505_preprocessed.jpg
+2025-05-27 22:43:49 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\58ce6854-73f3-4f72-84e6-02e18a68f505_preprocessed.jpg
+2025-05-27 22:43:56 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 36.02
+2025-05-27 22:43:56 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from 58ce6854-73f3-4f72-84e6-02e18a68f505.jpg
+2025-05-27 22:43:57 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-27 22:43:57 | INFO     | main:process_document:468 - Calculated risk score: 50 based on extracted fields
+2025-05-27 22:43:58 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 22:43:58 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_1a92124d-3754-4d28-a240-01a92bd3810f.pdf, using generated default
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 1a92124d-3754-4d28-a240-01a92bd3810f
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 22:43:58 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 22:43:58 | INFO     | main:process_document:530 - Successfully processed document: Listing-2-Scanned.jpg
+2025-05-27 22:44:56 | WARNING  | app.utils.document_validator:is_valid_real_estate_document:95 - File Seller-Report-4-Scanned.jpg does not match any real estate document patterns
+2025-05-27 22:44:56 | WARNING  | app.agents.document_ingest_agent:ingest_document:82 - File does not match standard naming patterns: Seller-Report-4-Scanned.jpg
+2025-05-27 22:44:56 | INFO     | app.agents.document_ingest_agent:ingest_document:110 - File saved: ./uploads\cab596e1-6e18-4b40-b1a9-444870344c67.jpg
+2025-05-27 22:44:59 | INFO     | app.agents.document_ingest_agent:ingest_document:152 - Document type detected: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:45:03 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:45:04 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\cab596e1-6e18-4b40-b1a9-444870344c67_preprocessed.jpg
+2025-05-27 22:45:04 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\cab596e1-6e18-4b40-b1a9-444870344c67_preprocessed.jpg
+2025-05-27 22:45:09 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 42.91
+2025-05-27 22:45:09 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from cab596e1-6e18-4b40-b1a9-444870344c67.jpg
+2025-05-27 22:45:09 | INFO     | app.agents.metadata_hashing_agent:process_document:38 - Generated metadata for Seller-Report-4-Scanned.jpg
+2025-05-27 22:45:13 | INFO     | app.agents.ocr_normalization_agent:process_document:278 - Detected document type: scanned_image, needs OCR: True, rotation: 0°
+2025-05-27 22:45:15 | INFO     | app.utils.ocr_preprocessor:preprocess_image:67 - Image preprocessed successfully: C:\Users\GSC-057\Desktop\panoramascore\uploads\cab596e1-6e18-4b40-b1a9-444870344c67_preprocessed.jpg
+2025-05-27 22:45:15 | INFO     | app.agents.ocr_normalization_agent:_process_image:614 - Starting OCR processing on C:\Users\GSC-057\Desktop\panoramascore\uploads\cab596e1-6e18-4b40-b1a9-444870344c67_preprocessed.jpg
+2025-05-27 22:45:20 | INFO     | app.agents.ocr_normalization_agent:_process_image:641 - OCR completed successfully with confidence: 42.91
+2025-05-27 22:45:20 | INFO     | app.agents.ocr_normalization_agent:process_document:325 - Successfully extracted text from cab596e1-6e18-4b40-b1a9-444870344c67.jpg
+2025-05-27 22:45:20 | INFO     | app.agents.nlu_extraction_agent:extract_fields:104 - Extracted 2 fields from document
+2025-05-27 22:45:20 | INFO     | main:process_document:468 - Calculated risk score: 50 based on extracted fields
+2025-05-27 22:45:21 | INFO     | app.agents.embedding_agent:generate_embedding:95 - Successfully generated embedding of dimension 1536
+2025-05-27 22:45:21 | INFO     | app.agents.embedding_agent:process_document:126 - Successfully processed document and generated embedding
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:21 | WARNING  | app.agents.rag_agent:store_embedding:250 - No checksum available for document_5423baf1-89ae-4750-9a04-91bb5b9fa949.pdf, using generated default
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:store_embedding:297 - Successfully stored embedding with ID: 5423baf1-89ae-4750-9a04-91bb5b9fa949
+2025-05-27 22:45:21 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:22 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:22 | INFO     | app.agents.rag_agent:_get_connection:114 - Attempting to connect to database postgres as user postgres...
+2025-05-27 22:45:22 | INFO     | app.agents.rag_agent:_get_connection:123 - Database connection successful with PG_* parameters
+2025-05-27 22:45:22 | INFO     | app.agents.rag_agent:find_similar_documents:368 - Found 3 similar documents
+2025-05-27 22:45:22 | INFO     | app.agents.rag_agent:process_document:479 - Successfully processed document through RAG pipeline
+2025-05-27 22:45:22 | INFO     | main:process_document:530 - Successfully processed document: Seller-Report-4-Scanned.jpg

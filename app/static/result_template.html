@@ -4,7 +4,457 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PanoramaScore - Analysis Results</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        
+        main {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 20px 0 15px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        /* Result cards */
+        .result-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .result-card h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .result-card h3 i {
+            margin-right: 10px;
+            color: #3498db;
+            font-size: 20px;
+        }
+        
+        /* Metadata display */
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-gap: 16px;
+        }
+        
+        .metadata-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #edf2f7;
+        }
+        
+        .metadata-label {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .metadata-value {
+            color: #334155;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        /* Risk indicator */
+        .risk-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .risk-score {
+            font-size: 36px;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, #3498db, #2980b9);
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 16px;
+            line-height: 1;
+        }
+        
+        .risk-band {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .risk-band.low {
+            background: linear-gradient(45deg, #2e7d32, #43a047);
+        }
+        
+        .risk-band.moderate {
+            background: linear-gradient(45deg, #f9a825, #fbc02d);
+        }
+        
+        .risk-band.high {
+            background: linear-gradient(45deg, #c62828, #e53935);
+        }
+        
+        /* Fields display */
+        .fields-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-top: 16px;
+        }
+        
+        .fields-table th {
+            background-color: #f1f5f9;
+            text-align: left;
+            padding: 14px 16px;
+            font-weight: 600;
+            color: #475569;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .fields-table td {
+            padding: 14px 16px;
+            border-top: 1px solid #f1f5f9;
+            color: #334155;
+        }
+        
+        .fields-table tr:hover td {
+            background-color: #f8fafc;
+        }
+        
+        .field-name {
+            font-weight: 600;
+            color: #334155;
+        }
+        
+        .field-value {
+            font-family: 'Courier New', monospace;
+            background: #f8fafc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .field-influence {
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        
+        .field-influence.positive {
+            color: #16a34a;
+            background-color: #dcfce7;
+        }
+        
+        .field-influence.negative {
+            color: #dc2626;
+            background-color: #fee2e2;
+        }
+        
+        .field-influence.neutral {
+            color: #64748b;
+            background-color: #f1f5f9;
+        }
+        
+        /* Copilot box */
+        .copilot-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+            border-left: 5px solid #3498db;
+            padding: 24px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .copilot-box::before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .copilot-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .copilot-title i {
+            margin-right: 10px;
+            color: #3498db;
+            font-size: 20px;
+        }
+        
+        .copilot-box p {
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        /* Similar documents table */
+        .similar-docs-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        
+        .similar-docs-table th {
+            background-color: #edf7ff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #d0e8fd;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        
+        .similar-docs-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #edf2f7;
+            background-color: #ffffff;
+            font-size: 15px;
+        }
+        
+        .similar-docs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .similar-docs-table tr:hover td {
+            background-color: #f8fbff;
+        }
+        
+        /* Similarity percentage */
+        .similarity-score {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #4A90E2, #5E9CEA);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(74, 144, 226, 0.2);
+        }
+        
+        /* Credits display */
+        .credits-display {
+            background: linear-gradient(135deg, #eef6fe 0%, #f0f7ff 100%);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 28px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e6eef8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .credits-display::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+            pointer-events: none;
+        }
+        
+        .credit-amount {
+            font-size: 32px;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, #4A90E2, #1abc9c);
+            background: linear-gradient(45deg, #4A90E2, #1abc9c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
+        }
+        
+        /* Action buttons */
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+            border: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+        
+        .action-button i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .action-button.secondary {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #495057;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .action-button.secondary:hover {
+            background: linear-gradient(45deg, #e9ecef, #f8f9fa);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Action buttons container */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px 0;
+            color: #5d6d7e;
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #e6eef8;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,36 +464,84 @@
         </header>
         
         <main>
-            <div class="result-section">
-                <h2>Document Analysis Results</h2>
+            <h2>Document Analysis Results</h2>
+            
+            <!-- Document Summary Section -->
+            <div class="result-card">
+                <h3><i class="fas fa-file-alt"></i> Document Summary</h3>
                 
-                <!-- Milestone 1: Document Ingestion & Metadata -->
-                <div class="result-card">
-                    <h3>Document Metadata</h3>
-                    <div class="metadata-section">
-                        {milestone1_content}
+                <!-- Risk Score & Band -->
+                <div class="risk-indicator">
+                    <div class="risk-score">{risk_score}</div>
+                    <div class="risk-band {risk_band_class}">{risk_band}</div>
+                </div>
+                
+                <!-- Document Metadata -->
+                <div class="metadata-grid">
+                    <div class="metadata-item">
+                        <div class="metadata-label">File Name</div>
+                        <div class="metadata-value">{file_name}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="metadata-label">Document Type</div>
+                        <div class="metadata-value">{document_type}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="metadata-label">Upload Date</div>
+                        <div class="metadata-value">{upload_date}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="metadata-label">File Size</div>
+                        <div class="metadata-value">{file_size}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="metadata-label">MIME Type</div>
+                        <div class="metadata-value">{mime_type}</div>
+                    </div>
+                    <div class="metadata-item">
+                        <div class="metadata-label">Page Count</div>
+                        <div class="metadata-value">{page_count}</div>
                     </div>
                 </div>
-                
-                <!-- Milestone 2: OCR & Field Extraction -->
-                <div class="result-card">
-                    <h3>Extracted Fields</h3>
-                    <div class="fields-section">
-                        {milestone2_content}
-                    </div>
+            </div>
+            
+            <!-- Extracted Fields Section -->
+            <div class="result-card">
+                <h3><i class="fas fa-list-alt"></i> Extracted Key Fields</h3>
+                <div class="fields-section">
+                    {milestone2_content}
                 </div>
-                
-                <!-- Milestone 3: Vector Similarity Search -->
-                <div class="result-card">
-                    <h3>RAG Results</h3>
-                    <div class="vector-section">
-                        {vector_search_section}
-                    </div>
+            </div>
+            
+            <!-- AI Recommendation Section -->
+            <div class="copilot-box">
+                <h4 class="copilot-title"><i class="fas fa-robot"></i> AI Analysis</h4>
+                <p>Based on the extracted fields and document content, this document appears to be a {document_type} with a risk score of {risk_score}, placing it in the {risk_band} risk category. {risk_analysis}</p>
+            </div>
+            
+            <!-- Similar Documents Section -->
+            <div class="result-card">
+                <h3><i class="fas fa-chart-network"></i> Similar Documents</h3>
+                <div class="vector-section">
+                    {vector_search_section}
                 </div>
-                
-                <div class="actions">
-                    <a href="/" class="button">Process Another Document</a>
+            </div>
+            
+            <!-- Credits Display -->
+            <div class="credits-display">
+                <div>
+                    <span>Available Lapis Credits:</span>
+                    <span class="credit-amount">{credits_remaining}</span>
                 </div>
+                <div>
+                    <span>Credits used for this analysis: <strong>5</strong></span>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="#" class="action-button"><i class="fas fa-download"></i> Download Risk Report</a>
+                <a href="/" class="action-button secondary"><i class="fas fa-plus"></i> Process Another Document</a>
             </div>
         </main>
         

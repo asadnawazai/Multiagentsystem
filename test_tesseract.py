@@ -17,7 +17,7 @@ def test_tesseract_installation():
         # Explicitly set the path to the Tesseract executable
         tesseract_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
         pytesseract.pytesseract.tesseract_cmd = tesseract_path
-        print(f"\n✅ Tesseract path: {tesseract_path}")
+        print(f"\nTesseract path: {tesseract_path}")
         
         version = pytesseract.get_tesseract_version()
         print(f"✅ Tesseract version: {version}")

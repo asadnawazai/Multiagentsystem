@@ -293,5 +293,298 @@
     },
     "missing_fields": [],
     "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 17:49:46",
+    "file_name": "eb8ff189-23ad-43e4-a27f-7313f011939d.pdf",
+    "extracted_fields": {
+      "parcel_id": "13-342-190-300000 Type: Single Family Residence Year Built: 1961 Lot Size: 0.072 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "tax_value": "$349,000",
+      "property_address": "2140 N Tripp Ave, Chicago, IL 60639 Parcel ID: 13-342-190-300000 Type: Single Family Residence Year Built: 1961 Lot Size: 0.072 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "flood_zone": "LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "amount": "$349,000",
+      "bedrooms": "4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "bathrooms": "2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "year_built": "1961 Lot Size: 0.072 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com",
+      "mls_number": "MLS_366262 Date: May 26, 2025 PROPERTY DETAILS Address: 2140 N Tripp Ave, Chicago, IL 60639 Parcel ID: 13-342-190-300000 Type: Single Family Residence Year Built: 1961 Lot Size: 0.072 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $349,000 Tax Assessed Value: $230,030 Annual Property Tax: $4,870 FEATURES AND AMENITIES Classic brick bungalow, hardwood floors, finished basement, detached garage, central AC SCHOOL INFORMATION PS Nixon Elementary (4/10), Kelvyn Park HS (1/10) REMARKS Updated mechanicals, move-in condition, fenced yard, no flood zone LISTING AGENT Alex Kruser, Fulton Grace Realty License #: 475168359 Phone: (815) 354-7532 Email: alex@fultongrace.com"
+    },
+    "missing_fields": [],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 17:51:16",
+    "file_name": "6d1ef677-91d3-4321-91ee-be43932c0e50.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-27 18:01:13",
+    "file_name": "99fb28d9-d515-4206-9b25-e3a881ef0abb.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-27 18:07:53",
+    "file_name": "be0a3108-3a6a-462f-a2d2-d1e33bbad3dd.pdf",
+    "extracted_fields": {
+      "parcel_id": "002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "tax_value": "$988,888",
+      "property_address": "152 Harvest Ave, Staten Island, NY 10310 Parcel ID: 002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "flood_zone": "LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "amount": "$988,888",
+      "bedrooms": "4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "bathrooms": "2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "year_built": "1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "mls_number": "MLS_980295 Date: May 26, 2025 PROPERTY DETAILS Address: 152 Harvest Ave, Staten Island, NY 10310 Parcel ID: 002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com"
+    },
+    "missing_fields": [],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 18:10:23",
+    "file_name": "93355dc4-208b-417b-a1fe-0ebe8a245476.pdf",
+    "extracted_fields": {
+      "parcel_id": "002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "tax_value": "$988,888",
+      "property_address": "152 Harvest Ave, Staten Island, NY 10310 Parcel ID: 002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "flood_zone": "LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "amount": "$988,888",
+      "bedrooms": "4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "bathrooms": "2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "year_built": "1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com",
+      "mls_number": "MLS_980295 Date: May 26, 2025 PROPERTY DETAILS Address: 152 Harvest Ave, Staten Island, NY 10310 Parcel ID: 002920066 Type: Single Family - Detached Year Built: 1935 (renovated 2025) Lot Size: 0.09 acres Bedrooms: 4 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $988,888 Tax Assessed Value: pending Annual Property Tax: pending FEATURES AND AMENITIES Fully renovated, new HVAC, granite kitchen, fenced yard, private deck SCHOOL INFORMATION PS 45 John Tyler (5/10), Curtis High School (3/10) REMARKS Full rehab completed in 2025, near ferry and express bus, no flood zone LISTING AGENT Loubna Abdarazzak, Compass Realty Central Inc. License #: 10401392155 Phone: (347) 682-9322 Email: loubna@compass.com"
+    },
+    "missing_fields": [],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 18:30:14",
+    "file_name": "606dc909-833c-4f3f-8214-f570ee9271be.pdf",
+    "extracted_fields": {
+      "parcel_id": "APN 262802522103003168 Type: Single Family Residential Year Built: 2022 Lot Size: 0.19 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "tax_value": "$260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "property_address": "920 Cambridge Dr, Winter Haven, FL 33881 Parcel ID: APN 262802522103003168 Type: Single Family Residential Year Built: 2022 Lot Size: 0.19 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "flood_zone": "not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "amount": "$295,000",
+      "bedrooms": "4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "bathrooms": "2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "year_built": "2022 Lot Size: 0.19 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288",
+      "mls_number": "MLS_821773 Date: May 26, 2025 PROPERTY DETAILS Address: 920 Cambridge Dr, Winter Haven, FL 33881 Parcel ID: APN 262802522103003168 Type: Single Family Residential Year Built: 2022 Lot Size: 0.19 acres Bedrooms: 4 Bathrooms: 2 FINANCIAL INFORMATION List Price: $295,000 Tax Value: $260,907 Annual Property Tax: $6,569 HOA Fees: $17/month FEATURES AND AMENITIES Fully finished basement, 2-car garage, open kitchen, energy efficient windows, fenced yard, irrigation system SCHOOL INFORMATION Fred G. Garner Elementary (3/10), Denison Middle (3/10), Winter Haven Senior High (2/10) REMARKS Short-sale home, upgraded in 2022 with modern appliances, roof, HVAC. Flood zone not indicated. LISTING AGENT Briana Willis, Global Advantage Realty LLC License #: FL 3482024 Phone: (848) 467-9288"
+    },
+    "missing_fields": [],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 18:41:23",
+    "file_name": "b6cdc296-e0b0-4415-bb14-aaaed5e09335.pdf",
+    "extracted_fields": {
+      "parcel_id": "9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "tax_value": "$429,000",
+      "property_address": "9805 Aurora Ave N, Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "amount": "$429,000",
+      "bedrooms": "1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "bathrooms": "1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "year_built": "2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "mls_number": "MLS_789458 Date: May 26, 2025 PROPERTY DETAILS Address: 9805 Aurora Ave N, Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com"
+    },
+    "missing_fields": [
+      "flood_zone"
+    ],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 18:51:24",
+    "file_name": "b416e9d6-ad69-40e8-ad1e-586ad19e2609.pdf",
+    "extracted_fields": {
+      "parcel_id": "1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "tax_value": "$699,000",
+      "property_address": "1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "amount": "$699,000",
+      "bedrooms": "2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "bathrooms": "2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "year_built": "2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "mls_number": "MLS_789457 Date: May 26, 2025 PROPERTY DETAILS Address: 1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com"
+    },
+    "missing_fields": [
+      "flood_zone"
+    ],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 22:28:20",
+    "file_name": "e67d4020-c9eb-4dfd-8188-20d827d983d6.pdf",
+    "extracted_fields": {
+      "parcel_id": "1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "tax_value": "$699,000",
+      "property_address": "1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "amount": "$699,000",
+      "bedrooms": "2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "bathrooms": "2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "year_built": "2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "mls_number": "MLS_789457 Date: May 26, 2025 PROPERTY DETAILS Address: 1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com"
+    },
+    "missing_fields": [
+      "flood_zone"
+    ],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 22:30:38",
+    "file_name": "679706bf-c604-455b-8df4-b33f1fece78c.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-27 22:37:41",
+    "file_name": "f205d7dd-f324-459b-b965-9d5309c86656.pdf",
+    "extracted_fields": {
+      "parcel_id": "9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "tax_value": "$429,000",
+      "property_address": "9805 Aurora Ave N, Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "amount": "$429,000",
+      "bedrooms": "1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "bathrooms": "1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "year_built": "2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com",
+      "mls_number": "MLS_789458 Date: May 26, 2025 PROPERTY DETAILS Address: 9805 Aurora Ave N, Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment, perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com"
+    },
+    "missing_fields": [
+      "flood_zone"
+    ],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-27 22:43:56",
+    "file_name": "58ce6854-73f3-4f72-84e6-02e18a68f505.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-27 22:45:20",
+    "file_name": "cab596e1-6e18-4b40-b1a9-444870344c67.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 01:19:07",
+    "file_name": "3e0682f9-c459-400f-b3f5-c10e9dbb7b9e.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 01:24:07",
+    "file_name": "4600e0e2-7007-4b47-82e7-39ab18f45ea1.pdf",
+    "extracted_fields": {
+      "parcel_id": "APN-77889-9900 Property Type: Residential - Townhouse Year Built: 2018 Square Footage: 2,200 sq.ft. Lot Size: 0.12 acres Bedrooms: 3 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "tax_value": "$600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "property_address": "321 Cedar Avenue, Austin, TX 78701 Parcel ID: APN-77889-9900 Property Type: Residential - Townhouse Year Built: 2018 Square Footage: 2,200 sq.ft. Lot Size: 0.12 acres Bedrooms: 3 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "flood_zone": "X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "amount": "$675,000",
+      "bedrooms": "3 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "bathrooms": "2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "year_built": "2018 Square Footage: 2,200 sq.ft. Lot Size: 0.12 acres Bedrooms: 3 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example",
+      "mls_number": "MLS_901234 Date: May 25, 2025 PROPERTY DETAILS Property Address: 321 Cedar Avenue, Austin, TX 78701 Parcel ID: APN-77889-9900 Property Type: Residential - Townhouse Year Built: 2018 Square Footage: 2,200 sq.ft. Lot Size: 0.12 acres Bedrooms: 3 Bathrooms: 2.5 FINANCIAL INFORMATION List Price: $675,000 Tax Value: $600,000 Annual Property Tax: $7,500 HOA Fees: $200 monthly FEATURES AND AMENITIES \u25cf Modern open concept floor plan \u25cf Stainless steel appliances and quartz countertops \u25cf Hardwood and tile flooring \u25cf Two-car garage with direct access \u25cf Community pool and fitness center \u25cf Energy-efficient HVAC system \u25cf Smart thermostat and lighting system \u25cf Close to downtown amenities SCHOOL INFORMATION Elementary School: Oak Hill Elementary (Rating: 8/10) Middle School: Hill Middle School (Rating: 8/10) High School: Austin High School (Rating: 9/10) REMARKS Contemporary townhouse in a vibrant Austin neighborhood. Low-maintenance yard and community features provide great lifestyle options. Flood zone: X (minimal flood risk). Seller is open to offers. LISTING AGENT David Martinez Lone Star Realty License #: BRE-55667788 Phone: (512) 555-1212 Email: david.martinez@lonestarrealty.example"
+    },
+    "missing_fields": [],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-28 01:33:02",
+    "file_name": "95c770b4-9cf3-4a1c-96ee-df07e44945e2.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 01:33:42",
+    "file_name": "34a5e8d2-72fe-44a6-a792-63836101f41a.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
   }
 ]

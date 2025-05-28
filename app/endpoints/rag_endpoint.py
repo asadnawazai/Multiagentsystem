@@ -256,32 +256,33 @@ class RAGEndpoint:
                 recommendation_text = f"It is similar ({similarity:.0f}%) to a previously uploaded document, which had a risk score of {top_doc.get('risk_score', 'unknown')}."
             recommendation_text += " Please review the contributing factors for final decision."
             
-            # Format similar documents as table rows
+            # Format similar documents as table rows - Clean, minimal design
             similar_documents_html = ""
             if rag_result.get('similar_documents') and len(rag_result['similar_documents']) > 0:
                 for i, doc in enumerate(rag_result['similar_documents'], 1):
+                    # Get document info
                     similarity = doc.get('similarity', 0) * 100  # Convert to percentage
                     risk_score = doc.get('risk_score', 'N/A')
                     
-                    # Format matching fields
-                    match_fields_html = ""
-                    if doc.get('fields'):
-                        for field_name, field_value in doc['fields'].items():
-                            if isinstance(field_value, (dict, list)) or field_name.startswith('_') or field_name in ['file_checksum']:
-                                continue
-                            match_fields_html += f"<span class='match-field'>`{field_name}`: {field_value}</span> "
+                    # Get filename or doc identifier
+                    doc_name = "Unknown Document"
+                    if doc.get('fields') and 'file_name' in doc['fields']:
+                        doc_name = doc['fields']['file_name']
+                    elif 'id' in doc:
+                        doc_name = f"Document {doc['id'][-8:]}"
                     
-                    # Emoji for the match number
-                    emoji = "1️⃣" if i == 1 else ("2️⃣" if i == 2 else ("3️⃣" if i == 3 else f"{i}"))
-                    # Format similar document row
+                    # Clean up doc name if needed
+                    if len(doc_name) > 30:
+                        doc_name = doc_name[:27] + '...'
+                    
+                    # Create clean, minimal row
                     similar_documents_html += f"<tr>"
-                    similar_documents_html += f"<td>{emoji}</td>"
-                    similar_documents_html += f"<td><span class='similarity-score'>{similarity:.2f}%</span></td>"
+                    similar_documents_html += f"<td>{doc_name}</td>"
+                    similar_documents_html += f"<td><span class='similarity-score'>{similarity:.0f}%</span></td>"
                     similar_documents_html += f"<td>{risk_score}</td>"
-                    similar_documents_html += f"<td>{match_fields_html}</td>"
                     similar_documents_html += f"</tr>"
             else:
-                similar_documents_html = "<tr><td colspan='4'>No similar documents found. This appears to be the first document of this type.</td></tr>"
+                similar_documents_html = "<tr><td colspan='3'><em>No similar documents found. This appears to be the first document of this type.</em></td></tr>"
             
             # Get file metadata from the result
             file_size = "Unknown"

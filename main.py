@@ -1,5 +1,6 @@
 import os
 import json
+from datetime import datetime
 from typing import Optional, Union, Dict, Any, List, Tuple
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Depends, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -546,10 +547,123 @@ async def process_document(
             with open("./app/static/result_template.html", "r") as file:
                 html_template = file.read()
             
+            # Get risk score and band information
+            risk_score = result.get('risk_score', 50)  # Default to 50 if not present
+            
+            # Determine risk band based on score
+            risk_band = "Low Risk"
+            risk_band_class = "low"
+            if risk_score >= 70:
+                risk_band = "High Risk"
+                risk_band_class = "high"
+            elif risk_score >= 40:
+                risk_band = "Moderate Risk"
+                risk_band_class = "moderate"
+            
+            # Get field values for risk analysis
+            extracted_fields = result.get('fields', {})
+            
+            # Format field names to be more human-readable
+            readable_fields = []
+            important_fields = ['property_address', 'price', 'amount', 'tax_value', 'parcel_id', 'name', 'date']
+            
+            # First add important fields that exist
+            for field in important_fields:
+                if field in extracted_fields and extracted_fields[field]:
+                    value = extracted_fields[field]
+                    if field == 'amount' or field == 'price' or field == 'tax_value':
+                        # Add dollar sign to monetary values if not present
+                        if isinstance(value, str) and not value.startswith('$'):
+                            value = f'${value}'
+                    readable_fields.append(f"'{field}' ({value})")
+            
+            # Then add any other fields that weren't in the important list
+            for k, v in extracted_fields.items():
+                if k not in important_fields and k != 'text' and v:
+                    readable_fields.append(f"'{k}'")
+            
+            # Join the field names with commas
+            if readable_fields:
+                field_names_text = ', '.join(readable_fields)
+            else:
+                field_names_text = "the document content and metadata"
+            
+            # Generate risk analysis text
+            risk_analysis = f"Key factors influencing this assessment include {field_names_text}."
+            
+            # Get file metadata with better fallbacks
+            # Try to get filename from multiple possible sources
+            file_name = result.get('file_name', 
+                       result.get('original_filename', 
+                       result.get('filename', 
+                       validation_info.get('original_filename', 'Unknown'))))
+            
+            # Try to get document type from extracted fields or fallback to result
+            document_type = 'Unknown Document'
+            if 'fields' in result and isinstance(result['fields'], dict):
+                # Check if document_type is in the extracted fields
+                if 'document_type' in result['fields']:
+                    document_type = result['fields']['document_type']
+                # If MLS is in fields, it's likely an MLS report
+                elif any(field for field in ['mls', 'MLS'] if field in result['fields']):
+                    document_type = 'MLS Report'
+            # Fallback to the document_type in the result if not found in fields
+            if document_type == 'Unknown Document':
+                document_type = result.get('document_type', 'Real Estate Document')
+            
+            # Get upload date, file size, mime type, and page count
+            upload_date = datetime.now().strftime('%Y-%m-%d')
+            
+            # Get file size from validation info if available
+            file_size = 'Unknown'
+            if 'validation_info' in result and 'file_size_formatted' in result['validation_info']:
+                file_size = result['validation_info']['file_size_formatted']
+            else:
+                file_size = result.get('file_size_formatted', 
+                           result.get('filesize_formatted', 'Unknown'))
+                
+            # Get mime type from validation info if available
+            mime_type = 'Unknown'
+            if 'validation_info' in result and 'mime_type' in result['validation_info']:
+                mime_type = result['validation_info']['mime_type']
+            else:
+                mime_type = result.get('mime_type', 
+                            result.get('content_type', 'Unknown'))
+                
+            # Get page count
+            page_count = result.get('page_count', '1')
+            
+            # Get credits information from our existing service
+            credits_remaining = 25  # Default value if we can't get actual credits
+            try:
+                # Check if client_id exists and use the existing credit_service
+                if client_id:
+                    credits_remaining = credit_service.get_remaining_credits(client_id)
+            except Exception as e:
+                logger.error(f"Error getting credits: {str(e)}")
+                # Fall back to default value
+            
             # Replace the placeholders with content
             html_content = html_template.replace("{milestone1_content}", milestone1_content)
             html_content = html_content.replace("{milestone2_content}", milestone2_content)
             html_content = html_content.replace("{vector_search_section}", vector_search_section)
+            
+            # Replace risk score and band
+            html_content = html_content.replace("{risk_score}", str(risk_score))
+            html_content = html_content.replace("{risk_band}", risk_band)
+            html_content = html_content.replace("{risk_band_class}", risk_band_class)
+            html_content = html_content.replace("{risk_analysis}", risk_analysis)
+            
+            # Replace metadata
+            html_content = html_content.replace("{file_name}", file_name)
+            html_content = html_content.replace("{document_type}", document_type)
+            html_content = html_content.replace("{upload_date}", upload_date)
+            html_content = html_content.replace("{file_size}", file_size)
+            html_content = html_content.replace("{mime_type}", mime_type)
+            html_content = html_content.replace("{page_count}", str(page_count))
+            
+            # Replace credits
+            html_content = html_content.replace("{credits_remaining}", str(credits_remaining))
             
             # Return the HTML response
             return HTMLResponse(content=html_content, status_code=200)

@@ -1260,6 +1260,21 @@ fields:
         \ Ge Copyright 2026 Re snot glarsiteed: Ec al ousting Oppo a LC oo lo Fen\
         \ eee oe oe ee ae \u2018 a Se eae FS Ee eee Be ee se ena | @ RPR: \u2014 Se\
         \ : ee ee PE en coe oo Pe 0 eee rc (2212025, Vo"
+      - '9988776655 Type: Apartment Year Built: 2020 Lot Size: 0.050 acres Bedrooms:
+        1 Bathrooms: 1 FINANCIAL INFORMATION List Price: $429,000 Tax Assessed Value:
+        $410,000 Annual Property Tax: $4,500 FEATURES AND AMENITIES Balcony, secure
+        entry, community room, on-site management SCHOOL INFORMATION Licton Springs
+        K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property Report - New Listing
+        Affordable modern apartment, perfect for young professionals. LISTING AGENT
+        Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468 Email:
+        tomj@kw.com'
+      - '1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms:
+        2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value:
+        $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio,
+        modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary
+        (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic
+        townhouse in Capitol Hill. Close to amenities, great walkability. LISTING
+        AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com'
   tax_value:
     weight: 0.3
     thresholds:
@@ -2537,6 +2552,22 @@ fields:
         \ Ge Copyright 2026 Re snot glarsiteed: Ec al ousting Oppo a LC oo lo Fen\
         \ eee oe oe ee ae \u2018 a Se eae FS Ee eee Be ee se ena | @ RPR: \u2014 Se\
         \ : ee ee PE en coe oo Pe 0 eee rc (2212025, Vo"
+      - '9805 Aurora Ave N, Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment
+        Year Built: 2020 Lot Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL
+        INFORMATION List Price: $429,000 Tax Assessed Value: $410,000 Annual Property
+        Tax: $4,500 FEATURES AND AMENITIES Balcony, secure entry, community room,
+        on-site management SCHOOL INFORMATION Licton Springs K-8 (7/10), Ingraham
+        High (8/10) REMARKS MLS Property Report - New Listing Affordable modern apartment,
+        perfect for young professionals. LISTING AGENT Tom Johnson, Keller Williams
+        License #: 66789 Phone: (206) 555-2468 Email: tomj@kw.com'
+      - '1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse
+        Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL
+        INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property
+        Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging,
+        pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10)
+        REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill.
+        Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License
+        #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com'
   flood_zone:
     weight: 0.3
     thresholds:
@@ -2879,6 +2910,24 @@ fields:
         MLS Property Report - New Listing Stately historic home with charm and modern
         updates. Must see! LISTING AGENT Emily Carter, Compass License #: 12345 Phone:
         (206) 555-1357 Email: emily@compass.com'
+      - 'MLS_789458 Date: May 26, 2025 PROPERTY DETAILS Address: 9805 Aurora Ave N,
+        Seattle, WA 98103 Parcel ID: 9988776655 Type: Apartment Year Built: 2020 Lot
+        Size: 0.050 acres Bedrooms: 1 Bathrooms: 1 FINANCIAL INFORMATION List Price:
+        $429,000 Tax Assessed Value: $410,000 Annual Property Tax: $4,500 FEATURES
+        AND AMENITIES Balcony, secure entry, community room, on-site management SCHOOL
+        INFORMATION Licton Springs K-8 (7/10), Ingraham High (8/10) REMARKS MLS Property
+        Report - New Listing Affordable modern apartment, perfect for young professionals.
+        LISTING AGENT Tom Johnson, Keller Williams License #: 66789 Phone: (206) 555-2468
+        Email: tomj@kw.com'
+      - 'MLS_789457 Date: May 26, 2025 PROPERTY DETAILS Address: 1523 E Pine St Unit
+        B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023
+        Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List
+        Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES
+        AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL
+        INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property
+        Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great
+        walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206)
+        555-6789 Email: saralee@redfin.com'
 document_patterns:
 - CRS_Property_Report_*
 - Zoning_*

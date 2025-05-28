@@ -7,204 +7,424 @@
     <link rel="stylesheet" href="/static/styles.css">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f5f7fa;
+            background-color: #f4f8fb;
             margin: 0;
             padding: 0;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px;
         }
         
         header {
             text-align: center;
-            padding: 20px 0;
+            padding: 28px 0;
             margin-bottom: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #4A90E2;
         }
         
         h1 {
             margin: 0;
             color: #2c3e50;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
-            color: #7f8c8d;
-            margin-top: 5px;
+            color: #5d6d7e;
+            margin-top: 6px;
+            font-weight: 500;
         }
         
         .section-title {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            font-size: 20px;
             color: #2c3e50;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px;
+            border-bottom: none;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
         
-        /* Data tables */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #4A90E2;
+            border-radius: 3px;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #4A90E2;
+            font-size: 22px;
+        }
+        
+        /* Card styles */
+        .card {
             background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 28px;
+            margin-bottom: 28px;
+            border-top: 1px solid #e6eef8;
+            border-left: 1px solid #e6eef8;
+            transition: all 0.3s ease;
         }
         
-        .data-table th {
-            background-color: #f8f9fa;
-            padding: 15px;
-            text-align: left;
+        .card:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        
+        /* Summary card with document info */
+        .summary-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f4f9ff 100%);
+            border-left: 5px solid #4A90E2;
+        }
+        
+        .summary-item {
+            flex: 1 1 200px;
+            margin-bottom: 16px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .summary-label {
+            font-size: 14px;
+            color: #5d6d7e;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-value {
+            font-size: 18px;
             font-weight: 600;
             color: #2c3e50;
-            border-bottom: 2px solid #e9ecef;
         }
         
-        .data-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e9ecef;
+        /* Risk score display */
+        .risk-score-display {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
         }
         
-        .data-table tr:last-child td,
-        .data-table tr:last-child th {
-            border-bottom: none;
+        .risk-score-number {
+            font-size: 42px;
+            font-weight: 700;
+            margin-right: 16px;
+            background: -webkit-linear-gradient(45deg, #3498db, #1abc9c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
         }
         
         /* Risk indicators */
         .risk-badge {
             display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
             color: white;
             margin-left: 8px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-transform: uppercase;
         }
         
         .risk-high {
-            background-color: #E74C3C;
+            background: linear-gradient(45deg, #c62828, #e53935);
+            border: 1px solid rgba(198, 40, 40, 0.2);
         }
         
         .risk-moderate {
-            background-color: #F39C12;
+            background: linear-gradient(45deg, #f9a825, #fbc02d);
+            border: 1px solid rgba(249, 168, 37, 0.2);
         }
         
         .risk-low {
-            background-color: #2ECC71;
+            background: linear-gradient(45deg, #2e7d32, #43a047);
+            border: 1px solid rgba(46, 125, 50, 0.2);
         }
         
-        /* Match number indicator */
-        .match-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
+        /* Extracted fields table */
+        .fields-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
         
-        /* Similarity score */
-        .similarity-score {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            background-color: #4A90E2;
-            color: white;
-            font-weight: bold;
-        }
-        
-        /* Match fields */
-        .match-field {
-            display: inline-block;
-            background-color: #EBF5FB;
-            border-radius: 4px;
-            padding: 4px 8px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            font-family: monospace;
-        }
-        
-        /* Recommendation box */
-        .recommendation-box {
-            background-color: #e8f4fd;
-            border-left: 5px solid #3498db;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .recommendation-title {
+        .fields-table th {
+            background-color: #e3f2fd;
+            padding: 14px 16px;
+            text-align: left;
             font-weight: 600;
             color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 10px;
+            border-bottom: 2px solid #c5e1fd;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
         }
         
-        .similar-doc-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 16px;
+        .fields-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #edf2f7;
+            background-color: #ffffff;
+            font-size: 15px;
+        }
+        
+        .fields-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .fields-table tr:hover td {
+            background-color: #f8fbff;
+        }
+        
+        .influence-up {
+            color: #2e7d32;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .influence-up::before {
+            content: '⬆';
+            margin-right: 6px;
+            font-size: 16px;
+        }
+        
+        .influence-down {
+            color: #c62828;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .influence-down::before {
+            content: '⬇';
+            margin-right: 6px;
+            font-size: 16px;
+        }
+        
+        /* Copilot box */
+        .copilot-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+            border-left: 5px solid #3498db;
+            padding: 24px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .copilot-box::before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .copilot-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0;
             margin-bottom: 16px;
-            background-color: white;
-        }
-        
-        .similar-doc-card h4 {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-top: 0;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
         }
         
-        .match-properties {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
+        .copilot-title i {
+            margin-right: 10px;
+            color: #3498db;
+            font-size: 20px;
         }
         
-        .match-property {
-            background-color: #EBF5FB;
-            border-radius: 4px;
-            padding: 4px 8px;
-            font-size: 0.85rem;
+        .copilot-box p {
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 16px;
         }
         
+        /* Similar documents table */
+        .similar-docs-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        
+        .similar-docs-table th {
+            background-color: #edf7ff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #d0e8fd;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        
+        .similar-docs-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #edf2f7;
+            background-color: #ffffff;
+            font-size: 15px;
+        }
+        
+        .similar-docs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .similar-docs-table tr:hover td {
+            background-color: #f8fbff;
+        }
+        
+        /* Similarity percentage */
+        .similarity-score {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #4A90E2, #5E9CEA);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(74, 144, 226, 0.2);
+        }
+        
+        /* Credits display */
         .credits-display {
-            background: #F0F7FF;
-            border-radius: 6px;
-            padding: 1rem;
-            margin: 1rem 0;
+            background: linear-gradient(135deg, #eef6fe 0%, #f0f7ff 100%);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 28px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e6eef8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .credits-display::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+            pointer-events: none;
         }
         
         .credit-amount {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4A90E2;
+            font-size: 32px;
+            font-weight: 700;
+            background: -webkit-linear-gradient(45deg, #4A90E2, #1abc9c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
         }
         
-        .credit-alert {
-            background-color: #FDEBD0;
-            border-left: 4px solid #F39C12;
-            padding: 8px 16px;
-            margin: 16px 0;
+        /* Action buttons */
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+            border: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, #3498db);
+        }
+        
+        .action-button i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .action-button.secondary {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #495057;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .action-button.secondary:hover {
+            background: linear-gradient(45deg, #e9ecef, #f8f9fa);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Action buttons container */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px 0;
+            color: #5d6d7e;
+            font-size: 14px;
+            margin-top: 40px;
+            border-top: 1px solid #e6eef8;
         }
     </style>
 </head>
@@ -216,93 +436,116 @@
         </header>
         
         <main>
-            <h2 class="section-title">Current Document Summary</h2>
+            <!-- 1. Document Summary Section -->
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> Document Summary</h2>
             
-            <table class="data-table">
-                <tbody>
-                    <tr>
-                        <th>Document Type</th>
-                        <td>{{document_type}}</td>
-                    </tr>
-                    <tr>
-                        <th>Upload Date</th>
-                        <td>{{upload_date}}</td>
-                    </tr>
-                    <tr>
-                        <th>File Name</th>
-                        <td>{{file_name}}</td>
-                    </tr>
-                    <tr>
-                        <th>File Size</th>
-                        <td>{{file_size}}</td>
-                    </tr>
-                    <tr>
-                        <th>MIME Type</th>
-                        <td>{{mime_type}}</td>
-                    </tr>
-                    <tr>
-                        <th>Page Count</th>
-                        <td>{{page_count}}</td>
-                    </tr>
-                    <tr>
-                        <th>Extraction Method</th>
-                        <td>{{extraction_method}}</td>
-                    </tr>
-                    <tr>
-                        <th>OCR Confidence</th>
-                        <td>{{ocr_confidence}}</td>
-                    </tr>
-                    <tr>
-                        <th>Amount</th>
-                        <td>{{amount}}</td>
-                    </tr>
-                    <tr>
-                        <th>Risk Score</th>
-                        <td>
-                            <strong>{{risk_score}}</strong>
-                            <span class="risk-badge {{risk_class}}">{{risk_band}}</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Risk Factors</th>
-                        <td>{{risk_factors}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="recommendation-box">
-                <h4 class="recommendation-title">Copilot Recommendation</h4>
-                <p>This document shows a <strong>{{risk_band}} risk score of {{risk_score}}</strong>.
-                {{recommendation_text}}</p>
+            <div class="card summary-card">
+                <div class="summary-item">
+                    <div class="summary-label">File Name</div>
+                    <div class="summary-value">{{file_name}}</div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-label">Document Type</div>
+                    <div class="summary-value">{{document_type}}</div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-label">Upload Date</div>
+                    <div class="summary-value">{{upload_date}}</div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-label">Risk Assessment</div>
+                    <div class="risk-score-display">
+                        <span class="risk-score-number">{{risk_score}}</span>
+                        <span class="risk-badge {{risk_class}}">{{risk_band}}</span>
+                    </div>
+                </div>
             </div>
-
-            <h2 class="section-title">Similar Documents (RAG Matches)</h2>
-            <p>These are past documents most similar to the one you uploaded. They're used to provide additional context.</p>
             
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Match #</th>
-                        <th>Similarity</th>
-                        <th>Risk Score</th>
-                        <th>Match Fields</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{similar_documents}}
-                </tbody>
-            </table>
+            <!-- 2. Extracted Key Fields -->
+            <h2 class="section-title"><i class="fas fa-table"></i> Key Fields Extracted</h2>
             
+            <div class="card">
+                <table class="fields-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                            <th>Influence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically generate from key fields only -->
+                        <!-- Amount Field -->
+                        {{#if amount}}
+                        <tr>
+                            <td>Amount</td>
+                            <td>{{amount}}</td>
+                            <td><span class="influence-down">⬇ High Risk</span></td>
+                        </tr>
+                        {{/if}}
+                        
+                        <!-- Other key fields would be dynamically inserted here -->
+                        
+                        <!-- Risk Factors -->
+                        <tr>
+                            <td colspan="3">
+                                <strong>Contributing Factors:</strong> {{risk_factors}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 3. Natural Language Copilot Summary -->
+            <h2 class="section-title"><i class="fas fa-brain"></i> AI-Powered Risk Analysis</h2>
+            
+            <div class="copilot-box">
+                <h4 class="copilot-title"><i class="fas fa-robot"></i> PanoramaScore Copilot</h4>
+                <p>This document is rated <strong>{{risk_band}}</strong> with a score of <strong>{{risk_score}}</strong>. {{recommendation_text}}</p>
+            </div>
+            
+            <!-- 4. RAG Results (If Vector DB Connected) -->
+            <h2 class="section-title"><i class="fas fa-search"></i> Similar Documents</h2>
+            
+            <div class="card">
+                <table class="similar-docs-table">
+                    <thead>
+                        <tr>
+                            <th>Similar Document</th>
+                            <th>Similarity</th>
+                            <th>Risk Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{similar_documents}}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Credits Display -->
             <div class="credits-display">
                 <div>
                     <span>Remaining Lapis Credits:</span>
                 </div>
                 <div class="credit-amount">{{credits_remaining}}</div>
             </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="#" class="action-button"><i class="fas fa-download"></i> Download Risk Report</a>
+                <a href="/" class="action-button secondary"><i class="fas fa-plus"></i> Process Another Document</a>
+            </div>
+        </main>
         
         <footer>
             <p>&copy; 2025 PanoramaScore. All rights reserved.</p>
         </footer>
     </div>
+    
+    <!-- Add Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
