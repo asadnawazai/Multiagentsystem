@@ -93,6 +93,118 @@ class OCRPreprocessor:
         else:
             return image
     
+    def _preprocess_image(self, image: np.ndarray) -> np.ndarray:
+        """Apply preprocessing steps to image for better OCR results.
+        
+        Args:
+            image: Input image as numpy array
+            
+        Returns:
+            Preprocessed image
+        """
+        
+        # First check if this appears to be a form document
+        if self._is_likely_form(image):
+            return self.preprocess_form_document(image)
+            
+        # If not a form, apply standard preprocessing
+        # Step 1: Convert to grayscale if it's not already
+        if len(image.shape) == 3:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        else:
+            gray = image
+            binary = cv2.adaptiveThreshold(
+                gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                cv2.THRESH_BINARY, 11, 2
+            )
+            
+            # Step 4: Noise removal (optional)
+            kernel = np.ones((1, 1), np.uint8)
+            binary = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
+            
+            # Step 5: Deskew text (correct slight rotations)
+            deskewed = self._deskew(binary)
+            
+            return deskewed
+    
+    def _is_likely_form(self, image: np.ndarray) -> bool:
+        """Detect if image is likely a structured form document.
+        
+        Args:
+            image: Input image as numpy array
+            
+        Returns:
+            True if image appears to be a form document
+        """
+        # Convert to grayscale if it's not already
+        if len(image.shape) == 3:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        else:
+            gray = image
+            
+        # Look for horizontal and vertical lines which are common in forms
+        # Detect edges
+        edges = cv2.Canny(gray, 50, 150, apertureSize=3)
+        
+        # Detect lines using HoughLinesP
+        lines = cv2.HoughLinesP(edges, 1, np.pi/180, threshold=100, minLineLength=100, maxLineGap=10)
+        
+        if lines is None:
+            return False
+            
+        # Count horizontal and vertical lines
+        horizontal_lines = 0
+        vertical_lines = 0
+        
+        for line in lines:
+            x1, y1, x2, y2 = line[0]
+            # Calculate angle
+            angle = np.abs(np.arctan2(y2 - y1, x2 - x1) * 180.0 / np.pi)
+            
+            # Horizontal lines have angles close to 0 or 180
+            if angle < 5 or angle > 175:
+                horizontal_lines += 1
+            # Vertical lines have angles close to 90
+            elif 85 < angle < 95:
+                vertical_lines += 1
+                
+        # If we have several horizontal and vertical lines, it's likely a form
+        return horizontal_lines >= 5 and vertical_lines >= 5
+        
+    def preprocess_form_document(self, image: np.ndarray) -> np.ndarray:
+        """Special preprocessing for form documents.
+        
+        Args:
+            image: Input image as numpy array
+            
+        Returns:
+            Preprocessed form image optimized for OCR
+        """
+        # Convert to grayscale if it's not already
+        if len(image.shape) == 3:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        else:
+            gray = image
+            
+        # Apply adaptive thresholding to handle varying background
+        # This works better for forms with boxes and lines
+        binary = cv2.adaptiveThreshold(
+            gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+            cv2.THRESH_BINARY, 11, 2
+        )
+        
+        # Dilate to fill in small holes in text
+        kernel = np.ones((2, 2), np.uint8)
+        dilated = cv2.dilate(binary, kernel, iterations=1)
+        
+        # Erode to reduce thickness of lines and boxes
+        eroded = cv2.erode(dilated, kernel, iterations=1)
+        
+        # Apply a slight Gaussian blur to smooth out noise while preserving text
+        blurred = cv2.GaussianBlur(eroded, (3, 3), 0)
+        
+        return blurred
+    
     def _deskew(self, image: np.ndarray) -> np.ndarray:
         """Deskew an image to straighten text lines.
         

@@ -33,6 +33,14 @@ class YAMLAdapter:
         except Exception as e:
             logger.error(f"Error loading YAML config: {e}")
             return {}
+            
+    def load_config(self) -> Dict[str, Any]:
+        """Public method to load or return the YAML configuration.
+        
+        Returns:
+            Dict containing the YAML configuration
+        """
+        return self.config
     
     def _save_config(self) -> bool:
         """Save the current configuration to the YAML file.

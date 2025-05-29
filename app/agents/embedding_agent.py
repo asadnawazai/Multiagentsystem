@@ -19,13 +19,19 @@ class EmbeddingAgent:
         """
         # Initialize OpenAI client
         try:
-            self.api_key = openai_api_key or os.getenv("OPENAI_API_KEY")
+            # First try the provided key, then try environment variables with multiple possible names
+            self.api_key = openai_api_key or os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_KEY")
+            
+            # Clean the key if it's quoted
+            if self.api_key and (self.api_key.startswith('"') or self.api_key.startswith("'")):
+                self.api_key = self.api_key.strip('"').strip("'")
+                
             if not self.api_key:
                 raise ValueError("OpenAI API key not provided and not found in environment variables")
                 
             # Just validate the API key format, don't make a real API call yet
-            if not (self.api_key.startswith("sk-") or self.api_key.startswith("sk-proj-")):
-                raise ValueError("Invalid OpenAI API key format")
+            if not (self.api_key.startswith("sk-")):
+                logger.warning(f"API key format may be invalid: {self.api_key[:10]}...")
                 
             self.client = OpenAI(api_key=self.api_key, timeout=3.0)  # Short timeout
             logger.info("Embedding Agent initialized successfully")
@@ -56,10 +62,18 @@ class EmbeddingAgent:
         # Create a formatted string from the fields
         text_parts = []
         
+        # First, prioritize the full extracted text if available
+        if 'extracted_text' in fields and fields['extracted_text'] and fields['extracted_text'] != 'Not Found':
+            return fields['extracted_text']
+        
+        if 'text' in fields and fields['text'] and fields['text'] != 'Not Found':
+            return fields['text']
+            
+        # If no full text is available, use structured fields
         # Add all fields in a consistent format
         for key, value in fields.items():
-            # Skip empty values
-            if not value:
+            # Skip empty values, 'Not Found' values, and metadata fields
+            if not value or value == 'Not Found' or key in ['extracted_text', 'text']:
                 continue
                 
             # Format the field key (snake_case to Title Case)

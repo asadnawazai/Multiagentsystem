@@ -1,212 +1,234 @@
 import os
 import re
-import yaml
 import hashlib
-from typing import Dict, List, Tuple, Optional
+import psycopg2
+from typing import List, Dict, Optional, Tuple, Any
 from loguru import logger
+from app.utils.yaml_adapter import YAMLAdapter
 
+# Database connection settings - using default values if not in environment
+PG_HOST = os.getenv("PG_HOST", "localhost")
+PG_PORT = os.getenv("PG_PORT", "5432")
+PG_USER = os.getenv("PG_USER", "postgres")
+PG_PASSWORD = os.getenv("PG_PASSWORD", "postgres")
+PG_DATABASE = os.getenv("PG_DATABASE", "postgres")
 
 class DocumentValidator:
-    """Utility for validating document integrity and real estate document types."""
+    """Validator for real estate documents.
     
-    def __init__(self, config_path: str, uploads_folder: str):
+    This class validates documents based on configured patterns for real estate documents
+    and checks for duplicates in the database by using file checksums.
+    """
+    
+    def __init__(self, config_path: str, upload_folder: str):
         """Initialize the document validator.
         
         Args:
-            config_path: Path to the YAML configuration file
-            uploads_folder: Path to the uploads folder where documents are stored
+            config_path: Path to the configuration file
+            upload_folder: Path to the upload folder
         """
         self.config_path = config_path
-        self.uploads_folder = uploads_folder
-        self.document_patterns = []
-        self.critical_fields = []
-        self.checksums = {}
-        self._load_config()
-        self._load_existing_checksums()
-    
-    def _load_config(self) -> None:
-        """Load the document configuration from YAML file."""
-        try:
-            with open(self.config_path, 'r') as file:
-                config = yaml.safe_load(file)
-                
-            self.document_patterns = config.get('document_patterns', [])
-            self.critical_fields = config.get('critical_fields', [])
-            logger.info(f"Loaded document patterns: {self.document_patterns}")
-        except Exception as e:
-            logger.error(f"Error loading document config: {e}")
-            # Set defaults if config loading fails
-            self.document_patterns = ["CRS_Property_Report_*", "Zoning_*", "MLS_*"]
-            self.critical_fields = ["parcel_id", "tax_value", "property_address"]
-    
-    def _load_existing_checksums(self) -> None:
-        """Load existing checksums from previously processed files."""
-        try:
-            # Create checksums directory if it doesn't exist
-            checksums_path = os.path.join(self.uploads_folder, "checksums")
-            os.makedirs(checksums_path, exist_ok=True)
-            
-            # Load existing checksums from a file if it exists
-            checksums_file = os.path.join(checksums_path, "file_checksums.txt")
-            
-            if os.path.exists(checksums_file):
-                with open(checksums_file, 'r') as f:
-                    for line in f:
-                        parts = line.strip().split('|')
-                        if len(parts) >= 3:
-                            filename, file_size, checksum = parts[:3]
-                            self.checksums[filename] = {'size': file_size, 'checksum': checksum}
-                            
-            logger.info(f"Loaded {len(self.checksums)} existing checksums")
-        except Exception as e:
-            logger.error(f"Error loading existing checksums: {e}")
-    
-    def _save_checksum(self, filename: str, file_size: str, checksum: str) -> None:
-        """Save a new file checksum to the checksums database."""
-        try:
-            checksums_path = os.path.join(self.uploads_folder, "checksums")
-            checksums_file = os.path.join(checksums_path, "file_checksums.txt")
-            
-            with open(checksums_file, 'a') as f:
-                f.write(f"{filename}|{file_size}|{checksum}\n")
-                
-            # Update in-memory store
-            self.checksums[filename] = {'size': file_size, 'checksum': checksum}
-        except Exception as e:
-            logger.error(f"Error saving checksum: {e}")
-    
-    def is_valid_real_estate_document(self, filename: str) -> bool:
-        """Check if file is a valid real estate document based on filename patterns.
+        self.upload_folder = upload_folder
+        self.yaml_adapter = YAMLAdapter(config_path)
         
-        Args:
-            filename: The original filename to check
-            
-        Returns:
-            bool: True if the file matches any valid real estate document pattern
-        """
-        # Check each pattern for a match
-        for pattern in self.document_patterns:
-            # Convert glob pattern to regex pattern
-            regex_pattern = pattern.replace('*', '.*')
-            if re.match(regex_pattern, filename, re.IGNORECASE):
-                logger.info(f"File {filename} matches pattern {pattern}")
-                return True
-                
-        logger.warning(f"File {filename} does not match any real estate document patterns")
-        return False
-    
-    def validate_file_integrity(self, filepath: str, original_filename: str) -> Tuple[bool, Optional[str]]:
-        """Validate file integrity by checking for empty files, corrupted files, and duplicates.
+        # Load document patterns and validation rules
+        self.document_patterns = self._load_config()
         
-        Args:
-            filepath: Path to the file
-            original_filename: Original filename from upload
-            
+        # Load existing checksums to avoid duplicates
+        self.existing_checksums = self._load_existing_checksums()
+        
+    def _load_config(self) -> List[str]:
+        """Load document patterns from configuration.
+        
         Returns:
-            Tuple[bool, Optional[str]]: (is_valid, error_message)
+            List of document patterns
         """
         try:
-            # Check if file exists
-            if not os.path.exists(filepath):
-                return False, "File does not exist"
-                
-            # Check if file is empty
-            file_size = os.path.getsize(filepath)
-            if file_size == 0:
-                return False, "File is empty"
-                
-            # Calculate checksum
-            checksum = self._calculate_checksum(filepath)
-            
-            # UPDATED LOGIC: First check if the document exists in the database
-            # Only consider a file a duplicate if it exists in the database
-            if self._is_duplicate_in_database(checksum):
-                return False, "This document has already been processed and exists in the database."
-            
-            # The file may have been uploaded before but doesn't exist in the database anymore
-            # (e.g., it was deleted) - in this case, we allow it to be processed again
-            
-            # File is valid - save its checksum locally for reference
-            self._save_checksum(original_filename, str(file_size), checksum)
-            
-            return True, None
-            
+            config = self.yaml_adapter.load_config()
+            if 'document_patterns' in config:
+                patterns = config['document_patterns']
+                logger.info(f"Loaded document patterns: {patterns}")
+                return patterns
+            else:
+                # Default patterns if none provided
+                default_patterns = [
+                    "*.pdf", "*.jpg", "*.jpeg", "*.png", "*.tif", "*.tiff",
+                    "*Property*", "*Tax*", "*Deed*", "*Title*", "*Survey*", "*Mortgage*",
+                    "*Closing*", "*Listing*", "*Estate*", "*House*", "*Home*", "*Parcel*",
+                    "Property*", "Tax*", "Deed*", "Title*", "Survey*", "Mortgage*",
+                    "Closing*", "Listing*", "Real_Estate*", "House*", "Home*", "Parcel*",
+                    "MLS_*", "Property_Tax_*", "Title_Search_*", "Flood_Map_*", 
+                    "Zoning_*", "Appraisal_*", "CRS_Property_Report_*", "Assessment*"
+                ]
+                logger.warning(f"No document patterns found in config, using defaults: {default_patterns}")
+                return default_patterns
         except Exception as e:
-            logger.error(f"Error validating file integrity: {e}")
-            return False, f"Error validating file: {str(e)}"
-    
-    def _calculate_checksum(self, filepath: str) -> str:
-        """Calculate SHA-256 checksum of a file."""
-        sha256_hash = hashlib.sha256()
-        
-        with open(filepath, "rb") as f:
-            # Read and update hash in chunks to handle large files
-            for byte_block in iter(lambda: f.read(4096), b""):
-                sha256_hash.update(byte_block)
-        
-        return sha256_hash.hexdigest()
-    
-    def _is_duplicate_in_database(self, checksum: str) -> bool:
-        """Check if a document with the same checksum already exists in the database.
-        
-        Args:
-            checksum: The SHA-256 checksum of the file
+            logger.error(f"Error loading document patterns: {e}")
+            # Return default patterns in case of error
+            return ["*.pdf", "*.jpg", "*.jpeg", "*.png"]
             
+    def _load_existing_checksums(self) -> List[str]:
+        """Load existing file checksums from the database.
+        
         Returns:
-            bool: True if a document with the same checksum exists in the database
+            List of existing checksums
         """
         try:
-            import psycopg2
-            import os
-            
-            # Get database connection parameters from environment variables
-            # Try PG_* prefix first, then fall back to DB_* prefix
-            host = os.getenv('PG_HOST', os.getenv('DB_HOST', 'localhost'))
-            port = os.getenv('PG_PORT', os.getenv('DB_PORT', '5432'))
-            dbname = os.getenv('PG_DATABASE', os.getenv('DB_NAME', 'panoramascore'))
-            user = os.getenv('PG_USER', os.getenv('DB_USER', 'postgres'))
-            password = os.getenv('PG_PASSWORD', os.getenv('DB_PASSWORD', ''))
-            schema = os.getenv('PG_SCHEMA', 'public')
-            
             conn = psycopg2.connect(
-                host=host,
-                port=port,
-                dbname=dbname,
-                user=user,
-                password=password
+                host=PG_HOST,
+                port=PG_PORT,
+                user=PG_USER,
+                password=PG_PASSWORD,
+                database=PG_DATABASE
             )
             
             with conn.cursor() as cursor:
-                # Query for documents with the same checksum
+                cursor.execute("SELECT file_checksum FROM real_estate_documents")
+                checksums = [row[0] for row in cursor.fetchall()]
+                
+            conn.close()
+            logger.info(f"Loaded {len(checksums)} existing checksums")
+            return checksums
+        except Exception as e:
+            logger.error(f"Error loading existing checksums: {e}")
+            return []
+            
+    def is_valid_real_estate_document(self, filename: str) -> bool:
+        """Check if the file is a valid real estate document.
+        
+        Args:
+            filename: Name of the file to validate
+            
+        Returns:
+            True if the file is a valid real estate document, False otherwise
+        """
+        # First check if the file exists
+        if not os.path.exists(filename):
+            return False
+            
+        # Get the base filename without path
+        base_filename = os.path.basename(filename)
+        
+        # Check if the file matches any of the document patterns
+        for pattern in self.document_patterns:
+            if self._matches_pattern(base_filename, pattern):
+                logger.info(f"File {base_filename} matches pattern {pattern}")
+                return True
+                
+        logger.warning(f"File {base_filename} does not match any document pattern")
+        return False
+        
+    def _matches_pattern(self, filename: str, pattern: str) -> bool:
+        """Check if the filename matches the pattern.
+        
+        Args:
+            filename: Name of the file to validate
+            pattern: Pattern to match against
+            
+        Returns:
+            True if the file matches the pattern, False otherwise
+        """
+        # Convert the glob pattern to regex pattern
+        regex_pattern = pattern.replace('.', '\\.')
+        regex_pattern = regex_pattern.replace('*', '.*')
+        regex_pattern = f"^{regex_pattern}$"
+        
+        return bool(re.match(regex_pattern, filename, re.IGNORECASE))
+        
+    def is_duplicate(self, file_path: str) -> bool:
+        """Check if the file is a duplicate.
+        
+        Args:
+            file_path: Path to the file to check
+            
+        Returns:
+            True if the file is a duplicate, False otherwise
+        """
+        # Calculate checksum for the file
+        with open(file_path, 'rb') as f:
+            file_content = f.read()
+            checksum = hashlib.sha256(file_content).hexdigest()
+            
+        # Check if the checksum exists in the database
+        return self._is_duplicate_in_database(checksum)
+        
+    def _is_duplicate_in_database(self, checksum: str) -> bool:
+        """Check if the checksum exists in the database.
+        
+        Args:
+            checksum: Checksum to check
+            
+        Returns:
+            True if the checksum exists in the database, False otherwise
+        """
+        try:
+            conn = psycopg2.connect(
+                host=PG_HOST,
+                port=PG_PORT,
+                user=PG_USER,
+                password=PG_PASSWORD,
+                database=PG_DATABASE
+            )
+            
+            with conn.cursor() as cursor:
                 cursor.execute("SELECT id FROM real_estate_documents WHERE file_checksum = %s", (checksum,))
                 result = cursor.fetchone()
                 
             conn.close()
-            
-            # If we found a result, a duplicate exists
             return result is not None
-            
         except Exception as e:
-            # If there's an error connecting to the database, log it but don't block the upload
-            logger.error(f"Error checking for duplicates in database: {e}")
+            logger.error(f"Error checking for duplicate in database: {e}")
             return False
-    
-    def check_missing_critical_fields(self, fields: Dict) -> List[str]:
-        """Check if any critical fields are missing from the extracted data.
+            
+    def get_document_checksum(self, file_path: str) -> str:
+        """Calculate the checksum for a document.
         
         Args:
-            fields: Dictionary of extracted fields
+            file_path: Path to the file
             
         Returns:
-            List[str]: List of missing critical fields
+            Checksum of the file
         """
-        missing_fields = []
-        
-        for field in self.critical_fields:
-            if field not in fields or not fields[field]:
-                missing_fields.append(field)
-                
-        if missing_fields:
-            logger.warning(f"Missing critical fields: {missing_fields}")
+        with open(file_path, 'rb') as f:
+            file_content = f.read()
+            return hashlib.sha256(file_content).hexdigest()
             
-        return missing_fields
+    def _calculate_checksum(self, file_path: str) -> str:
+        """Private method to calculate document checksum.
+        
+        Args:
+            file_path: Path to the file
+            
+        Returns:
+            Checksum of the file
+        """
+        # This is an alias for get_document_checksum to maintain compatibility
+        return self.get_document_checksum(file_path)
+            
+    def validate_file_integrity(self, file_path: str, original_filename: str) -> Tuple[bool, str]:
+        """Validate the integrity of a document.
+        
+        Args:
+            file_path: Path to the file
+            original_filename: Original name of the file
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
+        # Check if the file exists
+        if not os.path.exists(file_path):
+            return False, f"File does not exist: {file_path}"
+            
+        # Check if the file is a valid real estate document
+        if not self.is_valid_real_estate_document(original_filename):
+            # If strict validation is required, return False
+            # For now, we'll allow it but log a warning
+            logger.warning(f"File does not match standard naming patterns: {original_filename}")
+            
+        # Check if the file is a duplicate
+        file_checksum = self.get_document_checksum(file_path)
+        if file_checksum in self.existing_checksums:
+            return False, f"Duplicate file detected with checksum: {file_checksum}"
+            
+        # File passed all integrity checks
+        return True, "File integrity validated"

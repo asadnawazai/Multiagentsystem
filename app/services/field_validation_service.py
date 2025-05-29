@@ -25,8 +25,18 @@ class FieldValidationService:
             logger.info(f"Loaded critical fields: {self.critical_fields}")
         except Exception as e:
             logger.error(f"Error loading field validation config: {e}")
-            # Set defaults if config loading fails
-            self.critical_fields = ["parcel_id", "tax_value", "property_address", "MLS_number"]
+            # Set defaults if config loading fails - include all required real estate fields
+            self.critical_fields = [
+                'mls_listing',  # MLS Listing
+                'build_year',  # Build Year
+                'land_use_code',  # Land Use Code
+                'flood_risk_score',  # Flood Risk Score
+                'zoning_record',  # Zoning Record
+                'outdated_tax_delta',  # Outdated Tax Delta
+                'infrastructure_opacity',  # Infrastructure Opacity
+                'regional_data_variation',  # Regional Data Variation
+                'climate_score'  # Climate Score
+            ]
     
     def check_missing_fields(self, fields: Dict) -> Dict:
         """Check for missing critical fields in the extracted data.

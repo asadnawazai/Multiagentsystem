@@ -189,6 +189,55 @@
             background: linear-gradient(45deg, #c62828, #e53935);
         }
         
+        /* Contributing factors */
+        .contributing-factors {
+            margin: 20px 0;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 16px;
+            border-left: 4px solid #edf2f7;
+        }
+        
+        .contributing-factors h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contributing-factors h4 i {
+            margin-right: 8px;
+            color: #f39c12;
+        }
+        
+        .factors-list {
+            margin: 0;
+            padding-left: 24px;
+        }
+        
+        .factors-list li {
+            margin-bottom: 6px;
+            color: #4a5568;
+        }
+        
+        .factor-high {
+            color: #e53935;
+            font-weight: 600;
+        }
+        
+        .factor-moderate {
+            color: #f9a825;
+            font-weight: 600;
+        }
+        
+        .factor-low {
+            color: #43a047;
+            font-weight: 600;
+        }
+        
         /* Fields display */
         .fields-table {
             width: 100%;
@@ -257,6 +306,27 @@
         .field-influence.neutral {
             color: #64748b;
             background-color: #f1f5f9;
+        }
+        
+        /* Extracted text container */
+        .extracted-text-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        
+        .extracted-text {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #334155;
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
         }
         
         /* Copilot box */
@@ -466,50 +536,13 @@
         <main>
             <h2>Document Analysis Results</h2>
             
-            <!-- Document Summary Section -->
-            <div class="result-card">
-                <h3><i class="fas fa-file-alt"></i> Document Summary</h3>
-                
-                <!-- Risk Score & Band -->
-                <div class="risk-indicator">
-                    <div class="risk-score">{risk_score}</div>
-                    <div class="risk-band {risk_band_class}">{risk_band}</div>
-                </div>
-                
-                <!-- Document Metadata -->
-                <div class="metadata-grid">
-                    <div class="metadata-item">
-                        <div class="metadata-label">File Name</div>
-                        <div class="metadata-value">{file_name}</div>
-                    </div>
-                    <div class="metadata-item">
-                        <div class="metadata-label">Document Type</div>
-                        <div class="metadata-value">{document_type}</div>
-                    </div>
-                    <div class="metadata-item">
-                        <div class="metadata-label">Upload Date</div>
-                        <div class="metadata-value">{upload_date}</div>
-                    </div>
-                    <div class="metadata-item">
-                        <div class="metadata-label">File Size</div>
-                        <div class="metadata-value">{file_size}</div>
-                    </div>
-                    <div class="metadata-item">
-                        <div class="metadata-label">MIME Type</div>
-                        <div class="metadata-value">{mime_type}</div>
-                    </div>
-                    <div class="metadata-item">
-                        <div class="metadata-label">Page Count</div>
-                        <div class="metadata-value">{page_count}</div>
-                    </div>
-                </div>
-            </div>
+            <!-- Main content starts directly with extracted text -->
             
-            <!-- Extracted Fields Section -->
+            <!-- Complete Extracted Text Section -->
             <div class="result-card">
-                <h3><i class="fas fa-list-alt"></i> Extracted Key Fields</h3>
-                <div class="fields-section">
-                    {milestone2_content}
+                <h3><i class="fas fa-file-alt"></i> Extracted Document Text</h3>
+                <div class="extracted-text-container">
+                    <pre class="extracted-text">{extracted_full_text}</pre>
                 </div>
             </div>
             
@@ -519,13 +552,25 @@
                 <p>Based on the extracted fields and document content, this document appears to be a {document_type} with a risk score of {risk_score}, placing it in the {risk_band} risk category. {risk_analysis}</p>
             </div>
             
-            <!-- Similar Documents Section -->
-            <div class="result-card">
+            <!-- Similar Documents Section (only shown if DB is connected) -->
+            <div class="result-card" id="similar-documents-section">
                 <h3><i class="fas fa-chart-network"></i> Similar Documents</h3>
                 <div class="vector-section">
                     {vector_search_section}
                 </div>
             </div>
+            
+            <script>
+                // Hide the similar documents section if no results are available
+                document.addEventListener('DOMContentLoaded', function() {
+                    const vectorSection = document.querySelector('.vector-section');
+                    const similarDocsSection = document.getElementById('similar-documents-section');
+                    
+                    if (vectorSection && vectorSection.textContent.includes('not enabled') || vectorSection.textContent.trim() === '') {
+                        similarDocsSection.style.display = 'none';
+                    }
+                });
+            </script>
             
             <!-- Credits Display -->
             <div class="credits-display">

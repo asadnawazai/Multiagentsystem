@@ -1,22 +1,99 @@
 document_type: Real Estate
+
+# Document patterns for validation
+document_patterns:
+  - "*.pdf"
+  - "*.jpg"
+  - "*.jpeg"
+  - "*.png"
+  - "*.tif"
+  - "*.tiff"
+  - "*Property*"
+  - "*Tax*"
+  - "*Deed*"
+  - "*Title*"
+  - "*Survey*"
+  - "*Mortgage*"
+  - "*Closing*"
+  - "*Listing*"
+  - "*Estate*"
+  - "*House*"
+  - "*Home*"
+  - "*Parcel*"
+  - "Property*"
+  - "Tax*"
+  - "Deed*"
+  - "Title*"
+  - "Survey*"
+  - "Mortgage*"
+  - "Closing*"
+  - "Listing*"
+  - "Real_Estate*"
+  - "House*"
+  - "Home*"
+  - "Parcel*"
+  - "MLS_*"
+  - "Property_Tax_*"
+  - "Title_Search_*"
+  - "Flood_Map_*"
+  - "Zoning_*"
+  - "Appraisal_*"
+  - "CRS_Property_Report_*"
+  - "Assessment*"
+
 fields:
-  tax_appraisal:
-    weight: 0.3
+  # All 9 required fields from RFP page 5-6
+  mls_listing:
+    weight: 0.2
     thresholds:
-      high: 500000
-      medium: 300000
-      low: 100000
-  flood_risk_zone:
+      high: NOT FOUND  # Higher risk if MLS listing is missing
+      medium: OUTDATED
+  build_year:
     weight: 0.4
     thresholds:
-      high: 0.2 PCT
-      medium: X
-  year_built:
-    weight: 0.3
-    thresholds:
-      high: 1940
+      high: 1940    # Higher risk for older properties
       medium: 1980
       low: 2000
+  land_use_code:
+    weight: 0.3
+    thresholds:
+      high: INDUSTRIAL
+      medium: MIXED
+  flood_risk_score:
+    weight: 0.6
+    thresholds:
+      high: HIGH
+      medium: MODERATE
+      low: LOW
+  zoning_record:
+    weight: 0.3
+    thresholds:
+      high: UNZONED
+      medium: COMMERCIAL
+  outdated_tax_delta:
+    weight: 0.4
+    thresholds:
+      high: HIGH
+      medium: MODERATE
+      low: LOW
+  infrastructure_opacity:
+    weight: 0.5
+    thresholds:
+      high: HIGH
+      medium: MODERATE
+      low: LOW
+  regional_data_variation:
+    weight: 0.3
+    thresholds:
+      high: HIGH
+      medium: MODERATE
+      low: LOW
+  climate_score:
+    weight: 0.5
+    thresholds:
+      high: HIGH
+      medium: MODERATE
+      low: LOW
   parcel_id:
     weight: 0.2
     thresholds:

@@ -878,5 +878,227 @@
       "mls_number"
     ],
     "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 12:22:13",
+    "file_name": "ec0bf01a-8636-446b-b304-d1252aa7a1a4.pdf",
+    "extracted_fields": {
+      "parcel_id": "1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "tax_value": "$699,000",
+      "property_address": "1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "amount": "$699,000",
+      "bedrooms": "2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "bathrooms": "2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "year_built": "2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com",
+      "mls_number": "MLS_789457 Date: May 26, 2025 PROPERTY DETAILS Address: 1523 E Pine St Unit B, Seattle, WA 98122 Parcel ID: 1122334455 Type: Townhouse Year Built: 2023 Lot Size: 0.030 acres Bedrooms: 2 Bathrooms: 2 FINANCIAL INFORMATION List Price: $699,000 Tax Assessed Value: $670,000 Annual Property Tax: $7,800 FEATURES AND AMENITIES Private patio, modern design, EV charging, pet-friendly SCHOOL INFORMATION Stevens Elementary (8/10), Garfield High (9/10) REMARKS MLS Property Report - New Listing Chic townhouse in Capitol Hill. Close to amenities, great walkability. LISTING AGENT Sara Lee, Redfin License #: 55678 Phone: (206) 555-6789 Email: saralee@redfin.com"
+    },
+    "missing_fields": [
+      "flood_zone"
+    ],
+    "ocr_type": "digital_pdf"
+  },
+  {
+    "timestamp": "2025-05-28 12:25:22",
+    "file_name": "3b66c322-de73-45bc-a915-87f06444df68.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 12:33:53",
+    "file_name": "5d7618dc-8bd2-454c-aeda-528948aad3d1.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 12:41:55",
+    "file_name": "1e79d8af-bf8d-457b-8781-9a8723c3cfd6.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 12:43:44",
+    "file_name": "00020608-49e5-4825-a6f1-b68fd7335e05.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 12:49:14",
+    "file_name": "ec697157-3a32-49b4-aff5-f15f78a32214.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 13:02:52",
+    "file_name": "bfdf4d52-32d0-49fa-8599-f64ed93c02f0.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 13:19:00",
+    "file_name": "8ccbc8c6-479d-46c0-953e-7aa0d0c56952.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 13:36:34",
+    "file_name": "5454eaab-5f0f-440b-a718-565aa6096d99.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 14:20:41",
+    "file_name": "11362bde-83fd-41d8-9fdd-c7b91376a81e.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 14:35:53",
+    "file_name": "42a85bf1-81c8-4c23-a3ef-3c98561a28f6.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 14:53:48",
+    "file_name": "7e235081-a7db-4cea-b468-9b643d60f0e1.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
+  },
+  {
+    "timestamp": "2025-05-28 15:28:00",
+    "file_name": "01c666d2-d1d9-446f-af3e-1c403221f182.jpg",
+    "extracted_fields": {},
+    "missing_fields": [
+      "parcel_id",
+      "tax_value",
+      "property_address",
+      "flood_zone",
+      "amount",
+      "bedrooms",
+      "bathrooms",
+      "year_built",
+      "mls_number"
+    ],
+    "ocr_type": "scanned_image"
   }
 ]

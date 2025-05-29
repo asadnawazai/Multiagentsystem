@@ -46,7 +46,9 @@ class RiskScoringService:
         contributing_factors = []
         
         for field_name, field_config in self.fields_config.items():
-            if field_name in fields and fields[field_name]:
+            # Only include fields that were actually found in the document
+            # Skip any fields marked as 'Not Found' or empty values
+            if field_name in fields and fields[field_name] and fields[field_name] != 'Not Found':
                 field_value = fields[field_name]
                 weight = field_config.get('weight', 0.1)
                 thresholds = field_config.get('thresholds', {})

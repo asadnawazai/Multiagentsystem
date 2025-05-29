@@ -11,7 +11,7 @@ from ..utils.file_utils import is_valid_file_extension, generate_unique_filename
 from ..utils.document_validator import DocumentValidator
 from ..utils.document_type_detector import DocumentTypeDetector
 from ..utils.yaml_adapter import YAMLAdapter
-from ..agents.ocr_normalization_agent import OCRNormalizationAgent
+from .ocr_normalization_agent import OCRNormalizationAgent
 
 
 class DocumentIngestAgent:

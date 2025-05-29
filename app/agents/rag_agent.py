@@ -7,6 +7,7 @@ from psycopg2.extras import Json
 import numpy as np
 from typing import Dict, List, Any, Optional, Tuple
 from loguru import logger
+import hashlib
 
 class RAGAgent:
     """Agent responsible for vector storage and similarity search.
@@ -75,9 +76,22 @@ class RAGAgent:
                         cursor.execute(f"""
                             CREATE TABLE IF NOT EXISTS {self.embedding_table} (
                                 id TEXT PRIMARY KEY,
+                                file_name TEXT,
+                                file_checksum TEXT,
+                                extracted_text TEXT,
                                 document_type TEXT,
                                 fields JSONB,
                                 risk_score INTEGER,
+                                risk_band TEXT,
+                                mls_listing TEXT,
+                                build_year TEXT,
+                                land_use_code TEXT,
+                                flood_risk_score TEXT,
+                                zoning_record TEXT,
+                                outdated_tax_delta TEXT,
+                                infrastructure_opacity TEXT,
+                                regional_data_variation TEXT,
+                                climate_score TEXT,
                                 embedding vector(1536),
                                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                             );
@@ -112,12 +126,17 @@ class RAGAgent:
             # First try with PG_* parameters
             try:
                 logger.info(f"Attempting to connect to database {self.db_params['database']} as user {self.db_params['user']}...")
+                # Clean any quotes from the password
+                password = self.db_params['password']
+                if password and (password.startswith('"') or password.startswith("'")):
+                    password = password.strip('"').strip("'")
+                    
                 conn = psycopg2.connect(
                     host=self.db_params['host'],
                     port=self.db_params['port'],
                     dbname=self.db_params['database'],
                     user=self.db_params['user'],
-                    password=self.db_params['password'],
+                    password=password,
                     connect_timeout=3  # Set a short timeout to fail fast
                 )
                 logger.info("Database connection successful with PG_* parameters")
@@ -127,20 +146,26 @@ class RAGAgent:
                 logger.warning(f"Primary connection failed: {str(primary_error)}")
                 logger.info("Trying fallback connection with DB_* parameters...")
                 
+                # Use the credentials from .env file with fallback values
                 fallback_params = {
                     'host': os.getenv('DB_HOST', 'localhost'),
                     'port': os.getenv('DB_PORT', '5432'),
-                    'database': os.getenv('DB_NAME', 'test_db'),
-                    'user': os.getenv('DB_USER', 'admin_user'),
-                    'password': os.getenv('DB_PASSWORD', 'dbuser123')
+                    'database': os.getenv('DB_NAME', 'postgres'),  # Changed from test_db to postgres
+                    'user': os.getenv('DB_USER', 'postgres'),  # Changed from admin_user to postgres
+                    'password': os.getenv('DB_PASSWORD', 'admin')  # Changed default to match .env
                 }
+                
+                # Clean any quotes from the password
+                password = fallback_params['password']
+                if password and (password.startswith('"') or password.startswith("'")):
+                    password = password.strip('"').strip("'")
                 
                 conn = psycopg2.connect(
                     host=fallback_params['host'],
                     port=fallback_params['port'],
                     dbname=fallback_params['database'],
                     user=fallback_params['user'],
-                    password=fallback_params['password'],
+                    password=password,
                     connect_timeout=3
                 )
                 logger.info("Database connection successful with DB_* parameters")
@@ -211,6 +236,7 @@ class RAGAgent:
             fields: Dictionary of extracted fields
             embedding: Vector embedding
             risk_score: Initial risk score
+            file_name: Name of the uploaded file
             
         Returns:
             UUID of inserted record, or None if error
@@ -240,55 +266,78 @@ class RAGAgent:
                     # Use a placeholder filename if none is provided
                     file_name = f"document_{record_id}.pdf"
                 
-                # Handle file_checksum - ensure it's never NULL
-                file_checksum = fields.get('file_checksum')
-                if file_checksum is None:
-                    # Generate a default checksum based on the record ID if none is available
-                    import hashlib
-                    default_checksum = hashlib.sha256(record_id.encode()).hexdigest()
-                    file_checksum = default_checksum
-                    logger.warning(f"No checksum available for {file_name}, using generated default")
+                # Calculate risk band based on score
+                risk_band = 'low'
+                if risk_score >= 70:
+                    risk_band = 'high'
+                elif risk_score >= 40:
+                    risk_band = 'moderate'
                 
-                # Use the risk_band and contributing_factors from the fields if available
-                # This ensures we use the properly calculated values from risk_scoring_service
-                if 'risk_band' in fields:
-                    risk_band = fields['risk_band'].lower()
-                else:
-                    # Fallback risk band calculation if not provided
-                    risk_band = 'low'
-                    if risk_score >= 75:
-                        risk_band = 'high'
-                    elif risk_score >= 50:
-                        risk_band = 'moderate'
+                # Extract all fields from the extracted data
+                # Prioritize 'extracted_text' which is shown in the UI, then fall back to 'text'
+                extracted_text = fields.get('extracted_text', fields.get('text', None))  # Full document text
                 
-                # Use contributing factors from the fields if available
-                if 'contributing_factors' in fields and fields['contributing_factors']:
-                    contributing_factors = fields['contributing_factors']
-                else:
-                    # Fallback contributing factors logic
-                    contributing_factors = []
-                    for field_name, field_value in fields.items():
-                        if field_name in ['flood_zone', 'property_condition', 'year_built']:
-                            if field_value:
-                                contributing_factors.append(f"{field_name}: {field_value}")
+                # Real estate specific fields - convert 'Not Found' back to None for database storage
+                mls_listing = fields.get('mls_listing', None)
+                if mls_listing == 'Not Found':
+                    mls_listing = None
+                
+                # Convert build_year to int if possible
+                build_year = fields.get('build_year', None)
+                if build_year == 'Not Found':
+                    build_year = None
+                elif build_year and isinstance(build_year, str) and build_year.isdigit():
+                    build_year = int(build_year)
+                
+                land_use_code = fields.get('land_use_code', None)
+                if land_use_code == 'Not Found':
+                    land_use_code = None
                     
-                    if not contributing_factors:
-                        contributing_factors = ["Standard document with no elevated risk factors"]
+                flood_risk_score = fields.get('flood_risk_score', None)
+                if flood_risk_score == 'Not Found':
+                    flood_risk_score = None
+                    
+                zoning_record = fields.get('zoning_record', None)
+                if zoning_record == 'Not Found':
+                    zoning_record = None
+                    
+                outdated_tax_delta = fields.get('outdated_tax_delta', None)
+                if outdated_tax_delta == 'Not Found':
+                    outdated_tax_delta = None
+                    
+                infrastructure_opacity = fields.get('infrastructure_opacity', None)
+                if infrastructure_opacity == 'Not Found':
+                    infrastructure_opacity = None
+                    
+                regional_data_variation = fields.get('regional_data_variation', None)
+                if regional_data_variation == 'Not Found':
+                    regional_data_variation = None
+                    
+                climate_score = fields.get('climate_score', None)
+                if climate_score == 'Not Found':
+                    climate_score = None
                 
+                # Generate a file checksum if one doesn't exist
+                file_checksum = fields.get('file_checksum', hashlib.sha256(str(uuid.uuid4()).encode()).hexdigest())
+            
+                # Insert using the new simplified database schema
                 cursor.execute(f"""
-                    INSERT INTO {self.embedding_table} (id, file_name, file_checksum, document_type, fields, embedding, risk_score, risk_band, contributing_factors, status)
-                    VALUES (%s, %s, %s, %s, %s, %s::vector, %s, %s, %s, %s)
+                    INSERT INTO {self.embedding_table} (
+                        id, file_name, file_checksum, extracted_text,
+                        risk_score, risk_band, embedding, created_at
+                    )
+                    VALUES (
+                        %s, %s, %s, %s, 
+                        %s, %s, %s::vector, NOW()
+                    )
                 """, (
                     record_id,
                     file_name,
-                    file_checksum,  # Now always has a value
-                    document_type,
-                    json.dumps(fields),
-                    embedding_str,  # Format as a proper vector for PostgreSQL
+                    file_checksum,
+                    extracted_text,
                     risk_score,
                     risk_band,
-                    json.dumps(contributing_factors),
-                    'complete'  # Mark as complete immediately
+                    embedding_str  # Format as a proper vector for PostgreSQL
                 ))
                 
                 # Commit the transaction
@@ -337,7 +386,8 @@ class RAGAgent:
                 embedding_str = '[' + ','.join(map(str, embedding)) + ']'
                 
                 query = f"""
-                    SELECT id, document_type, fields, risk_score, 1 - (embedding <=> %s::vector) as similarity
+                    SELECT id, file_name, extracted_text, risk_score, risk_band, 
+                           1 - (embedding <=> %s::vector) as similarity
                     FROM {self.embedding_table}
                     ORDER BY similarity DESC
                     LIMIT %s;
@@ -349,20 +399,46 @@ class RAGAgent:
                 # Process results
                 similar_docs = []
                 for row in results:
-                    # Parse fields if it's a string, otherwise use as is
-                    fields = row[2]
-                    if isinstance(fields, str):
+                    # Extract structured fields from the extracted_text (if possible)
+                    # In our simplified schema, all fields are contained within the extracted_text
+                    extracted_text = row[2]
+                    
+                    # Create a basic fields dictionary with the extracted text
+                    fields = {
+                        "text": extracted_text
+                    }
+                    
+                    # Try to parse the extracted_text to see if it contains our structured format
+                    # with the 9 required fields at the top
+                    if "===== EXTRACTED REAL ESTATE FIELDS =====" in extracted_text:
+                        # Parse the structured fields section
                         try:
-                            fields = json.loads(fields)
-                        except json.JSONDecodeError:
-                            fields = {"error": "Failed to parse fields"}
-                
+                            fields_section = extracted_text.split("===== EXTRACTED REAL ESTATE FIELDS =====")[1]
+                            fields_section = fields_section.split("===== FULL DOCUMENT TEXT =====")[0]
+                            
+                            # Extract each field
+                            for line in fields_section.strip().split("\n"):
+                                if ": " in line:
+                                    field_name, field_value = line.split(": ", 1)
+                                    # Convert display name back to field name (lowercase with underscores)
+                                    field_key = field_name.lower().replace(" ", "_")
+                                    fields[field_key] = field_value
+                        except Exception as e:
+                            logger.warning(f"Error parsing structured fields: {e}")
+                    
+                    # Determine document type based on the content
+                    document_type = "Real Estate Document"  # Default
+                    if fields.get("mls_listing") and fields.get("mls_listing") != "Not Found":
+                        document_type = "MLS Listing"
+                    
                     similar_docs.append({
                         "id": row[0],
-                        "document_type": row[1],
+                        "file_name": row[1],
+                        "document_type": document_type,
                         "fields": fields,
                         "risk_score": row[3],
-                        "similarity": row[4]  # Renamed from match_score to similarity for consistency
+                        "risk_band": row[4],
+                        "similarity": row[5]  # Similarity is now at index 5 (after removing extra columns)
                     })
                 
                 logger.info(f"Found {len(similar_docs)} similar documents")
