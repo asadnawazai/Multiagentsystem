@@ -161,12 +161,12 @@ class RAGEndpoint:
             
             # Step 5: Calculate risk score based on the document fields
             risk_result = self.risk_scoring_service.calculate_risk_score(fields)
-            calculated_risk_score = risk_result["risk_score"]
+            risk_score = risk_result["risk_score"]  # Use risk_score instead of calculated_risk_score
             risk_band = risk_result["risk_band"]
             contributing_factors = risk_result["contributing_factors"]
             
             # Use the calculated risk score instead of the default value
-            fields['risk_score'] = calculated_risk_score
+            fields['risk_score'] = risk_score
             fields['risk_band'] = risk_band
             fields['contributing_factors'] = contributing_factors
             
@@ -178,13 +178,13 @@ class RAGEndpoint:
                 document_type=document_type,
                 fields=fields,
                 embedding=embedding,
-                risk_score=calculated_risk_score
+                risk_score=risk_score
             )
             
             # Add metadata and input fields to the result
             rag_result['metadata'] = metadata
             rag_result['input_fields'] = fields
-            rag_result['risk_score'] = calculated_risk_score
+            rag_result['risk_score'] = risk_score
             rag_result['risk_band'] = risk_band
             rag_result['contributing_factors'] = contributing_factors
             

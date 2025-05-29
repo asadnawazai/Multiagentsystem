@@ -171,40 +171,63 @@ class OCRPreprocessor:
         # If we have several horizontal and vertical lines, it's likely a form
         return horizontal_lines >= 5 and vertical_lines >= 5
         
-    def preprocess_form_document(self, image: np.ndarray) -> np.ndarray:
-        """Special preprocessing for form documents.
+    def preprocess_form_image(self, image: np.ndarray) -> np.ndarray:
+        """Apply special preprocessing for form documents.
         
         Args:
-            image: Input image as numpy array
+            image: Input image array
             
         Returns:
-            Preprocessed form image optimized for OCR
+            Preprocessed image optimized for form OCR
         """
-        # Convert to grayscale if it's not already
-        if len(image.shape) == 3:
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        else:
-            gray = image
+        try:
+            # Make a copy to avoid modifying the original
+            img = image.copy()
             
-        # Apply adaptive thresholding to handle varying background
-        # This works better for forms with boxes and lines
-        binary = cv2.adaptiveThreshold(
-            gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
-            cv2.THRESH_BINARY, 11, 2
-        )
-        
-        # Dilate to fill in small holes in text
-        kernel = np.ones((2, 2), np.uint8)
-        dilated = cv2.dilate(binary, kernel, iterations=1)
-        
-        # Erode to reduce thickness of lines and boxes
-        eroded = cv2.erode(dilated, kernel, iterations=1)
-        
-        # Apply a slight Gaussian blur to smooth out noise while preserving text
-        blurred = cv2.GaussianBlur(eroded, (3, 3), 0)
-        
-        return blurred
-    
+            # Convert to grayscale
+            if len(img.shape) == 3:
+                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            else:
+                gray = img
+            
+            # Apply contrast stretching to enhance features
+            min_val, max_val = np.percentile(gray, (2, 98))
+            stretched = np.clip((gray - min_val) * 255.0 / (max_val - min_val), 0, 255).astype(np.uint8)
+
+            # First sharpen the image to make text and checkboxes clearer
+            kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+            sharpened = cv2.filter2D(stretched, -1, kernel)
+            
+            # Apply adaptive thresholding with optimized parameters for forms
+            binary = cv2.adaptiveThreshold(
+                sharpened, 
+                255, 
+                cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                cv2.THRESH_BINARY, 
+                11,  # Smaller block size for forms with small text and checkboxes
+                8     # C constant adjusted for better form field detection
+            )
+            
+            # Use morphological operations to preserve checkboxes and form structures
+            kernel = np.ones((2, 2), np.uint8)
+            # Dilate to make checkboxes and lines more prominent
+            dilated = cv2.dilate(binary, kernel, iterations=1)
+            # Erode to clean up noise while preserving structure
+            processed = cv2.erode(dilated, kernel, iterations=1)
+            
+            # Run Canny edge detection to emphasize checkbox boundaries
+            edges = cv2.Canny(processed, 100, 200)
+            kernel = np.ones((2, 2), np.uint8)
+            dilated_edges = cv2.dilate(edges, kernel, iterations=1)
+            
+            # Combine processed image with edge detection to get both text and form structures
+            result = cv2.bitwise_and(processed, cv2.bitwise_not(dilated_edges))
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error in form preprocessing: {str(e)}")
+            return image  # Return original image on error
     def _deskew(self, image: np.ndarray) -> np.ndarray:
         """Deskew an image to straighten text lines.
         

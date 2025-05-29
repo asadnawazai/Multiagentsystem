@@ -69,7 +69,10 @@ class NLUExtractionAgent:
                 r'(?i)list(?:ing)?\s+price[\s:]*\$?(\d[\d,.]*)',
                 # MLS form specific patterns
                 r'(?i)Listed\s+Price[\s:]*\$?(\d[\d,.]*)',
-                r'(?i)List\s+Price[\s:]*\$?(\d[\d,.]*)'
+                r'(?i)List\s+Price[\s:]*\$?(\d[\d,.]*)',
+                r'(?i)Sale\s+Price[\s:]*\$?(\d[\d,.]*)',
+                r'(?i)\$\s*(\d[\d,.]*)\s*(?:,|\n|$)',
+                r'(?i)\$\s*(\d[\d,.]*)'
             ],
             "property_address": [
                 r'(?i)property\s+address[\s:]+(.+?)(?:\s{2,}|$|\n)',
@@ -139,25 +142,40 @@ class NLUExtractionAgent:
                 r'(?i)\bAge\b[^\n]*?([0-9]+)'  # Will match "Age: 62" as seen in the form
             ],
             "bedrooms": [
-                r'(?i)bedrooms[\s:]*([0-9]+)',
-                r'(?i)beds[\s:]*([0-9]+)',
-                r'(?i)bed[\s:]*([0-9]+)',
-                r'(?i)br[\s:]*([0-9]+)',
-                r'(?i)#\s*of\s*bed[\s:]*([0-9]+)',
-                # MLS form specific patterns
-                r'(?i)#\s*of\s*Bedrooms[\s:]*([0-9]+)',
-                r'(?i)\d\s+Bedrooms',  # Match text like '4 Bedrooms'
-                r'(?i)Bedrooms[^\n]*?([0-9]+)'  # Match any bedrooms pattern
+                r'(?i)(?:bed(?:rooms)?|BR)\s*(?::|and|\n|\t)*\s*([0-9]+)',
+                r'(?i)(?:bed(?:rooms)?):\s*([0-9]+)',
+                r'(?i)(?:bed(?:rooms)?)[\s-]*(?::|/|\|)*\s*([0-9]+)',
+                r'(?i)beds?:?\s*([0-9]+)',
+                # Patterns for the summary section
+                r'(?i)\b([0-9]+)\s*(?:bed|bedroom|br)\b',
+                r'(?i)\b(?:bed|bedroom|br)\s*[-:]?\s*([0-9]+)\b',
+                # Abbreviation in structured forms
+                r'(?i)\bBR\b[^\n]*?([0-9])',
+                r'(?i)Bedrooms[^\n]*?([0-9]+)',
+                r'(?i)#\s*Bedrooms[^\n]*?([0-9]+)',
+                r'(?i)\b([0-9]+)\s*Bedrooms\b',
+                # Checkbox patterns for MLS forms
+                r'(?i)☑\s*([0-9]+)\s*Bed',
+                r'(?i)[✓xX]\s*([0-9]+)\s*Bed',
+                r'(?i)[\u2611\u2713]\s*([0-9]+)\s*Bed'
             ],
             "bathrooms": [
-                r'(?i)bathrooms[\s:]*([0-9.]+)',
-                r'(?i)baths[\s:]*([0-9.]+)',
-                r'(?i)bath[\s:]*([0-9.]+)',
-                r'(?i)ba[\s:]*([0-9.]+)',
-                # MLS form specific patterns
-                r'(?i)#\s*of\s*Bathrooms[\s:]*([0-9.]+)',
-                r'(?i)\d\s+Bathrooms',  # Match text like '3 Bathrooms'
-                r'(?i)Bathrooms[^\n]*?([0-9.]+)'  # Match any bathrooms pattern
+                r'(?i)(?:bath(?:rooms)?|BA)\s*(?::|and|\n|\t)*\s*([0-9.]+)',
+                r'(?i)(?:bath(?:rooms)?):\s*([0-9.]+)',
+                r'(?i)(?:bath(?:rooms)?)[\s-]*(?::|/|\|)*\s*([0-9.]+)',
+                r'(?i)baths:?\s*([0-9.]+)',
+                # Patterns for the summary section
+                r'(?i)\b([0-9.]+)\s*(?:bath|bathroom|ba)\b',
+                r'(?i)\b(?:bath|bathroom|ba)\s*[-:]?\s*([0-9.]+)\b',
+                # Abbreviation in structured forms
+                r'(?i)\bBA\b[^\n]*?([0-9.]+)',
+                r'(?i)Bathrooms[^\n]*?([0-9.]+)',
+                r'(?i)#\s*Bath[^\n]*?([0-9.]+)',
+                r'(?i)Full\s*Bath[^\n]*?([0-9]+)',
+                # Checkbox patterns
+                r'(?i)☑\s*Full\s*Bath',
+                r'(?i)[✓xX]\s*Full\s*Bath',
+                r'(?i)[\u2611\u2713]\s*Full\s*Bath'
             ],
             "land_use_code": [
                 r'(?i)Land\s+Use\s+Code:\s*(\w[\d-]*)',  # Will match "Land Use Code: R2"

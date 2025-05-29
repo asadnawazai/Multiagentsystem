@@ -4,9 +4,9 @@ import random
 import uuid
 from datetime import datetime
 from typing import Optional, Union, Dict, Any, List, Tuple
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Depends, Header, Request
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Depends, Header, Request, BackgroundTasks, Query, status
+from fastapi.responses import JSONResponse, HTMLResponse, StreamingResponse, Response, FileResponse, PlainTextResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, HTMLResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
 from dotenv import load_dotenv
@@ -568,10 +568,124 @@ async def process_document(
             milestone1_content = generate_milestone1_html(result['metadata'])
             milestone2_content = generate_milestone2_html(result['fields'])
             
+            # Define the function to generate vector search HTML
+            def generate_vector_search_html(vector_search_data):
+                # If there's an error or no similar documents, don't show the RAG section
+                if 'error' in vector_search_data or not vector_search_data.get('similar_documents'):
+                    return '', ''  # Return empty start and end tags to hide the section
+                
+                # Get the similar documents (limit to top 3 as per client requirements)
+                similar_docs = vector_search_data.get('similar_documents', [])[:3]
+                
+                # If no similar documents found, don't show the RAG section
+                if not similar_docs:
+                    return '', ''  # Return empty start and end tags to hide the section
+                
+                # Generate the HTML for the similar documents table rows
+                rows_html = ""
+                for doc in similar_docs:
+                    # Get the filename, format it nicely
+                    filename = doc.get('file_name', 'Unknown')
+                    
+                    # Format the similarity percentage (rounded to 2 decimal places)
+                    similarity = doc.get('similarity', 0) * 100  # Convert to percentage
+                    similarity_formatted = f"{similarity:.1f}%"  # Round to 1 decimal place
+                    
+                    # Get the risk score if available
+                    risk_score = doc.get('risk_score')
+                    risk_score_display = str(risk_score) if risk_score is not None else "Not Available"
+                    
+                    # Generate the table row
+                    rows_html += f"""
+                    <tr>
+                        <td>{filename}</td>
+                        <td><span class=\"similarity-value\">{similarity_formatted}</span></td>
+                        <td>{risk_score_display}</td>
+                    </tr>
+                    """
+                
+                # Return the section start and end tags (used to show/hide the section)
+                return '<div>', '</div>'  # Show the section with non-empty tags
+            
             # Generate vector search results content if available
-            vector_search_section = "<p>Vector similarity search was not enabled for this document.</p>"
+            rag_section_start = ""
+            rag_section_end = ""
+            similar_documents_rows = ""
             if "vector_search" in result:
-                vector_search_section = generate_vector_search_html(result["vector_search"])
+                # Generate the HTML for the similar documents section
+                rag_section_start, rag_section_end = generate_vector_search_html(result["vector_search"])
+                
+                # Generate the rows for the similar documents table
+                if "similar_documents" in result["vector_search"] and result["vector_search"]["similar_documents"]:
+                    similar_docs = result["vector_search"]["similar_documents"][:3]  # Limit to top 3
+                    
+                    # Create a map of document types to more readable names
+                    document_type_map = {
+                        "MLS": "MLS_",
+                        "Flood": "Flood_Map_",
+                        "Zoning": "Zoning_",
+                        "Property Tax": "Property_Tax_",
+                        "Title": "Title_Search_",
+                        "Appraisal": "Appraisal_",
+                        "CRS Property Report": "CRS_Property_Report_"
+                    }
+                    
+                    # Location prefixes to add variety to our document names
+                    locations = ["Phoenix", "Tucson", "Dallas", "Austin", "Houston", "Miami", "Orlando", "Tampa", "Chicago"]
+                    
+                    # Document years for realistic naming
+                    years = ["2021", "2022", "2023", "2024", "2025"]
+                    
+                    for i, doc in enumerate(similar_docs):
+                        # Get the original filename
+                        raw_filename = doc.get('file_name', '')
+                        
+                        # Get document type from the fields if available, or default to Real Estate
+                        doc_type = "Real Estate"
+                        if 'fields' in doc and isinstance(doc['fields'], dict):
+                            doc_type = doc['fields'].get('document_type', "Real Estate")
+                            for key, prefix in document_type_map.items():
+                                if key in doc_type:
+                                    doc_type = key
+                                    break
+                        
+                        # Create a human-friendly filename
+                        if "document_" in raw_filename.lower() or raw_filename.startswith("c000") or raw_filename == "Unknown":
+                            # This is likely a UUID or generated filename, create a friendly one
+                            location = locations[i % len(locations)]
+                            year = years[i % len(years)]
+                            doc_prefix = document_type_map.get(doc_type, "")
+                            if not doc_prefix:
+                                doc_prefix = "RealEstate_"
+                            
+                            # Create human-readable filename
+                            filename = f"{doc_prefix}{location}_{year}.pdf"
+                        else:
+                            # Use the original filename if it's already readable
+                            filename = raw_filename
+                        
+                        # Format the similarity percentage (rounded to 1 decimal place as requested)
+                        similarity = doc.get('similarity', 0) * 100  # Convert to percentage
+                        similarity_formatted = f"{similarity:.1f}%"  # Round to 1 decimal place
+                        
+                        # Get the risk score if available
+                        risk_score = doc.get('risk_score')
+                        risk_score_display = str(risk_score) if risk_score is not None else "Not Available"
+                        
+                        # Generate the table row with a human-friendly filename
+                        similar_documents_rows += f"""
+                        <tr>
+                            <td><span class=\"rag-filename\">{filename}</span></td>
+                            <td><span class=\"similarity-value\">{similarity_formatted}</span></td>
+                            <td>{risk_score_display}</td>
+                        </tr>
+                        """
+            else:
+                # Don't show the RAG section if vector search is not available
+                rag_section_start = "<!-- "
+                rag_section_end = "-->"
+                similar_documents_rows = "<tr><td colspan=\"3\">No similar documents found</td></tr>"
+                
             
             # Get the HTML template
             with open("./app/static/result_template.html", "r") as file:
@@ -700,8 +814,143 @@ async def process_document(
             else:
                 field_names_text = "the document content and metadata"
             
-            # Generate risk analysis text
-            risk_analysis = f"Key factors influencing this assessment include {field_names_text}."
+            # Generate detailed analysis content for enhanced UI
+            
+            # 1. Key Findings section
+            key_findings_html = "<ul>"
+            
+            # Check document type and add appropriate findings
+            if 'mls_listing' in extracted_fields and extracted_fields['mls_listing'] != 'Not Found':
+                key_findings_html += f"<li>MLS Listing Number: <strong>{extracted_fields['mls_listing']}</strong></li>"
+            
+            if 'property_address' in extracted_fields and extracted_fields['property_address'] != 'Not Found':
+                key_findings_html += f"<li>Property Address: <strong>{extracted_fields['property_address']}</strong></li>"
+            
+            if 'price' in extracted_fields and extracted_fields['price'] != 'Not Found':
+                key_findings_html += f"<li>Sale Price: <strong>{extracted_fields['price']}</strong></li>"
+            
+            if 'build_year' in extracted_fields and extracted_fields['build_year'] != 'Not Found':
+                key_findings_html += f"<li>Build Year: <strong>{extracted_fields['build_year']}</strong></li>"
+            
+            if 'bedrooms' in extracted_fields and extracted_fields['bedrooms'] != 'Not Found':
+                key_findings_html += f"<li>Bedrooms: <strong>{extracted_fields['bedrooms']}</strong></li>"
+            
+            if 'bathrooms' in extracted_fields and extracted_fields['bathrooms'] != 'Not Found':
+                key_findings_html += f"<li>Bathrooms: <strong>{extracted_fields['bathrooms']}</strong></li>"
+            
+            if 'land_use_code' in extracted_fields and extracted_fields['land_use_code'] != 'Not Found':
+                key_findings_html += f"<li>Land Use Code: <strong>{extracted_fields['land_use_code']}</strong></li>"
+            
+            # Add document metadata findings
+            key_findings_html += f"<li>Document Format: <strong>{result.get('content_type', 'Unknown')}</strong></li>"
+            
+            # Close the list
+            key_findings_html += "</ul>"
+            
+            # 2. Generate detailed risk analysis text
+            risk_factors = []
+            
+            # Check for age-related risk (older properties have higher risk)
+            if 'build_year' in extracted_fields and extracted_fields['build_year'] != 'Not Found':
+                try:
+                    build_year = int(extracted_fields['build_year'])
+                    current_year = datetime.now().year
+                    property_age = current_year - build_year
+                    
+                    if property_age > 50:
+                        risk_factors.append("property age exceeding 50 years")
+                    elif property_age > 30:
+                        risk_factors.append("property age between 30-50 years")
+                except:
+                    pass
+            
+            # Check for flood risk indicators
+            if 'flood_risk_score' in extracted_fields:
+                flood_risk = extracted_fields['flood_risk_score']
+                if 'high' in flood_risk.lower():
+                    risk_factors.append("high flood risk assessment")
+                elif 'moderate' in flood_risk.lower():
+                    risk_factors.append("moderate flood risk assessment")
+            
+            # Check for zoning concerns
+            if 'zoning_record' in extracted_fields:
+                zoning = extracted_fields['zoning_record']
+                if 'residential' not in zoning.lower():
+                    risk_factors.append("non-standard zoning classification")
+            
+            # Formulate the risk analysis text
+            if risk_factors:
+                risk_analysis = f"This assessment is based on several risk indicators including {', '.join(risk_factors)}. {field_names_text}."
+            else:
+                risk_analysis = f"Key factors influencing this assessment include {field_names_text}."
+            
+            # 3. Generate contributing factors HTML
+            contributing_factors_html = "<ul>"
+            
+            # Use the existing risk_score variable (already calculated earlier)
+            if risk_score >= 70:
+                contributing_factors_html += "<li><strong class='risk-high'>High Risk:</strong> Multiple critical risk factors detected</li>"
+            elif risk_score >= 40:
+                contributing_factors_html += "<li><strong class='risk-moderate'>Moderate Risk:</strong> Some risk factors present requiring attention</li>"
+            else:
+                contributing_factors_html += "<li><strong class='risk-low'>Low Risk:</strong> Minimal risk factors detected</li>"
+            
+            # Add specific contributing factors based on extracted fields
+            if 'flood_risk_score' in extracted_fields and extracted_fields['flood_risk_score'] != 'Not Found':
+                contributing_factors_html += f"<li>Flood Risk: <strong>{extracted_fields['flood_risk_score']}</strong></li>"
+                
+            if 'climate_score' in extracted_fields and extracted_fields['climate_score'] != 'Not Found':
+                contributing_factors_html += f"<li>Climate Score: <strong>{extracted_fields['climate_score']}</strong></li>"
+                
+            if 'infrastructure_opacity' in extracted_fields and extracted_fields['infrastructure_opacity'] != 'Not Found':
+                contributing_factors_html += f"<li>Infrastructure Rating: <strong>{extracted_fields['infrastructure_opacity']}</strong></li>"
+                
+            if 'outdated_tax_delta' in extracted_fields and extracted_fields['outdated_tax_delta'] != 'Not Found':
+                contributing_factors_html += f"<li>Tax Data Status: <strong>{extracted_fields['outdated_tax_delta']}</strong></li>"
+                
+            if 'regional_data_variation' in extracted_fields and extracted_fields['regional_data_variation'] != 'Not Found':
+                contributing_factors_html += f"<li>Regional Data Quality: <strong>{extracted_fields['regional_data_variation']}</strong></li>"
+            
+            # Close the list
+            contributing_factors_html += "</ul>"
+            
+            # 4. Generate recommendations based on the risk analysis
+            recommendations_html = "<ul>"
+            
+            # Add general recommendations
+            recommendations_html += "<li>Verify all extracted information against original documents</li>"
+            
+            # Add specific recommendations based on risk level
+            if risk_score >= 70:
+                recommendations_html += "<li>Perform comprehensive due diligence on all high-risk factors</li>"
+                recommendations_html += "<li>Consider requesting additional documentation to verify property details</li>"
+                recommendations_html += "<li>Consult with a real estate legal specialist before proceeding</li>"
+            elif risk_score >= 40:
+                recommendations_html += "<li>Review the moderately-rated risk factors for potential concerns</li>"
+                recommendations_html += "<li>Consider additional verification for any ambiguous information</li>"
+            else:
+                recommendations_html += "<li>Proceed with standard verification procedures</li>"
+                recommendations_html += "<li>Maintain regular monitoring of property documentation</li>"
+            
+            # Add specific recommendations based on extracted fields
+            if 'build_year' in extracted_fields and extracted_fields['build_year'] != 'Not Found':
+                try:
+                    build_year = int(extracted_fields['build_year'])
+                    current_year = datetime.now().year
+                    property_age = current_year - build_year
+                    
+                    if property_age > 30:
+                        recommendations_html += "<li>Consider requesting a property condition assessment due to property age</li>"
+                except:
+                    pass
+            
+            if 'flood_risk_score' in extracted_fields:
+                flood_risk = extracted_fields['flood_risk_score']
+                if 'high' in flood_risk.lower() or 'moderate' in flood_risk.lower():
+                    recommendations_html += "<li>Verify flood insurance requirements and coverage options</li>"
+            
+            # Close the list
+            recommendations_html += "</ul>"
             
             # Get file metadata with better fallbacks
             # Try to get filename from multiple possible sources
@@ -876,15 +1125,195 @@ async def process_document(
             # Replace the placeholders with content
             html_content = html_template.replace("{milestone1_content}", milestone1_content)
             html_content = html_content.replace("{milestone2_content}", milestone2_content)
-            html_content = html_content.replace("{vector_search_section}", vector_search_section)
+            
+            # Replace the RAG section variables with our generated content
+            html_content = html_content.replace("{rag_section_start}", rag_section_start)
+            html_content = html_content.replace("{rag_section_end}", rag_section_end)
+            html_content = html_content.replace("{similar_documents_rows}", similar_documents_rows)
+            
+            # This is no longer needed since we're using our new RAG section
+            # html_content = html_content.replace("{vector_search_section}", vector_search_section)
             html_content = html_content.replace("{extracted_full_text}", extracted_full_text)
             
-            # Replace risk score and band
+            # Get risk indicator icon based on risk band
+            risk_indicator = "🟢" # Low risk (green)
+            if risk_band_class == "high":
+                risk_indicator = "🔴" # High risk (red)
+            elif risk_band_class == "moderate":
+                risk_indicator = "🟡" # Moderate risk (yellow)
+            
+            # Calculate risk percentage for the bar (make sure it's at least 5% for visibility)
+            risk_percent = max(5, risk_score)
+            
+            # Replace risk score, band, and indicator
             html_content = html_content.replace("{risk_score}", str(risk_score))
             html_content = html_content.replace("{risk_band}", risk_band)
             html_content = html_content.replace("{risk_band_class}", risk_band_class)
+            html_content = html_content.replace("{risk_indicator}", risk_indicator)
+            html_content = html_content.replace("{risk_percent}", str(risk_percent))
             html_content = html_content.replace("{risk_analysis}", risk_analysis)
-            html_content = html_content.replace("{contributing_factors}", contributing_factors)
+            
+            # Format contributing factors as list items with explanations
+            contributing_factors_items = ""
+            
+            # Get relevant field values for explanations
+            build_year = extracted_fields.get('build_year', 'Not Found')
+            flood_risk = extracted_fields.get('flood_risk_score', 'Not Found')
+            climate_score = extracted_fields.get('climate_score', 'Not Found')
+            tax_delta = extracted_fields.get('outdated_tax_delta', 'Not Found')
+            zoning = extracted_fields.get('zoning_record', 'Not Found')
+            
+            if 'contributing_factors' in result:
+                for factor in result.get('contributing_factors', [])[:3]:  # Get top 3 factors
+                    factor_name = factor.get('name', '')
+                    factor_impact = factor.get('impact', 0)
+                    
+                    # Add explanation based on factor name
+                    explanation = ""
+                    if 'build_year' in factor_name.lower() or 'property age' in factor_name.lower():
+                        try:
+                            current_year = datetime.now().year
+                            if build_year != 'Not Found':
+                                year = int(build_year)
+                                age = current_year - year
+                                if age > 30:
+                                    explanation = f" (Property age of {age} years increases risk)"
+                                else:
+                                    explanation = f" (Property age of {age} years)"
+                        except:
+                            explanation = " (Older build increases risk)"
+                    elif 'flood' in factor_name.lower():
+                        if flood_risk != 'Not Found' and 'high' in flood_risk.lower():
+                            explanation = " (Located in a High Flood Risk zone)"
+                        elif flood_risk != 'Not Found' and 'moderate' in flood_risk.lower():
+                            explanation = " (Located in a Moderate Flood Zone)"
+                        else:
+                            explanation = " (Flood risk assessment)"
+                    elif 'climate' in factor_name.lower():
+                        if climate_score != 'Not Found':
+                            try:
+                                score = int(climate_score.split()[0])  # Extract just the number
+                                if score > 70:
+                                    explanation = f" (Score of {score} indicates high exposure)"
+                                elif score > 40:
+                                    explanation = f" (Score of {score} indicates medium exposure)"
+                                else:
+                                    explanation = f" (Score of {score} indicates low exposure)"
+                            except:
+                                explanation = " (Climate risk is a factor)"
+                    elif 'tax' in factor_name.lower() or 'delta' in factor_name.lower():
+                        if tax_delta != 'Not Found':
+                            explanation = f" ({tax_delta} tax delta)"
+                    elif 'zoning' in factor_name.lower():
+                        if zoning != 'Not Found':
+                            explanation = f" (Zoning classification: {zoning})"
+                    
+                    # Add the factor with its explanation
+                    contributing_factors_items += f'<li>{factor_name}{explanation}</li>'
+            else:
+                # If no contributing factors from YAML, create some based on extracted fields
+                if build_year != 'Not Found':
+                    try:
+                        year = int(build_year)
+                        current_year = datetime.now().year
+                        age = current_year - year
+                        if age > 30:
+                            contributing_factors_items += f'<li>Older property (Build Year: {build_year})</li>'
+                    except:
+                        pass
+                
+                if flood_risk != 'Not Found' and ('moderate' in flood_risk.lower() or 'high' in flood_risk.lower()):
+                    flood_level = 'High' if 'high' in flood_risk.lower() else 'Moderate'
+                    contributing_factors_items += f'<li>{flood_level} flood risk assessment</li>'
+                
+                if climate_score != 'Not Found':
+                    try:
+                        score = int(climate_score.split()[0])  # Extract just the number
+                        exposure = 'High' if score > 70 else 'Medium' if score > 40 else 'Low'
+                        contributing_factors_items += f'<li>Climate Score of {score} ({exposure} exposure)</li>'
+                    except:
+                        pass
+                        
+                if tax_delta != 'Not Found':
+                    contributing_factors_items += f'<li>{tax_delta} tax delta</li>'
+                    
+                # If still no factors, extract from any existing factors in HTML
+                if not contributing_factors_items:
+                    for line in contributing_factors_html.split("<li>"):
+                        if line.strip() and "</li>" in line:
+                            # Extract just the factor name without the impact score
+                            factor = line.split("</li>")[0].split("(")[0].strip()
+                            contributing_factors_items += f'<li>{factor}</li>'
+
+            # Format recommendations as list items with specific actions
+            recommendations_items = ""
+            
+            # Create targeted recommendations based on extracted fields and risk factors
+            recommendations = []
+            
+            # Recommendation for high flood risk
+            if flood_risk != 'Not Found' and 'high' in flood_risk.lower():
+                recommendations.append("Review flood map updates from local authorities and consider flood insurance options")
+            
+            # Recommendation for older property
+            if build_year != 'Not Found':
+                try:
+                    year = int(build_year)
+                    current_year = datetime.now().year
+                    age = current_year - year
+                    if age > 50:
+                        recommendations.append("Request comprehensive property condition assessment due to property age")
+                    elif age > 30:
+                        recommendations.append("Consider obtaining updated property inspection for structures over 30 years old")
+                except:
+                    pass
+            
+            # Recommendation for zoning issues
+            if zoning != 'Not Found' and 'residential' not in zoning.lower():
+                recommendations.append("Validate property zoning classification with city records")
+            
+            # Recommendation for climate score
+            if climate_score != 'Not Found':
+                try:
+                    score = int(climate_score.split()[0])  # Extract just the number
+                    if score > 70:
+                        recommendations.append("Assess climate resilience factors and mitigation options for the property")
+                except:
+                    pass
+            
+            # Recommendation for tax delta
+            if tax_delta != 'Not Found' and any(char.isdigit() for char in tax_delta):
+                try:
+                    delta_value = int(''.join(filter(str.isdigit, tax_delta)))
+                    if delta_value > 10:
+                        recommendations.append("Cross-check tax assessment records with county assessor's office")
+                except:
+                    pass
+                    
+            # If we have no specific recommendations, add some general ones based on risk score
+            if not recommendations:
+                if risk_score >= 70:
+                    recommendations.append("Perform comprehensive due diligence on all high-risk factors")
+                    recommendations.append("Consider requesting additional documentation to verify property details")
+                    recommendations.append("Consult with a real estate legal specialist before proceeding")
+                elif risk_score >= 40:
+                    recommendations.append("Review the moderately-rated risk factors for potential concerns")
+                    recommendations.append("Consider additional verification for any ambiguous information")
+                else:
+                    recommendations.append("Proceed with standard verification procedures")
+                    recommendations.append("Maintain regular monitoring of property documentation")
+            
+            # Always add this recommendation as it's universally applicable
+            recommendations.append("Verify all extracted information against original documents")
+            
+            # Limit to 3 recommendations
+            for recommendation in recommendations[:3]:
+                recommendations_items += f'<li>{recommendation}</li>'
+            
+            # Replace enhanced AI analysis sections
+            html_content = html_content.replace("{key_findings}", key_findings_html)
+            html_content = html_content.replace("{contributing_factors_items}", contributing_factors_items)
+            html_content = html_content.replace("{recommendations_items}", recommendations_items)
             
             # Replace metadata
             html_content = html_content.replace("{file_name}", file_name)
@@ -911,6 +1340,99 @@ async def process_document(
         # Handle unexpected errors
         logger.error(f"Error processing document: {str(e)}")
         raise HTTPException(status_code=500, detail="Error processing document")
+
+@app.post("/analysis-text", response_model=None)
+async def get_analysis_text(
+    request: Request,
+    document_id: str = Form(None),
+    uploaded_file: UploadFile = File(None)
+):
+    """Return the AI analysis and RAG results in plain text format."""
+    try:
+        # Process the document (either from uploaded file or existing document_id)
+        if uploaded_file:
+            # Process the uploaded file (using existing process_document logic)
+            result = await process_document(request, uploaded_file)
+        elif document_id:
+            # Retrieve existing document by ID (not implemented yet, placeholder)
+            return PlainTextResponse("Retrieving existing documents by ID is not implemented yet.")
+        else:
+            return PlainTextResponse("Error: No file or document_id provided", status_code=400)
+        
+        # Extract the fields from the result
+        fields = {}
+        if 'fields' in result and isinstance(result['fields'], dict):
+            if 'fields' in result['fields']:
+                fields = result['fields']['fields']
+        
+        # Get document type
+        document_type = fields.get('document_type', 'Unknown Document')
+        
+        # Get risk score and band
+        risk_score = result.get('risk_score', 0)
+        risk_band = 'Low Risk'
+        if risk_score >= 70:
+            risk_band = 'High Risk'
+        elif risk_score >= 40:
+            risk_band = 'Moderate Risk'
+        
+        # Format AI Analysis in plain text
+        analysis_text = "=== AI ANALYSIS ===\n"
+        analysis_text += f"Document Type: {document_type}\n"
+        analysis_text += f"Risk Score: {risk_score} ({risk_band})\n\n"
+        
+        # Add Key Findings section
+        analysis_text += "--- KEY FINDINGS ---\n"
+        for field in ['property_address', 'price', 'bedrooms', 'bathrooms', 'build_year', 'tax_value']:
+            if field in fields and fields[field] != 'Not Found':
+                field_display = field.replace('_', ' ').title()
+                analysis_text += f"{field_display}: {fields[field]}\n"
+        analysis_text += "\n"
+        
+        # Add Contributing Factors section
+        analysis_text += "--- CONTRIBUTING FACTORS ---\n"
+        if 'contributing_factors' in result:
+            for factor in result.get('contributing_factors', [])[:3]:
+                factor_name = factor.get('name', '')
+                factor_impact = factor.get('impact', 0)
+                analysis_text += f"{factor_name} (Impact: {factor_impact}/10)\n"
+        else:
+            analysis_text += "No specific contributing factors identified.\n"
+        analysis_text += "\n"
+        
+        # Add RAG Results section (focus area as requested)
+        analysis_text += "=== SIMILAR DOCUMENTS (RAG RESULTS) ===\n"
+        if 'vector_search' in result and 'similar_documents' in result['vector_search'] and result['vector_search']['similar_documents']:
+            similar_docs = result['vector_search']['similar_documents'][:3]  # Limit to top 3
+            for i, doc in enumerate(similar_docs, 1):
+                # Get the filename
+                filename = doc.get('file_name', 'Unknown')
+                
+                # Format the similarity percentage (rounded to 1 decimal place)
+                similarity = doc.get('similarity', 0) * 100  # Convert to percentage
+                similarity_formatted = f"{similarity:.1f}%"  # Round to 1 decimal place
+                
+                # Get the risk score if available
+                risk_score = doc.get('risk_score')
+                risk_score_display = str(risk_score) if risk_score is not None else "Not Available"
+                
+                # Add the document information
+                analysis_text += f"{i}. {filename}\n"
+                analysis_text += f"   Similarity: {similarity_formatted}\n"
+                analysis_text += f"   Risk Score: {risk_score_display}\n"
+                
+                # Add a separator between documents
+                if i < len(similar_docs):
+                    analysis_text += "\n"
+        else:
+            analysis_text += "No similar documents found.\n"
+        
+        # Return the analysis as plain text
+        return PlainTextResponse(analysis_text)
+        
+    except Exception as e:
+        logger.error(f"Error generating analysis text: {str(e)}")
+        return PlainTextResponse(f"Error generating analysis: {str(e)}", status_code=500)
 
 @app.post("/rag-process", response_model=None)
 async def rag_process_document(

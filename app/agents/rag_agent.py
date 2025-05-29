@@ -531,11 +531,11 @@ class RAGAgent:
             # Get original filename from fields if available
             file_name = fields.get('original_filename', None)
             
-            # Use the calculated risk_score from fields if available (dynamically calculated)
-            calculated_risk_score = fields.get('risk_score', risk_score)
+            # Use the risk_score parameter that was passed in
+            # The risk_score has already been calculated in main.py
             
-            # Pass the calculated risk_score to store_embedding
-            record_id = await self.store_embedding(document_type, fields, embedding, calculated_risk_score, file_name)
+            # Pass the risk_score to store_embedding directly
+            record_id = await self.store_embedding(document_type, fields, embedding, risk_score, file_name)
             
             # Find similar documents
             similar_docs = await self.find_similar_documents(embedding)

@@ -546,11 +546,297 @@
                 </div>
             </div>
             
-            <!-- AI Recommendation Section -->
-            <div class="copilot-box">
-                <h4 class="copilot-title"><i class="fas fa-robot"></i> AI Analysis</h4>
-                <p>Based on the extracted fields and document content, this document appears to be a {document_type} with a risk score of {risk_score}, placing it in the {risk_band} risk category. {risk_analysis}</p>
+            <!-- BLOCK 1: Real Estate AI Analysis Section -->
+            <div class="analysis-box">
+                <h4 class="analysis-title"><i class="fas fa-robot"></i> AI Analysis Report – Real Estate Document</h4>
+                
+                <!-- Natural Language Risk Summary -->
+                <div class="risk-explanation">
+                    <p>This document has a Risk Score of <strong>{risk_score}</strong>, which places it in the <strong class="risk-text-{risk_band_class}">{risk_band}</strong> category.</p>
+                </div>
+                
+                <!-- Risk Score and Category -->
+                <div class="risk-summary">
+                    <div class="risk-score-box">
+                        <div class="risk-label">Risk Score:</div>
+                        <div class="risk-value">{risk_score}</div>
+                    </div>
+                    <div class="risk-category">
+                        <div class="risk-label">Risk Category:</div>
+                        <div class="risk-value">
+                            <span class="risk-indicator risk-{risk_band_class}">
+                                {risk_indicator} {risk_band}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Risk Meter -->
+                <div class="risk-meter">
+                    <div class="risk-bar">
+                        <div class="risk-fill risk-{risk_band_class}" style="width: {risk_percent}%;"></div>
+                    </div>
+                    <div class="risk-labels">
+                        <span>Low</span>
+                        <span>Moderate</span>
+                        <span>High</span>
+                    </div>
+                </div>
+                
+                <!-- Contributing Factors -->
+                <div class="analysis-section">
+                    <h5><i class="fas fa-balance-scale"></i> Contributing Factors:</h5>
+                    <p class="section-intro">Key factors that influenced this risk assessment:</p>
+                    <ul class="factor-list">
+                        {contributing_factors_items}
+                    </ul>
+                </div>
+                
+                <!-- Recommendations -->
+                <div class="analysis-section">
+                    <h5><i class="fas fa-lightbulb"></i> Recommendations:</h5>
+                    <p class="section-intro">Based on this analysis, we recommend the following actions:</p>
+                    <ul class="recommendation-list">
+                        {recommendations_items}
+                    </ul>
+                </div>
             </div>
+                
+            <!-- BLOCK 2: Similar Documents (RAG Results) - Only shown if vector DB is active -->
+            {rag_section_start}
+            <div class="rag-results-box">
+                <h4 class="rag-title"><i class="fas fa-project-diagram"></i> Similar Documents (RAG Results)</h4>
+                <div class="similar-documents">
+                    <table class="rag-table">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>Similarity</th>
+                                <th>Risk Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {similar_documents_rows}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {rag_section_end}
+            </div>
+            
+            <!-- Add styles for the updated sections -->
+            <style type="text/css">
+                /* AI Analysis Box Styles */
+                .analysis-box,
+                .rag-results-box {
+                    margin-bottom: 30px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    position: relative;
+                }
+                
+                .analysis-title,
+                .rag-title {
+                    color: #1e3a8a;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    border-bottom: 2px solid #e5e7eb;
+                    padding-bottom: 10px;
+                }
+                
+                /* Risk Summary Styles */
+                .risk-summary {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    margin-bottom: 20px;
+                }
+                
+                .risk-score-box,
+                .risk-category {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                
+                .risk-label {
+                    font-weight: 600;
+                    color: #4b5563;
+                }
+                
+                .risk-value {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+                
+                .risk-indicator {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 4px 12px;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    margin-left: 4px;
+                }
+                
+                /* Risk Meter Styles */
+                .risk-meter {
+                    margin-bottom: 25px;
+                }
+                
+                .risk-bar {
+                    height: 12px;
+                    background-color: #e5e7eb;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    margin-bottom: 5px;
+                }
+                
+                .risk-fill {
+                    height: 100%;
+                    transition: width 0.5s ease;
+                }
+                
+                .risk-labels {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: #6b7280;
+                }
+                
+                /* Risk Colors */
+                .risk-low {
+                    background-color: #10b981;
+                    color: #fff;
+                }
+                
+                .risk-moderate {
+                    background-color: #f59e0b;
+                    color: #fff;
+                }
+                
+                .risk-high {
+                    background-color: #ef4444;
+                    color: #fff;
+                }
+                
+                /* Text Risk Colors */
+                .risk-text-low {
+                    color: #10b981;
+                    font-weight: 600;
+                }
+                
+                .risk-text-moderate {
+                    color: #f59e0b;
+                    font-weight: 600;
+                }
+                
+                .risk-text-high {
+                    color: #ef4444;
+                    font-weight: 600;
+                }
+                
+                /* Risk Explanation */
+                .risk-explanation {
+                    margin-bottom: 20px;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    background-color: #f8fafc;
+                    padding: 15px;
+                    border-radius: 8px;
+                }
+                
+                .risk-explanation p {
+                    margin: 0;
+                }
+                
+                /* Section Intro */
+                .section-intro {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                    color: #4b5563;
+                    font-size: 14px;
+                }
+                
+                /* Analysis Section Styles */
+                .analysis-section {
+                    margin-bottom: 20px;
+                    padding-left: 15px;
+                    border-left: 3px solid #2196F3;
+                }
+                
+                .analysis-section h5 {
+                    color: #1e3a8a;
+                    margin-top: 0;
+                    margin-bottom: 12px;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                
+                .factor-list,
+                .recommendation-list {
+                    margin: 0;
+                    padding-left: 20px;
+                    list-style-type: disc;
+                }
+                
+                .factor-list li,
+                .recommendation-list li {
+                    margin-bottom: 8px;
+                    line-height: 1.5;
+                }
+                
+                /* RAG Results Box Styles */
+                .rag-results-box {
+                    border-top: 4px solid #4f46e5;
+                    margin-top: 30px;
+                }
+                
+                /* RAG Table Styles */
+                .rag-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 10px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+                
+                .rag-table th {
+                    background-color: #f5f7f9;
+                    padding: 12px 15px;
+                    text-align: left;
+                    font-weight: 600;
+                    color: #1e3a8a;
+                    font-size: 14px;
+                }
+                
+                .rag-table td {
+                    padding: 12px 15px;
+                    border-top: 1px solid #e5e7eb;
+                }
+                
+                .rag-table tr:hover {
+                    background-color: #f8fafc;
+                }
+                
+                .similarity-value {
+                    font-weight: 600;
+                    color: #4f46e5;
+                    background-color: #eef2ff;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    display: inline-block;
+                }
+                
+                .rag-filename {
+                    color: #111827;
+                    font-weight: 500;
+                }
+            </style>
             
             <!-- Similar Documents Section (only shown if DB is connected) -->
             <div class="result-card" id="similar-documents-section">
